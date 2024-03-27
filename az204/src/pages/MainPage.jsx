@@ -75,7 +75,7 @@ export const MainPage = () => {
                                                 {x.estado}
                                             </Tag>
                                             :
-                                            <Tag size={20} variant='solid' colorScheme='teal'>
+                                            <Tag p={1} size={20} variant='solid' colorScheme='teal'>
                                                 {x.estado}
                                             </Tag>
                                         }
@@ -96,16 +96,19 @@ export const MainPage = () => {
                                                 <MenuItem icon={<FaRepeat />}>
                                                     Repetir
                                                 </MenuItem>
-                                                <MenuItem as={Link} to={`/resultado/${idExamen}`} icon={<FaCheck />}>
-                                                    Ver nota
-                                                </MenuItem>
+                                                {x.estado == "Terminado" ?
+                                                    <MenuItem as={Link} to={`/resultado/${idExamen}`} icon={<FaCheck />}>
+                                                        Ver nota
+                                                    </MenuItem> : null
+                                                }
 
-                                                <MenuItem icon={<FaRegFilePdf />}>
+
+                                                {/* <MenuItem icon={<FaRegFilePdf />}>
                                                     Guardar PDF
-                                                </MenuItem>
-                                                <MenuItem icon={<FaTrash />}>
+                                                </MenuItem> */}
+                                                {/* <MenuItem icon={<FaTrash />}>
                                                     Eliminar
-                                                </MenuItem>
+                                                </MenuItem> */}
                                             </MenuList>
                                         </Menu> </Td>
                                     </Tr>

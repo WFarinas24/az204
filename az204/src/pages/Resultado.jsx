@@ -1,6 +1,6 @@
 import { Alert, AlertIcon, Box, Button, Card, Flex, Heading, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Stack, Table, Tbody, Td, Text, Thead, Tooltip, Tr } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { ObtenerExamen } from '../services/servicios';
+import { ObtenerExamen, TerminarExamen } from '../services/servicios';
 import { Link, useParams } from 'react-router-dom';
 
 import imgUrlExito from '../assets/exito.png';
@@ -17,6 +17,9 @@ export const Resultado = () => {
 
     useEffect(() => {
         const _examen = ObtenerExamen(idExamen)
+        if (_examen.estado != "Terminado"){
+            TerminarExamen({idExamen})
+        }
         setExamen(_examen)
         setResultado({
             correctas: _examen.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length,

@@ -74,12 +74,13 @@ export const MoficarRespuesta = ({ idExamen, idPregunta, respuesta }) => {
 export const TerminarExamen = ({ idExamen }) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
         if (x.id === idExamen) {
-            y.fechaEdit = new Date();
-            y.nota = _examen.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100
+            x.fechaEdit = new Date();
+            x.nota =  (x.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100).toFixed(2)
+            x.estado = "Terminado"
         }
         return x;
 
     }) ?? [])
-
+console.log(items)
     AgregarExamen(items)
 }
