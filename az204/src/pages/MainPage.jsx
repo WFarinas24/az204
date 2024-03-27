@@ -17,7 +17,7 @@ import {
     TableContainer,
 } from '@chakra-ui/react'
 import { FaCheck, FaCog, FaPlus, FaRegFilePdf, FaReply, FaSave, FaTrash } from 'react-icons/fa';
-import { GenerarExamen, ObtenerExamenes } from '../services/servicios';
+import { ClonarExamen, EliminarExamen, GenerarExamen, ObtenerExamenes } from '../services/servicios';
 import { Link } from 'react-router-dom';
 
 
@@ -25,8 +25,12 @@ export const MainPage = () => {
 
     const [listaExamenes, setListaExamenes] = useState([])
 
-    useEffect(() => {
+    const ActualizarTabla =()=> {
         setListaExamenes(ObtenerExamenes())
+        console.log(ObtenerExamenes())
+    }
+    useEffect(() => {
+        ActualizarTabla()
     }, [])
 
     return (
@@ -93,7 +97,7 @@ export const MainPage = () => {
                                                     Continuar
                                                 </MenuItem>
 
-                                                <MenuItem icon={<FaRepeat />}>
+                                                <MenuItem onClick={()=>{ClonarExamen(idExamen);ActualizarTabla();}} icon={<FaRepeat />}>
                                                     Repetir
                                                 </MenuItem>
                                                 {x.estado == "Terminado" ?
@@ -106,9 +110,9 @@ export const MainPage = () => {
                                                 {/* <MenuItem icon={<FaRegFilePdf />}>
                                                     Guardar PDF
                                                 </MenuItem> */}
-                                                {/* <MenuItem icon={<FaTrash />}>
+                                                <MenuItem onClick={()=>{EliminarExamen(x.id);ActualizarTabla() }} icon={<FaTrash />}>
                                                     Eliminar
-                                                </MenuItem> */}
+                                                </MenuItem>
                                             </MenuList>
                                         </Menu> </Td>
                                     </Tr>

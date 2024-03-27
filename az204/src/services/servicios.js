@@ -13,7 +13,8 @@ export const ObtenerPregunta = (idExamen, idPregunta) => {
         pregunta: examen.preguntas[index],
         index: index,
         anterior: examen.preguntas[index - 1]?.id,
-        siguiente: examen.preguntas[index + 1]?.id
+        siguiente: examen.preguntas[index + 1]?.id,
+        estado : examen.estado
     };
 }
 
@@ -81,6 +82,28 @@ export const TerminarExamen = ({ idExamen }) => {
         return x;
 
     }) ?? [])
-console.log(items)
+    AgregarExamen(items)
+}
+
+export const EliminarExamen = (idExamen) => {
+    const items = (JSON.parse(localStorage.getItem('examen-204'))).filter((x => {
+        return (x.id !=idExamen);
+    }) ?? [])
+
+    AgregarExamen(items)
+}
+
+
+export const ClonarExamen = (idExamen) => {
+    const items = (JSON.parse(localStorage.getItem('examen-204')) ?? [])
+    let item = items.find(x => x.id == idExamen)
+    let clone = JSON.parse(JSON.stringify(item))
+    clone.id = crypto.randomUUID();
+    clone.nota = 0
+    clone.fechaCrea = new Date();
+    clone.fechaEdit = new Date();
+    clone.estado = "Incompleto"
+
+    items.push(clone)
     AgregarExamen(items)
 }

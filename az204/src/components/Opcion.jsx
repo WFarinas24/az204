@@ -3,7 +3,8 @@ import React from 'react'
 import { MoficarRespuesta } from '../services/servicios'
 import { RiCheckboxBlankCircleFill, RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from "react-icons/ri";
 export const Opcion = (props) => {
-    const { text } = props
+    const { text, disable } = props
+
     const { getInputProps, getRadioProps } = useRadio(props)
 
     const input = getInputProps()
@@ -12,18 +13,35 @@ export const Opcion = (props) => {
     return (
 
         <Box as='label'>
-            <input {...input} />
+            <input  {...input} disabled={disable} />
             <Box
                 {...checkbox}
+                disabled={disable}
                 cursor='pointer'
                 borderWidth='1px'
                 borderRadius='md'
                 boxShadow='md'
+
                 _checked={{
                     bg: 'teal.600',
                     color: 'white',
                     borderColor: 'teal.600',
                 }}
+
+
+                _disabled={{
+                    color: "gray",
+                    border: "1px solid grey",
+                    textDecoration : "line-through",
+                    _checked: {
+                        textDecoration : "none",
+                        border: "1px solid teal",
+                        color: "teal.600",
+                        bg: "white",
+                    }
+                }
+                }
+
                 _focus={{
                     boxShadow: 'outline',
                 }}

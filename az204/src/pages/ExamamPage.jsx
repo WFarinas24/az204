@@ -18,10 +18,11 @@ export const ExamamPage = () => {
         anterior: null,
         siguiente: null,
         index: -1,
+        estado : "Terminado"
     })
 
 
-    const { getRootProps, getRadioProps, setValue } = useRadioGroup({
+    const { getRootProps, getRadioProps, setValue, isDisabled} = useRadioGroup({
         name: 'framework',
         defaultValue: "-1",
         onChange: (e) => { MoficarRespuesta({ idExamen, idPregunta, respuesta: e }); },
@@ -34,6 +35,7 @@ export const ExamamPage = () => {
         setPregunta(_pregunta.pregunta)
         setDatosPregunta(_pregunta)
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
+        console.log(datosPregunta.estado)
     }, [idPregunta])
 
     return (
@@ -80,12 +82,12 @@ export const ExamamPage = () => {
                     </Stack>
 
                     <RadioGroup m={10}>
-                        <Stack {...group}>
+                        <Stack {...group} >
                             {pregunta.respuestas.map((resp, index) => {
                                 const value = resp.substring(0, 1)
                                 const texto = resp.slice(2)
                                 const radio = getRadioProps({ value })
-                                return <Opcion text={texto} key={value} {...radio} />
+                                return <Opcion disable={datosPregunta.estado=="Terminado"} text={texto} key={value} {...radio} />
                             })
                             }
                             {pregunta.respuestas.length == 0 ?
