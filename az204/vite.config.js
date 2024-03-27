@@ -6,10 +6,6 @@ export default defineConfig({
 
   plugins: [react()],
   define: { _global: ({}), },
-  server: {
-    watch: {
-      usePolling: true,
-    },
-  },
-  base : '/'
+  
+  base : '/az204'
 })
