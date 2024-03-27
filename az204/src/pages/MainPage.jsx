@@ -19,6 +19,7 @@ import {
 import { FaCheck, FaCog, FaPlus, FaRegFilePdf, FaReply, FaSave, FaTrash } from 'react-icons/fa';
 import { ClonarExamen, EliminarExamen, GenerarExamen, ObtenerExamenes } from '../services/servicios';
 import { Link } from 'react-router-dom';
+import { ObtenerTiempo } from '../util/Utilidadades';
 
 
 export const MainPage = () => {
@@ -27,7 +28,6 @@ export const MainPage = () => {
 
     const ActualizarTabla = () => {
         setListaExamenes(ObtenerExamenes())
-        console.log(ObtenerExamenes())
     }
     useEffect(() => {
         ActualizarTabla()
@@ -73,7 +73,7 @@ export const MainPage = () => {
                                             dateStyle: 'short',
                                             timeStyle: 'short',
                                         }).format(new Date(x.fechaEdit))} 🕧</Td>
-                                        <Td>{x.tiempo}</Td>
+                                        <Td>{ObtenerTiempo(x.tiempo)}</Td>
                                         <Td>{x.estado == "Incompleto" ?
                                             <Tag p={1} size={20} variant='solid' colorScheme='purple'>
                                                 {x.estado}

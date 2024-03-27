@@ -4,7 +4,7 @@ import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, Fa
 
 import React, { useEffect, useState } from 'react'
 import { Opcion } from "../components/Opcion";
-import { ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
+import { ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
 import { Link, useParams } from "react-router-dom";
 
 export const ExamamPage = () => {
@@ -13,6 +13,9 @@ export const ExamamPage = () => {
     const [pregunta, setPregunta] = useState({
         respuestas: []
     })
+
+    const [interval, setIntervalPregunta] = useState(-1)
+
 
     const [datosPregunta, setDatosPregunta] = useState({
         anterior: null,
@@ -37,11 +40,21 @@ export const ExamamPage = () => {
         setDatosPregunta(_pregunta)
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
         setEsFavorito(ExisteFavorito({ idPregunta }))
+        clearInterval(interval)
+        const intevalId = setInterval(() => {
+            ActualizarTiempoExamen({ idExamen })
+        }, 1000)
+
+        return () => {
+            clearInterval(intevalId);
+        };
 
     }, [idPregunta])
 
+
     return (
         <Container maxW='8xl' >
+
             <Card>
 
                 <CardHeader>
@@ -64,10 +77,10 @@ export const ExamamPage = () => {
                                 variant='outline'
                             />
                             <MenuList>
-                                <MenuItem as={Link} to={"/"} icon={<FaSave />}>
+                                <MenuItem as={Link} to={"/"} onClick={clearInterval(interval)} icon={<FaSave />}>
                                     Guardar y volver
                                 </MenuItem>
-                                <MenuItem as={Link} to={"/"} color={"red"} icon={<FaTrash />}>
+                                <MenuItem as={Link} to={"/"} onClick={clearInterval(interval)} color={"red"} icon={<FaTrash />}>
                                     Eliminar
                                 </MenuItem>
                             </MenuList>
@@ -132,7 +145,7 @@ export const ExamamPage = () => {
                                     Siguiente
                                 </Button >
                                 :
-                                <Button as={Link} to={`/resultado/${idExamen}`} colorScheme='green' w={200} rightIcon={<FaCheck />}>
+                                <Button as={Link} to={`/resultado/${idExamen}`} onClick={clearInterval(interval)} colorScheme='green' w={200} rightIcon={<FaCheck />}>
                                     Finalizar
                                 </Button >
 
@@ -143,7 +156,7 @@ export const ExamamPage = () => {
 
 
             </Card>
-           
+
         </Container>
 
     )

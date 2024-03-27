@@ -104,6 +104,19 @@ export const TerminarExamen = ({ idExamen }) => {
     AgregarExamen(items)
 }
 
+export const ActualizarTiempoExamen = ({ idExamen }) => {
+    const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
+        if (x.id === idExamen && x.estado != "Terminado") {
+            x.tiempo = parseInt(x.tiempo??"0") +1
+            x.fechaEdit = new Date();
+        }
+        return x;
+
+    }) ?? [])
+    AgregarExamen(items)
+}
+
+
 export const EliminarExamen = (idExamen) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).filter((x => {
         return (x.id !=idExamen);

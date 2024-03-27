@@ -10,7 +10,8 @@ export const router = createHashRouter([
   },
   {
     path: "/examen/:idExamen/:idPregunta",
-    element: <ExamamPage />
+    element: <ExamamPage />,
+    
   },
   {
     path: "/resultado/:idExamen",
