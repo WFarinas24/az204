@@ -30,17 +30,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
+      - name: mostrar dir
+        run: |
+          # Show paths
+          echo "Paths: ${{ env.paths }}"
+          
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      - name: prueba
-        run: |
-          # Show paths
-          echo "Paths: ${{ env.paths }}"
+
           
       - name: Install dependencies
         
