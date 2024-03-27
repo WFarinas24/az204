@@ -33,8 +33,8 @@ export const ExamamPage = () => {
         const _pregunta = ObtenerPregunta(idExamen, idPregunta)
         setPregunta(_pregunta.pregunta)
         setDatosPregunta(_pregunta)
-        setValue(_pregunta.pregunta.usuarioRespuesta)
-        console.log("cambio")
+        setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
+        console.log(_pregunta.pregunta)
     }, [idPregunta])
 
     return (

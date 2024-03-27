@@ -2,7 +2,7 @@ import { data } from "../data/data-examen";
 
 export const ObtenerExamenes = () => {
     const items = JSON.parse(localStorage.getItem('examen-204'));
-    return items?.sort( (a,b) => new Date(b.fechaCrea) - new Date(a.fechaCrea)) ?? []
+    return items?.sort((a, b) => new Date(b.fechaCrea) - new Date(a.fechaCrea)) ?? []
 }
 
 export const ObtenerPregunta = (idExamen, idPregunta) => {
@@ -61,13 +61,25 @@ export const MoficarRespuesta = ({ idExamen, idPregunta, respuesta }) => {
                     y.fechaEdit = new Date();
                 }
                 return y
-           })
+            })
         }
         return x;
-        
-    }) ?? [])
-    
-console.log(items);
-AgregarExamen(items)
 
+    }) ?? [])
+
+    AgregarExamen(items)
+
+}
+
+export const TerminarExamen = ({ idExamen }) => {
+    const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
+        if (x.id === idExamen) {
+            y.fechaEdit = new Date();
+            y.nota = _examen.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100
+        }
+        return x;
+
+    }) ?? [])
+
+    AgregarExamen(items)
 }

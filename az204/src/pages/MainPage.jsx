@@ -80,7 +80,7 @@ export const MainPage = () => {
                                             </Tag>
                                         }
                                         </Td>
-                                        <Td>{x.nota}</Td>
+                                        <Td>{x.nota ?? 20}</Td>
                                         <Td> <Menu>
                                             <MenuButton
                                                 as={IconButton}
