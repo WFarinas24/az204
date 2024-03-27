@@ -75,7 +75,6 @@ export const Resultado = () => {
                         </Thead>
                         <Tbody>
                             {examen.preguntas?.filter(x => !x.respuestaCorrecta.includes(x.usuarioRespuesta) && x.usuarioRespuesta != "" && x.respuestaCorrecta != "").map(x => {
-                                console.log(x)
                                 return <Tr key={x.id}>
                                     <Td position={"relative"} bg={"red.100"} borderRadius={10}>
                                         <Image left={60} top={3} position={"absolute"} opacity={0.40} src={imgUrlError} width={"60px"} alt="" />

@@ -34,7 +34,6 @@ export const ExamamPage = () => {
         setPregunta(_pregunta.pregunta)
         setDatosPregunta(_pregunta)
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
-        console.log(_pregunta.pregunta)
     }, [idPregunta])
 
     return (
