@@ -1,10 +1,10 @@
 import { AbsoluteCenter, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Spacer, Stack, Text, VStack, useRadioGroup } from "@chakra-ui/react";
-import { FaAd, FaArrowLeft, FaArrowRight, FaCheck, FaCog, FaEdit, FaHamburger, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
+import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaHamburger, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
 
 
 import React, { useEffect, useState } from 'react'
 import { Opcion } from "../components/Opcion";
-import { MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
+import { ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
 import { Link, useParams } from "react-router-dom";
 
 export const ExamamPage = () => {
@@ -18,16 +18,17 @@ export const ExamamPage = () => {
         anterior: null,
         siguiente: null,
         index: -1,
-        estado : "Terminado"
+        estado: "Terminado"
     })
 
 
-    const { getRootProps, getRadioProps, setValue, isDisabled} = useRadioGroup({
+    const { getRootProps, getRadioProps, setValue, isDisabled } = useRadioGroup({
         name: 'framework',
         defaultValue: "-1",
         onChange: (e) => { MoficarRespuesta({ idExamen, idPregunta, respuesta: e }); },
     })
 
+    const [esFavorito, setEsFavorito] = useState(false)
     const group = getRootProps()
 
     useEffect(() => {
@@ -35,6 +36,8 @@ export const ExamamPage = () => {
         setPregunta(_pregunta.pregunta)
         setDatosPregunta(_pregunta)
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
+        setEsFavorito(ExisteFavorito({ idPregunta }))
+
     }, [idPregunta])
 
     return (
@@ -44,7 +47,14 @@ export const ExamamPage = () => {
                 <CardHeader>
                     <Flex direction={"row"} gap={1}>
                         <Spacer></Spacer>
-                        <Button><FaRegBookmark /></Button>
+                        <Button onClick={() => {GuardarFavorito(idPregunta); setEsFavorito(!esFavorito)}} colorScheme={esFavorito ? "green" : "gray"} >
+                            {esFavorito ?
+                                <FaBookmark />
+                                :
+                                <FaRegBookmark /> 
+                            }
+
+                        </Button>
 
                         <Menu>
                             <MenuButton
@@ -57,8 +67,8 @@ export const ExamamPage = () => {
                                 <MenuItem as={Link} to={"/"} icon={<FaSave />}>
                                     Guardar y volver
                                 </MenuItem>
-                                <MenuItem icon={<FaTrash />}>
-                                    Salir y Eliminar
+                                <MenuItem as={Link} to={"/"} color={"red"} icon={<FaTrash />}>
+                                    Eliminar
                                 </MenuItem>
                             </MenuList>
                         </Menu>
@@ -86,7 +96,7 @@ export const ExamamPage = () => {
                                 const value = resp.substring(0, 1)
                                 const texto = resp.slice(2)
                                 const radio = getRadioProps({ value })
-                                return <Opcion op={value} datos={datosPregunta} disable={datosPregunta.estado=="Terminado"} text={texto} key={value} {...radio} />
+                                return <Opcion op={value} datos={datosPregunta} disable={datosPregunta.estado == "Terminado"} text={texto} key={value} {...radio} />
                             })
                             }
                             {pregunta.respuestas.length == 0 ?
@@ -116,15 +126,15 @@ export const ExamamPage = () => {
                         </Spacer>
 
                         {
-                            datosPregunta.siguiente 
-                            ?
-                            <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
-                                Siguiente
-                            </Button >
-                            :
-                            <Button as={Link} to={`/resultado/${idExamen}`} colorScheme='green' w={200} rightIcon={<FaCheck />}>
-                                Finalizar
-                            </Button >
+                            datosPregunta.siguiente
+                                ?
+                                <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
+                                    Siguiente
+                                </Button >
+                                :
+                                <Button as={Link} to={`/resultado/${idExamen}`} colorScheme='green' w={200} rightIcon={<FaCheck />}>
+                                    Finalizar
+                                </Button >
 
                         }
 

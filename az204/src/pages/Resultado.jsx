@@ -31,12 +31,12 @@ export const Resultado = () => {
 
 
     return (
-        <Card h={"90vh"} alignItems={"center"}>
+        <Card  h={"90vh"} alignItems={"center"}>
             <Heading>
                 Resultado
             </Heading>
-            <Flex direction={"row"} maxH={500} >
-                <Box border={"1px solid green"} overflowY={"auto"}>
+            <Flex  m={10} direction={"row"} maxH={500} flexDirection={"row"} flexWrap={"wrap"} overflowX={"auto"} >
+                <Box borderRadius={4} border={"1px solid green"} overflowY={"auto"}>
                     <Text fontWeight={"bold"}>Correctas</Text>
 
                     <Table w={"40rem"}>
@@ -66,7 +66,7 @@ export const Resultado = () => {
                         </Tbody>
                     </Table>
                 </Box>
-                <Box border={"1px solid red"} overflowY={"auto"}>
+                <Box borderRadius={4} border={"1px solid red"} overflowY={"auto"}>
                     <Text fontWeight={"bold"} >Incorrectas</Text>
                     <Table w={"40rem"}>
                         <Thead>

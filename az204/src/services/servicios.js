@@ -72,6 +72,25 @@ export const MoficarRespuesta = ({ idExamen, idPregunta, respuesta }) => {
 
 }
 
+
+export const GuardarFavorito = (idPregunta) => {
+
+    let items = ((JSON.parse(localStorage.getItem('examen-204-favoritos')))?? [])
+    if (items.includes(idPregunta)){
+        items = items.filter(x => x != idPregunta)
+    }else{
+        items.push(idPregunta)
+    }
+
+    localStorage.setItem('examen-204-favoritos', JSON.stringify(items));
+}
+
+export const ExisteFavorito = ({idPregunta}) => {
+    const items = ((JSON.parse(localStorage.getItem('examen-204-favoritos')))?? [])
+    return items.includes(idPregunta);
+   
+}
+
 export const TerminarExamen = ({ idExamen }) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
         if (x.id === idExamen) {
