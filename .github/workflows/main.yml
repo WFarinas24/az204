@@ -30,18 +30,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name : set path
-        working-directory: az204
-        
       - name: Set up Node
         uses: actions/setup-node@v4
-        
         with:
           node-version: 20
           cache: 'npm'
-        
       - name: Install dependencies
-        working-directory: az204
         run: npm ci
       - name: Build
         run: npm run build
