@@ -42,7 +42,7 @@ export const ExamamPage = () => {
 
     return (
         <Container maxW='8xl' >
-            <Card h={"100vh"}>
+            <Card>
 
                 <CardHeader>
                     <Flex direction={"row"} gap={1}>
