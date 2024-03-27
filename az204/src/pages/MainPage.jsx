@@ -37,7 +37,8 @@ export const MainPage = () => {
                         <Heading>Historial de Quizz realizado</Heading>
                         <Spacer></Spacer>
                         <Button onClick={() => {
-                            GenerarExamen()
+                            GenerarExamen();
+                            setListaExamenes(ObtenerExamenes());
                         }} leftIcon={<FaPlus />} colorScheme='green'>Nuevo</Button>
                     </Flex>
 

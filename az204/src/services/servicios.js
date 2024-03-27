@@ -2,7 +2,7 @@ import { data } from "../data/data-examen";
 
 export const ObtenerExamenes = () => {
     const items = JSON.parse(localStorage.getItem('examen-204'));
-    return items ?? []
+    return items?.sort( (a,b) => new Date(b.fechaCrea) - new Date(a.fechaCrea)) ?? []
 }
 
 export const ObtenerPregunta = (idExamen, idPregunta) => {
