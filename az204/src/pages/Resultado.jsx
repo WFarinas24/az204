@@ -35,11 +35,11 @@ export const Resultado = () => {
             <Heading>
                 Resultado
             </Heading>
-            <Flex  m={10} direction={"row"} maxH={500} flexDirection={"row"} flexWrap={"wrap"} overflowX={"auto"} >
+            <Flex  m={10} direction={"row"} maxH={500} minH={400}  flexDirection={"row"} flexWrap={"wrap"} overflowX={"auto"} >
                 <Box borderRadius={4} border={"1px solid green"} overflowY={"auto"}>
                     <Text fontWeight={"bold"}>Correctas</Text>
 
-                    <Table w={"40rem"}>
+                    <Table maxW={"40rem"} >
                         <Thead>
                             <Tr>
                                 <Td>
@@ -68,7 +68,7 @@ export const Resultado = () => {
                 </Box>
                 <Box borderRadius={4} border={"1px solid red"} overflowY={"auto"}>
                     <Text fontWeight={"bold"} >Incorrectas</Text>
-                    <Table w={"40rem"}>
+                    <Table maxW={"40rem"}>
                         <Thead>
                             <Tr>
                                 <Td>
