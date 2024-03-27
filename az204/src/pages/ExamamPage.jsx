@@ -90,7 +90,7 @@ export const ExamamPage = () => {
                         <Text>{pregunta.pregunta}</Text>
                     </Stack>
 
-                    <RadioGroup m={10}>
+                    <RadioGroup m={4}>
                         <Stack {...group} >
                             {pregunta.respuestas.map((resp, index) => {
                                 const value = resp.substring(0, 1)

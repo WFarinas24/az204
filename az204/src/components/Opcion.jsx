@@ -36,7 +36,7 @@ export const Opcion = (props) => {
                     textDecoration: !esCorrecta ? "line-through" : "none",
                     _checked: {
                         textDecoration: "none",
-                        border: esCorrecta ? "1px solid teal" : "1px solid red" ,
+                        border: esCorrecta ? "1px solid teal" : "1px solid red",
                         color: esCorrecta ? "teal.600" : "red",
                         bg: "white",
                     }
@@ -50,7 +50,9 @@ export const Opcion = (props) => {
                 py={3}
             >
                 <HStack>
-                    {input.checked ? <RiCheckboxBlankCircleFill /> : <RiCheckboxBlankCircleLine />}
+                    <Box>
+                        {input.checked ? <RiCheckboxBlankCircleFill size={12} /> : <RiCheckboxBlankCircleLine size={12} />}
+                    </Box>
                     <Text textAlign={"start"}>{text}</Text>
                     {esCorrecta ?
                         <Tag p={1} size={20} variant='solid' colorScheme='teal' textDecor={"none"}>
