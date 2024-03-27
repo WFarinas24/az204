@@ -47,11 +47,11 @@ export const ExamamPage = () => {
                 <CardHeader>
                     <Flex direction={"row"} gap={1}>
                         <Spacer></Spacer>
-                        <Button onClick={() => {GuardarFavorito(idPregunta); setEsFavorito(!esFavorito)}} colorScheme={esFavorito ? "green" : "gray"} >
+                        <Button onClick={() => { GuardarFavorito(idPregunta); setEsFavorito(!esFavorito) }} colorScheme={esFavorito ? "green" : "gray"} >
                             {esFavorito ?
                                 <FaBookmark />
                                 :
-                                <FaRegBookmark /> 
+                                <FaRegBookmark />
                             }
 
                         </Button>
@@ -143,6 +143,7 @@ export const ExamamPage = () => {
 
 
             </Card>
+           
         </Container>
 
     )
