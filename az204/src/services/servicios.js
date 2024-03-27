@@ -135,6 +135,15 @@ export const ClonarExamen = (idExamen) => {
     clone.fechaCrea = new Date();
     clone.fechaEdit = new Date();
     clone.estado = "Incompleto"
+    clone.preguntas = clone.preguntas.map((x) =>
+    {
+        x.usuarioRespuesta = null;
+        delete x.usuarioRespuesta;
+
+        return x
+    })
+    
+    delete clone.ultimaPregunta;
 
     items.push(clone)
     AgregarExamen(items)
