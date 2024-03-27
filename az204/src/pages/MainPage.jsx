@@ -25,7 +25,7 @@ export const MainPage = () => {
 
     const [listaExamenes, setListaExamenes] = useState([])
 
-    const ActualizarTabla =()=> {
+    const ActualizarTabla = () => {
         setListaExamenes(ObtenerExamenes())
         console.log(ObtenerExamenes())
     }
@@ -94,10 +94,10 @@ export const MainPage = () => {
                                             />
                                             <MenuList>
                                                 <MenuItem as={Link} to={`/examen/${idExamen}/${idPregunta}`} icon={<VscDebugContinue />}>
-                                                    Continuar
+                                                    {x.estado == "Terminado" ? "Revisar" : "Continuar"}
                                                 </MenuItem>
 
-                                                <MenuItem onClick={()=>{ClonarExamen(idExamen);ActualizarTabla();}} icon={<FaRepeat />}>
+                                                <MenuItem onClick={() => { ClonarExamen(idExamen); ActualizarTabla(); }} icon={<FaRepeat />}>
                                                     Repetir
                                                 </MenuItem>
                                                 {x.estado == "Terminado" ?
@@ -110,7 +110,7 @@ export const MainPage = () => {
                                                 {/* <MenuItem icon={<FaRegFilePdf />}>
                                                     Guardar PDF
                                                 </MenuItem> */}
-                                                <MenuItem onClick={()=>{EliminarExamen(x.id);ActualizarTabla() }} icon={<FaTrash />}>
+                                                <MenuItem onClick={() => { EliminarExamen(x.id); ActualizarTabla() }} icon={<FaTrash />}>
                                                     Eliminar
                                                 </MenuItem>
                                             </MenuList>

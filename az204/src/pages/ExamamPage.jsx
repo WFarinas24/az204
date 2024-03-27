@@ -35,7 +35,6 @@ export const ExamamPage = () => {
         setPregunta(_pregunta.pregunta)
         setDatosPregunta(_pregunta)
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
-        console.log(datosPregunta.estado)
     }, [idPregunta])
 
     return (
@@ -87,7 +86,7 @@ export const ExamamPage = () => {
                                 const value = resp.substring(0, 1)
                                 const texto = resp.slice(2)
                                 const radio = getRadioProps({ value })
-                                return <Opcion disable={datosPregunta.estado=="Terminado"} text={texto} key={value} {...radio} />
+                                return <Opcion op={value} datos={datosPregunta} disable={datosPregunta.estado=="Terminado"} text={texto} key={value} {...radio} />
                             })
                             }
                             {pregunta.respuestas.length == 0 ?
