@@ -37,6 +37,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: az204/package-lock.json
       - name: Install dependencies
+        working-directory: az204
         run: npm ci
       - name: Build
         run: npm run build
