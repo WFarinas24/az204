@@ -11,5 +11,5 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  base : '/az204'
+  base : '/'
 })
