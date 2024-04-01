@@ -1,14 +1,21 @@
-import { AbsoluteCenter, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Spacer, Stack, Text, VStack, useRadioGroup } from "@chakra-ui/react";
+import { AbsoluteCenter, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Skeleton, Spacer, Stack, Text, VStack, useRadioGroup } from "@chakra-ui/react";
 import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaHamburger, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
 
-
+import { MdOutlineGTranslate } from "react-icons/md";
 import React, { useEffect, useState } from 'react'
 import { Opcion } from "../components/Opcion";
 import { ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
 import { Link, useParams } from "react-router-dom";
+import { Traducir } from "../services/traductor";
 
 export const ExamamPage = () => {
     const { idPregunta, idExamen } = useParams();
+
+
+    const [traduccion, setTraduccion] = useState({
+        cargando: false,
+        texto: null,
+    })
 
     const [pregunta, setPregunta] = useState({
         respuestas: []
@@ -41,6 +48,12 @@ export const ExamamPage = () => {
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
         setEsFavorito(ExisteFavorito({ idPregunta }))
         clearInterval(interval)
+
+        setTraduccion({
+            traduccionCargando: true,
+            texto: null
+        })
+
         const intevalId = setInterval(() => {
             ActualizarTiempoExamen({ idExamen })
         }, 1000)
@@ -51,6 +64,20 @@ export const ExamamPage = () => {
 
     }, [idPregunta])
 
+
+    const TraducirPregunta = async () => {
+        setTraduccion({
+            traduccionCargando: true,
+            texto: null
+        })
+
+        const res = await Traducir(pregunta.pregunta)
+        setTraduccion({
+            traduccionCargando: false,
+            texto: res
+        })
+
+    }
 
     return (
         <Container maxW='8xl' >
@@ -99,10 +126,45 @@ export const ExamamPage = () => {
                     <Box dir="row" textAlign={"start"}>
                         <Heading m={2}>Pregunta {datosPregunta.index + 1}</Heading>
                     </Box>
-                    <Stack border={'1px solid #A0AEC0'} backgroundColor={"whitesmoke"} p={4} borderRadius={10} >
+                    <Stack border={'1px solid #A0AEC0'} backgroundColor={"whitesmoke"} p={4} borderRadius={10} position={"relative"} >
                         <Text>{pregunta.pregunta}</Text>
+
+                        <Box position={"absolute"} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
+                            <MdOutlineGTranslate size={32} />
+                        </Box>
                     </Stack>
 
+                    {traduccion?.texto?.trim() != undefined?
+                        < Accordion defaultIndex={[0]} allowMultiple>
+                            <AccordionItem>
+                                <h2>
+                                    <AccordionButton>
+                                        <Box as="span" flex='1' textAlign='left' fontWeight={"bold"}>
+                                            Traducción
+                                            
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                </h2>
+
+                                <AccordionPanel borderRadius={"md"} bg={"orange.100"} pb={4}>
+
+                                    {
+                                        (traduccion.cargando) ?
+                                            <Stack>
+                                                <Skeleton height='20px' />
+                                                <Skeleton height='20px' />
+                                                <Skeleton height='20px' />
+                                            </Stack>
+                                            :
+                                            traduccion.texto
+                                    }
+
+                                </AccordionPanel>
+                            </AccordionItem>
+                        </Accordion>
+
+                        : null}
                     <RadioGroup m={4}>
                         <Stack {...group} >
                             {pregunta.respuestas.map((resp, index) => {
@@ -157,7 +219,7 @@ export const ExamamPage = () => {
 
             </Card>
 
-        </Container>
+        </Container >
 
     )
 }
