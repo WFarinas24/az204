@@ -50,7 +50,7 @@ export const ExamamPage = () => {
         clearInterval(interval)
 
         setTraduccion({
-            traduccionCargando: true,
+            cargando: false,
             texto: null
         })
 
@@ -67,13 +67,13 @@ export const ExamamPage = () => {
 
     const TraducirPregunta = async () => {
         setTraduccion({
-            traduccionCargando: true,
+            cargando: true,
             texto: null
         })
 
         const res = await Traducir(pregunta.pregunta)
         setTraduccion({
-            traduccionCargando: false,
+            cargando: false,
             texto: res
         })
 
@@ -130,18 +130,25 @@ export const ExamamPage = () => {
                         <Text>{pregunta.pregunta}</Text>
 
                         <Box position={"absolute"} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
-                            <MdOutlineGTranslate size={32} />
+
+                            {traduccion.cargando
+                                ?
+                                <div style={{ position: "absolute", right: -26, top: -22, opacity: 0.6 }} class="lds-ripple"><div></div><div></div></div>
+                                :
+                                null
+                            }
+                            <MdOutlineGTranslate style={{ zIndex: 9999 }} size={32} />
                         </Box>
                     </Stack>
 
-                    {traduccion?.texto?.trim() != undefined?
+                    {traduccion?.texto?.trim() != undefined || traduccion.cargando?
                         < Accordion defaultIndex={[0]} allowMultiple>
                             <AccordionItem>
                                 <h2>
                                     <AccordionButton>
                                         <Box as="span" flex='1' textAlign='left' fontWeight={"bold"}>
                                             Traducción
-                                            
+
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
