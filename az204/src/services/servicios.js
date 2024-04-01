@@ -134,6 +134,7 @@ export const ClonarExamen = (idExamen) => {
     clone.nota = 0
     clone.fechaCrea = new Date();
     clone.fechaEdit = new Date();
+    clone.tiempo = 0;
     clone.estado = "Incompleto"
     clone.preguntas = clone.preguntas.map((x) =>
     {
