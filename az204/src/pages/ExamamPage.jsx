@@ -1,5 +1,5 @@
 import { AbsoluteCenter, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Skeleton, Spacer, Stack, Text, VStack, useRadioGroup } from "@chakra-ui/react";
-import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaHamburger, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
+import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaHamburger, FaInfoCircle, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
 
 import { MdOutlineGTranslate } from "react-icons/md";
 import React, { useEffect, useState } from 'react'
@@ -141,7 +141,7 @@ export const ExamamPage = () => {
                         </Box>
                     </Stack>
 
-                    {traduccion?.texto?.trim() != undefined || traduccion.cargando?
+                    {traduccion?.texto?.trim() != undefined || traduccion.cargando ?
                         < Accordion defaultIndex={[0]} allowMultiple>
                             <AccordionItem>
                                 <h2>
@@ -164,7 +164,14 @@ export const ExamamPage = () => {
                                                 <Skeleton height='20px' />
                                             </Stack>
                                             :
-                                            traduccion.texto
+                                            <HStack alignItems={"top"}>
+                                                <Box>
+                                                    <FaInfoCircle style={{ margin: "10px 2px" }} size={18} />
+                                                </Box>
+                                                <Text>
+                                                    {traduccion.texto}
+                                                </Text>
+                                            </HStack>
                                     }
 
                                 </AccordionPanel>
