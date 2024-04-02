@@ -1,15 +1,17 @@
 import { AbsoluteCenter, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Skeleton, Spacer, Stack, Text, VStack, useRadioGroup } from "@chakra-ui/react";
-import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaHamburger, FaInfoCircle, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
+import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaExternalLinkAlt, FaHamburger, FaInfoCircle, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from "react-icons/fa";
 
 import { MdOutlineGTranslate } from "react-icons/md";
 import React, { useEffect, useState } from 'react'
 import { Opcion } from "../components/Opcion";
-import { ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPregunta } from "../services/servicios";
+import { ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerPaginaExamTopic, ObtenerPregunta } from "../services/servicios";
 import { Link, useParams } from "react-router-dom";
 import { Traducir } from "../services/traductor";
 
 export const ExamamPage = () => {
     const { idPregunta, idExamen } = useParams();
+
+    const [indexPregunta, setIndexPregunta] = useState(-1)
 
 
     const [traduccion, setTraduccion] = useState({
@@ -48,7 +50,7 @@ export const ExamamPage = () => {
         setValue(_pregunta.pregunta.usuarioRespuesta ?? "-1")
         setEsFavorito(ExisteFavorito({ idPregunta }))
         clearInterval(interval)
-
+        setIndexPregunta(ObtenerPaginaExamTopic(idPregunta))
         setTraduccion({
             cargando: false,
             texto: null
@@ -128,7 +130,10 @@ export const ExamamPage = () => {
                     </Box>
                     <Stack border={'1px solid #A0AEC0'} backgroundColor={"whitesmoke"} p={4} borderRadius={10} position={"relative"} >
                         <Text>{pregunta.pregunta}</Text>
-
+                        <HStack>
+                            <FaExternalLinkAlt />
+                            <a style={{ color: "blue" }} target="_blank" href={"https://www.examtopics.com/exams/microsoft/az-204/view/" + indexPregunta}>Ver en Exam topics</a>
+                        </HStack>
                         <Box position={"absolute"} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
 
                             {traduccion.cargando

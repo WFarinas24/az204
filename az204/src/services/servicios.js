@@ -14,7 +14,7 @@ export const ObtenerPregunta = (idExamen, idPregunta) => {
         index: index,
         anterior: examen.preguntas[index - 1]?.id,
         siguiente: examen.preguntas[index + 1]?.id,
-        estado : examen.estado
+        estado: examen.estado
     };
 }
 
@@ -75,27 +75,27 @@ export const MoficarRespuesta = ({ idExamen, idPregunta, respuesta }) => {
 
 export const GuardarFavorito = (idPregunta) => {
 
-    let items = ((JSON.parse(localStorage.getItem('examen-204-favoritos')))?? [])
-    if (items.includes(idPregunta)){
+    let items = ((JSON.parse(localStorage.getItem('examen-204-favoritos'))) ?? [])
+    if (items.includes(idPregunta)) {
         items = items.filter(x => x != idPregunta)
-    }else{
+    } else {
         items.push(idPregunta)
     }
 
     localStorage.setItem('examen-204-favoritos', JSON.stringify(items));
 }
 
-export const ExisteFavorito = ({idPregunta}) => {
-    const items = ((JSON.parse(localStorage.getItem('examen-204-favoritos')))?? [])
+export const ExisteFavorito = ({ idPregunta }) => {
+    const items = ((JSON.parse(localStorage.getItem('examen-204-favoritos'))) ?? [])
     return items.includes(idPregunta);
-   
+
 }
 
 export const TerminarExamen = ({ idExamen }) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
         if (x.id === idExamen) {
             x.fechaEdit = new Date();
-            x.nota =  (x.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100).toFixed(2)
+            x.nota = (x.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100).toFixed(2)
             x.estado = "Terminado"
         }
         return x;
@@ -107,7 +107,7 @@ export const TerminarExamen = ({ idExamen }) => {
 export const ActualizarTiempoExamen = ({ idExamen }) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
         if (x.id === idExamen && x.estado != "Terminado") {
-            x.tiempo = parseInt(x.tiempo??"0") +1
+            x.tiempo = parseInt(x.tiempo ?? "0") + 1
             x.fechaEdit = new Date();
         }
         return x;
@@ -119,7 +119,7 @@ export const ActualizarTiempoExamen = ({ idExamen }) => {
 
 export const EliminarExamen = (idExamen) => {
     const items = (JSON.parse(localStorage.getItem('examen-204'))).filter((x => {
-        return (x.id !=idExamen);
+        return (x.id != idExamen);
     }) ?? [])
 
     AgregarExamen(items)
@@ -136,16 +136,22 @@ export const ClonarExamen = (idExamen) => {
     clone.fechaEdit = new Date();
     clone.tiempo = 0;
     clone.estado = "Incompleto"
-    clone.preguntas = clone.preguntas.map((x) =>
-    {
+    clone.preguntas = clone.preguntas.map((x) => {
         x.usuarioRespuesta = null;
         delete x.usuarioRespuesta;
 
         return x
     })
-    
+
     delete clone.ultimaPregunta;
 
     items.push(clone)
     AgregarExamen(items)
+}
+
+export const ObtenerPaginaExamTopic = (idPregunta) => {
+    const examen = data.findIndex(x => x.id === idPregunta)
+    const index = Math.trunc((examen * 0.1)+1)
+    console.log(examen)
+    return index;
 }
