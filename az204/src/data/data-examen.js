@@ -1934,15 +1934,13 @@ export const data = [
             "C. HTTP response code",
             "D. Tenant ID"
         ]
-    }
-]
-[
+    },
     {
         "id": "816376",
         "topic": "Topic 4",
         "pregunta": "A development team is creating a new REST API. The API will store data in Azure Blob storage. You plan to deploy the API to Azure App Service.\nDevelopers must access the Azure Blob storage account to develop the API for the next two months. The Azure Blob storage account must not be accessible by the developers after the two-month time period.\nYou need to grant developers access to the Azure Blob storage account.\nWhat should you do?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Generate a shared access signature (SAS) for the Azure Blob storage account and provide the SAS to all developers.",
             "B. Create and apply a new lifecycle management policy to include a last accessed date value. Apply the policy to the Azure Blob storage account.",
             "C. Provide all developers with the access key for the Azure Blob storage account. Update the API to include the Coordinated Universal Time (UTC) timestamp for the request header.",
@@ -1956,14 +1954,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0038600001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0038700001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816378",
         "topic": "Topic 4",
         "pregunta": "You have a new Azure subscription. You are developing an internal website for employees to view sensitive data. The website uses Azure Active Directory (Azure\nAD) for authentication.\nYou need to implement multifactor authentication for the website.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BC",
-        "Respuestas": [
+        "respuestas": [
             "A. Configure the website to use Azure AD B2C.",
             "B. In Azure AD, create a new conditional access policy.",
             "C. Upgrade to Azure AD Premium.",
@@ -1978,7 +1976,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0038900001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0038900002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816380",
@@ -1987,7 +1985,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0039000001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0039200001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816381",
@@ -1996,14 +1994,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0039400001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0039500001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816382",
         "topic": "Topic 4",
         "pregunta": "You manage a data processing application that receives requests from an Azure Storage queue.\nYou need to manage access to the queue. You have the following requirements:\n✑ Provide other applications access to the Azure queue.\n✑ Ensure that you can revoke access to the queue without having to regenerate the storage account keys.\n✑ Specify access at the queue level and not at the storage account level.\nWhich type of shared access signature (SAS) should you use?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Service SAS with a stored access policy",
             "B. Account SAS",
             "C. User Delegation SAS",
@@ -2017,14 +2015,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0039900001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0040000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816384",
         "topic": "Topic 4",
         "pregunta": "You are building a web application that uses the Microsoft identity platform for user authentication.\nYou are implementing user identification for the web application.\nYou need to retrieve a claim to uniquely identify a user.\nWhich claim type should you use?\n",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. aud",
             "B. nonce",
             "C. oid",
@@ -2036,7 +2034,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You are developing an Azure Function that calls external APIs by providing an access token for the API. The access token is stored in a secret named token in an\nAzure Key Vault named mykeyvault.\nYou need to ensure the Azure Function can access to the token. Which value should you store in the Azure Function App configuration?\n",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. KeyVault:mykeyvault;Secret:token",
             "B. App:Settings:Secret:mykeyvault:token",
             "C. AZUREKVCONNSTR_ https://mykeyveult.vault.ezure.net/secrets/token/",
@@ -2048,7 +2046,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "A company maintains multiple web and mobile applications. Each application uses custom in-house identity providers as well as social identity providers.\nYou need to implement single sign-on (SSO) for all the applications.\nWhat should you do?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Use Azure Active Directory B2C (Azure AD B2C) with custom policies.",
             "B. Use Azure Active Directory B2B (Azure AD B2B) and enable external collaboration.",
             "C. Use Azure Active Directory B2C (Azure AD B2C) with user flows.",
@@ -2060,7 +2058,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You develop a Python application for image rendering that uses GPU resources to optimize rendering processes. You deploy the application to an Azure\nContainer Instances (ACI) Linux container.\nThe application requires a secret value to be passed when the container is started. The value must only be accessed from within the container.\nYou need to pass the secret value.\nWhat are two possible ways to achieve this goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "AE",
-        "Respuestas": [
+        "respuestas": [
             "A. Create an environment variable Set the secureValue property to the secret value.",
             "B. Add the secret value to the container image. Use a managed identity.",
             "C. Add the secret value to the application code Set the container startup command.",
@@ -2073,7 +2071,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You are developing a user portal for a company.\nYou need to create a report for the portal that lists information about employees who are subject matter experts for a specific topic. You must ensure that administrators have full control and consent over the data.\nWhich technology should you use?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Microsoft Graph data connect",
             "B. Microsoft Graph API",
             "C. Microsoft Graph connectors"
@@ -2086,7 +2084,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0040600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0040700001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816390",
@@ -2095,7 +2093,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0041000001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0041100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860788",
@@ -2104,7 +2102,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image395.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image396.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860789",
@@ -2113,14 +2111,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image397.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image398.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860790",
         "topic": "Topic 4",
         "pregunta": "You are developing a web application that uses the Microsoft identity platform for user and resource authentication. The web application calls several REST APIs.\n\nA REST API call must read the user’s calendar. The web application requires permission to send an email as the user.\n\nYou need to authorize the web application and the API.\n\nWhich parameter should you use?",
         "respuestaCorrecta": "E",
-        "Respuestas": [
+        "respuestas": [
             "A. tenant",
             "B. code_challenge",
             "C. state",
@@ -2135,7 +2133,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image399.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image400.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860792",
@@ -2144,14 +2142,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image401.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image403.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860793",
         "topic": "Topic 4",
         "pregunta": "You develop and deploy an Azure App Service web app named App1. You create a new Azure Key Vault named Vault1. You import several API keys, passwords, certificates, and cryptographic keys into Vault1.\n\nYou need to grant App1 access to Vault1 and automatically rotate credentials. Credentials must not be stored in code.\n\nWhat should you do?",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Enable App Service authentication for Appl. Assign a custom RBAC role to Vault1.",
             "B. Add a TLS/SSL binding to App1.",
             "C. Upload a self-signed client certificate to Vault1. Update App1 to use the client certificate.",
@@ -2163,7 +2161,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You are developing a Java application to be deployed in Azure. The application stores sensitive data in Azure Cosmos DB.\n\nYou need to configure Always Encrypted to encrypt the sensitive data inside the application.\n\nWhat should you do first?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Create a new container to include an encryption policy with the JSON properties to be encrypted.",
             "B. Create a customer-managed key (CMK) and store the key in a new Azure Key Vault instance.",
             "C. Create a data encryption key (DEK) by using the Azure Cosmos DB SDK and store the key in Azure Cosmos DB.",
@@ -2177,7 +2175,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image404.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image405.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860796",
@@ -2186,7 +2184,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image406.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image407.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860797",
@@ -2195,14 +2193,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image408.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image409.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "882063",
         "topic": "Topic 4",
         "pregunta": "You are developing several microservices to deploy to a new Azure Kubernetes Service cluster. The microservices manage data stored in Azure Cosmos DB and Azure Blob storage. The data is secured by using customer-managed keys stored in Azure Key Vault.\n\nYou must automate key rotation for all Azure Key Vault keys and allow for manual key rotation. Keys must rotate every three months. Notifications of expiring keys must be sent before key expiry.\n\nYou need to configure key rotation and enable key expiry notifications.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "AC",
-        "Respuestas": [
+        "respuestas": [
             "A. Create and configure a new Azure Event Grid instance.",
             "B. Configure Azure Key Vault alerts.",
             "C. Create and assign an Azure Key Vault access policy.",
@@ -2214,7 +2212,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You are developing a web application that uses the Microsoft identity platform to authenticate users and resources. The web application calls several REST APIs.\n\nThe APIs require an access token from the Microsoft identity platform.\n\nYou need to request a token.\n\nWhich three properties should you use? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "ABD",
-        "Respuestas": [
+        "respuestas": [
             "A. Redirect URI/URL",
             "B. Application ID",
             "C. Application name",
@@ -2229,14 +2227,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image453.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image454.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "892688",
         "topic": "Topic 4",
         "pregunta": "You are developing several Azure API Management (APIM) hosted APIs.\n\nYou must transform the APIs to hide private backend information and obscure the technology stack used to implement the backend processing.\n\nYou need to protect all APIs.\n\nWhat should you do?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Configure and apply a new inbound policy scoped to a product.",
             "B. Configure and apply a new outbound policy scoped to the operation.",
             "C. Configure and apply a new outbound policy scoped to global.",
@@ -2250,7 +2248,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image486.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image487.png",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -2260,14 +2258,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image509.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image510.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "907851",
         "topic": "Topic 4",
         "pregunta": "Case study -\n\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nMunson’s Pickles and Preserves Farm is an agricultural cooperative corporation based in Washington, US, with farms located across the United States. The company supports agricultural production resources by distributing seeds fertilizers, chemicals, fuel, and farm machinery to the farms.\n\n\nCurrent Environment -\n\nThe company is migrating all applications from an on-premises datacenter to Microsoft Azure. Applications support distributors, farmers, and internal company staff.\n\n\nCorporate website -\n• The company hosts a public website located at http://www.munsonspicklesandpreservesfarm.com. The site supports farmers and distributors who request agricultural production resources.\n\n\nFarms -\n• The company created a new customer tenant in the Microsoft Entra admin center to support authentication and authorization for applications.\n\n\nDistributors -\n• Distributors integrate their applications with data that is accessible by using APIs hosted at http://www.munsonspicklesandpreservesfarm.com/api to receive and update resource data.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n• The site must be migrated to Azure App Service.\n• Costs must be minimized when hosting in Azure.\n• Applications must automatically scale independent of the compute resources.\n• All code changes must be validated by internal staff before release to production.\n• File transfer speeds must improve, and webpage-load performance must increase.\n• All site settings must be centrally stored, secured without using secrets, and encrypted at rest and in transit.\n• A queue-based load leveling pattern must be implemented by using Azure Service Bus queues to support high volumes of website agricultural production resource requests.\n\n\nFarms -\n• Farmers must authenticate to applications by using Microsoft Entra ID.\n\n\nDistributors -\n• The company must track a custom telemetry value with each API call and monitor performance of all APIs.\n• API telemetry values must be charted to evaluate variations and trends for resource data.\n\n\nInternal staff -\n• App and API updates must be validated before release to production.\n• Staff must be able to select a link to direct them back to the production app when validating an app or API update.\n• Staff profile photos and email must be displayed on the website once they authenticate to applications by using their Microsoft Entra ID.\n\n\nSecurity -\n• All web communications must be secured by using TLS/HTTPS.\n• Web content must be restricted by country/region to support corporate compliance standards.\n• The principle of least privilege must be applied when providing any user rights or process access rights.\n• Managed identities for Azure resources must be used to authenticate services that support Microsoft Entra ID authentication.\n\n\nIssues -\n\n\nCorporate website -\n• Farmers report HTTP 503 errors at the same time as internal staff report that CPU and memory usage are high.\n• Distributors report HTTP 502 errors at the same time as internal staff report that average response times and networking traffic are high.\n• Internal staff report webpage load sizes are large and take a long time to load.\n• Developers receive authentication errors to Service Bus when they debug locally.\n\n\nDistributors -\n• Many API telemetry values are sent in a short period of time. Telemetry traffic, data costs, and storage costs must be reduced while preserving a statistically correct analysis of the data points sent by the APIs.\n\n\nYou need to implement farmer authentication.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "CDE",
-        "Respuestas": [
+        "respuestas": [
             "A. Add the shared access signature (SAS) token to the app.",
             "B. Create a shared access signature (SAS) token.",
             "C. Create a user flow.",
@@ -2280,7 +2278,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "Case study -\n\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nMunson’s Pickles and Preserves Farm is an agricultural cooperative corporation based in Washington, US, with farms located across the United States. The company supports agricultural production resources by distributing seeds fertilizers, chemicals, fuel, and farm machinery to the farms.\n\n\nCurrent Environment -\n\nThe company is migrating all applications from an on-premises datacenter to Microsoft Azure. Applications support distributors, farmers, and internal company staff.\n\n\nCorporate website -\n• The company hosts a public website located at http://www.munsonspicklesandpreservesfarm.com. The site supports farmers and distributors who request agricultural production resources.\n\n\nFarms -\n• The company created a new customer tenant in the Microsoft Entra admin center to support authentication and authorization for applications.\n\n\nDistributors -\n• Distributors integrate their applications with data that is accessible by using APIs hosted at http://www.munsonspicklesandpreservesfarm.com/api to receive and update resource data.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n• The site must be migrated to Azure App Service.\n• Costs must be minimized when hosting in Azure.\n• Applications must automatically scale independent of the compute resources.\n• All code changes must be validated by internal staff before release to production.\n• File transfer speeds must improve, and webpage-load performance must increase.\n• All site settings must be centrally stored, secured without using secrets, and encrypted at rest and in transit.\n• A queue-based load leveling pattern must be implemented by using Azure Service Bus queues to support high volumes of website agricultural production resource requests.\n\n\nFarms -\n• Farmers must authenticate to applications by using Microsoft Entra ID.\n\n\nDistributors -\n• The company must track a custom telemetry value with each API call and monitor performance of all APIs.\n• API telemetry values must be charted to evaluate variations and trends for resource data.\n\n\nInternal staff -\n• App and API updates must be validated before release to production.\n• Staff must be able to select a link to direct them back to the production app when validating an app or API update.\n• Staff profile photos and email must be displayed on the website once they authenticate to applications by using their Microsoft Entra ID.\n\n\nSecurity -\n• All web communications must be secured by using TLS/HTTPS.\n• Web content must be restricted by country/region to support corporate compliance standards.\n• The principle of least privilege must be applied when providing any user rights or process access rights.\n• Managed identities for Azure resources must be used to authenticate services that support Microsoft Entra ID authentication.\n\n\nIssues -\n\n\nCorporate website -\n• Farmers report HTTP 503 errors at the same time as internal staff report that CPU and memory usage are high.\n• Distributors report HTTP 502 errors at the same time as internal staff report that average response times and networking traffic are high.\n• Internal staff report webpage load sizes are large and take a long time to load.\n• Developers receive authentication errors to Service Bus when they debug locally.\n\n\nDistributors -\n• Many API telemetry values are sent in a short period of time. Telemetry traffic, data costs, and storage costs must be reduced while preserving a statistically correct analysis of the data points sent by the APIs.\n\n\nYou need to secure the corporate website to meet the security requirements.\n\nWhat should you do?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Create an Azure Cache for Redis instance. Update the code to support the cache.",
             "B. Create an Azure Content Delivery Network profile and endpoint. Configure the endpoint.\nС. Create an App Service instance with a standard plan. Configure the custom domain with a TLS/SSL certificate.",
             "D. Create an Azure Application Gateway with a Web Application Firewall (WAF). Configure end-to-end TLS encryption and the WAF."
@@ -2293,14 +2291,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image511.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image512.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "907854",
         "topic": "Topic 4",
         "pregunta": "Case study -\n\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nMunson’s Pickles and Preserves Farm is an agricultural cooperative corporation based in Washington, US, with farms located across the United States. The company supports agricultural production resources by distributing seeds fertilizers, chemicals, fuel, and farm machinery to the farms.\n\n\nCurrent Environment -\n\nThe company is migrating all applications from an on-premises datacenter to Microsoft Azure. Applications support distributors, farmers, and internal company staff.\n\n\nCorporate website -\n• The company hosts a public website located at http://www.munsonspicklesandpreservesfarm.com. The site supports farmers and distributors who request agricultural production resources.\n\n\nFarms -\n• The company created a new customer tenant in the Microsoft Entra admin center to support authentication and authorization for applications.\n\n\nDistributors -\n• Distributors integrate their applications with data that is accessible by using APIs hosted at http://www.munsonspicklesandpreservesfarm.com/api to receive and update resource data.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n• The site must be migrated to Azure App Service.\n• Costs must be minimized when hosting in Azure.\n• Applications must automatically scale independent of the compute resources.\n• All code changes must be validated by internal staff before release to production.\n• File transfer speeds must improve, and webpage-load performance must increase.\n• All site settings must be centrally stored, secured without using secrets, and encrypted at rest and in transit.\n• A queue-based load leveling pattern must be implemented by using Azure Service Bus queues to support high volumes of website agricultural production resource requests.\n\n\nFarms -\n• Farmers must authenticate to applications by using Microsoft Entra ID.\n\n\nDistributors -\n• The company must track a custom telemetry value with each API call and monitor performance of all APIs.\n• API telemetry values must be charted to evaluate variations and trends for resource data.\n\n\nInternal staff -\n• App and API updates must be validated before release to production.\n• Staff must be able to select a link to direct them back to the production app when validating an app or API update.\n• Staff profile photos and email must be displayed on the website once they authenticate to applications by using their Microsoft Entra ID.\n\n\nSecurity -\n• All web communications must be secured by using TLS/HTTPS.\n• Web content must be restricted by country/region to support corporate compliance standards.\n• The principle of least privilege must be applied when providing any user rights or process access rights.\n• Managed identities for Azure resources must be used to authenticate services that support Microsoft Entra ID authentication.\n\n\nIssues -\n\n\nCorporate website -\n• Farmers report HTTP 503 errors at the same time as internal staff report that CPU and memory usage are high.\n• Distributors report HTTP 502 errors at the same time as internal staff report that average response times and networking traffic are high.\n• Internal staff report webpage load sizes are large and take a long time to load.\n• Developers receive authentication errors to Service Bus when they debug locally.\n\n\nDistributors -\n• Many API telemetry values are sent in a short period of time. Telemetry traffic, data costs, and storage costs must be reduced while preserving a statistically correct analysis of the data points sent by the APIs.\n\n\nYou need to configure all site configuration settings for the corporate website.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "ABE",
-        "Respuestas": [
+        "respuestas": [
             "A. Create a managed identity.",
             "B. Update the role assignments for the Azure Key Vault.",
             "C. Create an Azure App Configuration store.",
@@ -2313,7 +2311,7 @@ export const data = [
         "topic": "Topic 4",
         "pregunta": "You are developing an application that uses keys stored in Azure Key Vault.\n\nYou need to enforce a specific cryptographic algorithm and key size for keys stored in the vault.\n\nWhat should you use?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Secret versioning",
             "B. Azure Policy",
             "C. Key Vault Firewall",
@@ -2327,14 +2325,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0045400001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0045500001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816392",
         "topic": "Topic 5",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution. Determine whether the solution meets the stated goals.\nYou are developing and deploying several ASP.NET web applications to Azure App Service. You plan to save session state information and HTML output.\nYou must use a storage mechanism with the following requirements:\n✑ Share session state across all ASP.NET web applications.\n✑ Support controlled, concurrent access to the same session state data for multiple readers and a single writer.\n✑ Save full HTTP responses for concurrent requests.\nYou need to store the information.\nProposed Solution: Enable Application Request Routing (ARR).\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2344,7 +2342,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution. Determine whether the solution meets the stated goals.\nYou are developing and deploying several ASP.NET web applications to Azure App Service. You plan to save session state information and HTML output.\nYou must use a storage mechanism with the following requirements:\n✑ Share session state across all ASP.NET web applications.\n✑ Support controlled, concurrent access to the same session state data for multiple readers and a single writer.\n✑ Save full HTTP responses for concurrent requests.\nYou need to store the information.\nProposed Solution: Deploy and configure an Azure Database for PostgreSQL. Update the web applications.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2356,7 +2354,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0045800001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0045900001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -2366,7 +2364,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0046000001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0046100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816396",
@@ -2375,14 +2373,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0046200001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0046200002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816397",
         "topic": "Topic 5",
         "pregunta": "You develop a gateway solution for a public facing news API. The news API back end is implemented as a RESTful service and uses an OpenAPI specification.\nYou need to ensure that you can access the news API by using an Azure API Management service instance.\nWhich Azure PowerShell command should you run?\n",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Import-AzureRmApiManagementApi -Context $ApiMgmtContext -SpecificationFormat \"Swagger\" -SpecificationPath $SwaggerPath -Path $Path",
             "B. New-AzureRmApiManagementBackend -Context $ApiMgmtContext -Url $Url -Protocol http",
             "C. New-AzureRmApiManagement -ResourceGroupName $ResourceGroup -Name $Name ג€\"Location $Location -Organization $Org -AdminEmail $AdminEmail",
@@ -2394,7 +2392,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are creating a hazard notification system that has a single signaling server which triggers audio and visual alarms to start and stop.\nYou implement Azure Service Bus to publish alarms. Each alarm controller uses Azure Service Bus to receive alarm signals as part of a transaction. Alarm events must be recorded for audit purposes. Each transaction record must include information about the alarm type that was activated.\nYou need to implement a reply trail auditing solution.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "AD",
-        "Respuestas": [
+        "respuestas": [
             "A. Assign the value of the hazard message SessionID property to the ReplyToSessionId property.",
             "B. Assign the value of the hazard message MessageId property to the DevileryCount property.",
             "C. Assign the value of the hazard message SessionID property to the SequenceNumber property.",
@@ -2408,7 +2406,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are developing an Azure function that connects to an Azure SQL Database instance. The function is triggered by an Azure Storage queue.\nYou receive reports of numerous System.InvalidOperationExceptions with the following message:\n`Timeout expired. The timeout period elapsed prior to obtaining a connection from the pool. This may have occurred because all pooled connections were in use and max pool size was reached.`\nYou need to prevent the exception.\nWhat should you do?\n",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. In the host.json file, decrease the value of the batchSize option",
             "B. Convert the trigger to Azure Event Hub",
             "C. Convert the Azure Function to the Premium plan",
@@ -2420,7 +2418,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution. Determine whether the solution meets the stated goals.\nYou are developing and deploying several ASP.NET web applications to Azure App Service. You plan to save session state information and HTML output.\nYou must use a storage mechanism with the following requirements:\n✑ Share session state across all ASP.NET web applications.\n✑ Support controlled, concurrent access to the same session state data for multiple readers and a single writer.\n✑ Save full HTTP responses for concurrent requests.\nYou need to store the information.\nProposed Solution: Deploy and configure Azure Cache for Redis. Update the web applications.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2432,7 +2430,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0046900001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0047100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816402",
@@ -2441,14 +2439,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0047300001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0047300002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816403",
         "topic": "Topic 5",
         "pregunta": "You develop and deploy an ASP.NET web app to Azure App Service. You use Application Insights telemetry to monitor the app.\nYou must test the app to ensure that the app is available and responsive from various points around the world and at regular intervals. If the app is not responding, you must send an alert to support staff.\nYou need to configure a test for the web app.\nWhich two test types can you use? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BC",
-        "Respuestas": [
+        "respuestas": [
             "A. integration",
             "B. multi-step web",
             "C. URL ping",
@@ -2463,7 +2461,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0047600001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0047600002.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -2471,7 +2469,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are developing applications for a company. You plan to host the applications on Azure App Services.\nThe company has the following requirements:\n✑ Every five minutes verify that the websites are responsive.\n✑ Verify that the websites respond within a specified time threshold. Dependent requests such as images and JavaScript files must load properly.\n✑ Generate alerts if a website is experiencing issues.\n✑ If a website fails to load, the system must attempt to reload the site three more times.\nYou need to implement this process with the least amount of effort.\nWhat should you do?\n",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Create a Selenium web test and configure it to run from your workstation as a scheduled task.",
             "B. Set up a URL ping test to query the home page.",
             "C. Create an Azure function to query the home page.",
@@ -2484,7 +2482,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You develop and add several functions to an Azure Function app that uses the latest runtime host. The functions contain several REST API endpoints secured by using SSL. The Azure Function app runs in a Consumption plan.\nYou must send an alert when any of the function endpoints are unavailable or responding too slowly.\nYou need to monitor the availability and responsiveness of the functions.\nWhat should you do?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Create a URL ping test.",
             "B. Create a timer triggered function that calls TrackAvailability() and send the results to Application Insights.",
             "C. Create a timer triggered function that calls GetMetric(\"Request Size\") and send the results to Application Insights.",
@@ -2498,7 +2496,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0047900001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0048000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816408",
@@ -2507,7 +2505,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0048100001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0048200001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816409",
@@ -2516,14 +2514,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0048300001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0048300002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816410",
         "topic": "Topic 5",
         "pregunta": "You develop and deploy an Azure App Service web app. The app is deployed to multiple regions and uses Azure Traffic Manager. Application Insights is enabled for the app.\nYou need to analyze app uptime for each month.\nWhich two solutions will achieve the goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BD",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Monitor logs",
             "B. Application Insights alerts",
             "C. Azure Monitor metrics",
@@ -2537,14 +2535,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0048700001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0048700002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816412",
         "topic": "Topic 5",
         "pregunta": "You are developing an ASP.NET Core Web API web service. The web service uses Azure Application Insights for all telemetry and dependency tracking. The web service reads and writes data to a database other than Microsoft SQL Server.\nYou need to ensure that dependency tracking works for calls to the third-party database.\nWhich two dependency telemetry properties should you use? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BD",
-        "Respuestas": [
+        "respuestas": [
             "A. Telemetry.Context.Cloud.RoleInstance",
             "B. Telemetry.Id",
             "C. Telemetry.Name",
@@ -2559,7 +2557,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0048900001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0049000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816414",
@@ -2568,7 +2566,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0049200001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0049300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -2578,14 +2576,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0049500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0049600001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816416",
         "topic": "Topic 5",
         "pregunta": "You are developing a web application that uses Azure Cache for Redis. You anticipate that the cache will frequently fill and that you will need to evict keys.\nYou must configure Azure Cache for Redis based on the following predicted usage pattern: A small subset of elements will be accessed much more often than the rest.\nYou need to configure the Azure Cache for Redis to optimize performance for the predicted usage pattern.\nWhich two eviction policies will achieve the goal?\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BC",
-        "Respuestas": [
+        "respuestas": [
             "A. noeviction",
             "B. allkeys-lru",
             "C. volatile-lru",
@@ -2601,14 +2599,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0049800001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0049800002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816418",
         "topic": "Topic 5",
         "pregunta": "An organization hosts web apps in Azure. The organization uses Azure Monitor.\nYou discover that configuration changes were made to some of the web apps.\nYou need to identify the configuration changes.\nWhich Azure Monitor log should you review?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. AppServiceAppLogs",
             "B. AppServiceEnvironmentPlatformlogs",
             "C. AppServiceConsoleLogs",
@@ -2621,7 +2619,7 @@ export const data = [
         "pregunta": "You develop and deploy an Azure App Service web app to a production environment. You enable the Always On setting and the Application Insights site extensions.\nYou deploy a code update and receive multiple failed requests and exceptions in the web app.\nYou need to validate the performance and failure counts of the web app in near real time.\nWhich Application Insights tool should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0050100001.jpg",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Profiler",
             "B. Smart Detection",
             "C. Live Metrics Stream",
@@ -2636,14 +2634,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0050200001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0050300001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816421",
         "topic": "Topic 5",
         "pregunta": "You are building a web application that performs image analysis on user photos and returns metadata containing objects identified. The image analysis is very costly in terms of time and compute resources. You are planning to use Azure Redis Cache so duplicate uploads do not need to be reprocessed.\nIn case of an Azure data center outage, metadata loss must be kept to a minimum.\nYou need to configure the Azure Redis cache instance.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BD",
-        "Respuestas": [
+        "respuestas": [
             "A. Configure Azure Redis with AOF persistence.",
             "B. Configure Azure Redis with RDB persistence.",
             "C. Configure second storage account for persistence.",
@@ -2655,7 +2653,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are developing an Azure-based web application. The application goes offline periodically to perform offline data processing. While the application is offline, numerous Azure Monitor alerts fire which result in the on-call developer being paged.\nThe application must always log when the application is offline for any reason.\nYou need to ensure that the on-call developer is not paged during offline processing.\nWhat should you do?\n",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Add Azure Monitor alert processing rules to suppress notifications.",
             "B. Disable Azure Monitor Service Health Alerts during offline processing.",
             "C. Create an Azure Monitor Metric Alert.",
@@ -2667,7 +2665,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are developing an online game that includes a feature that allows players to interact with other players on the same team within a certain distance. The calculation to determine the players in range occurs when players move and are cached in an Azure Cache for Redis instance.\n\nThe system should prioritize players based on how recently they have moved and should not prioritize players who have logged out of the game.\n\nYou need to select an eviction policy.\n\nWhich eviction policy should you use?",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. allkeys-Iru",
             "B. volatile-Iru",
             "C. allkeys-lfu",
@@ -2679,7 +2677,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You develop an Azure App Service web app and deploy to a production environment. You enable Application Insights for the web app.\n\nThe web app is throwing multiple exceptions in the environment.\n\nYou need to examine the state of the source code and variables when the exceptions are thrown.\n\nWhich Application Insights feature should you configure?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Smart detection",
             "B. Profiler",
             "C. Snapshot Debugger",
@@ -2694,7 +2692,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image410.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image411.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860801",
@@ -2703,14 +2701,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image412.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image413.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860802",
         "topic": "Topic 5",
         "pregunta": "You develop an ASP.NET Core app that uses Azure App Configuration. You also create an App Configuration containing 100 settings.\n\nThe app must meet the following requirements:\n\n• Ensure the consistency of all configuration data when changes to individual settings occur.\n• Handle configuration data changes dynamically without causing the application to restart.\n• Reduce the overall number of requests made to App Configuration APIs.\n\nYou must implement dynamic configuration updates in the app.\n\nWhat are two ways to achieve this goal? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "AB",
-        "Respuestas": [
+        "respuestas": [
             "A. Create and register a sentinel key in the App Configuration store. Set the refreshAll parameter of the Register method to true.",
             "B. Increase the App Configuration cache expiration from the default value.",
             "C. Decrease the App Configuration cache expiration from the default value.",
@@ -2726,14 +2724,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image428.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image429.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "882065",
         "topic": "Topic 5",
         "pregunta": "You develop and deploy a web app to Azure App Service. The Azure App Service uses a Basic plan in a single region.\n\nUsers report that the web app is responding slow. You must capture the complete call stack to help identify performance issues in the code. Call stack data must be correlated across app instances. You must minimize cost and impact to users on the web app.\n\nYou need to capture the telemetry.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "DEF",
-        "Respuestas": [
+        "respuestas": [
             "A. Restart all apps in the App Service plan.",
             "B. Enable Application Insights site extensions.",
             "C. Upgrade the Azure App Service plan to Premium.",
@@ -2748,7 +2746,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are building an application to track cell towers that are available to phones in near real time. A phone will send information to the application by using the Azure Web PubSub service. The data will be processed by using an Azure Functions app. Traffic will be transmitted by using a content delivery network (CDN).\n\nThe Azure function must be protected against misconfigured or unauthorized invocations.\n\nYou need to ensure that the CDN allows for the Azure function protection.\n\nWhich HTTP header should be on the allowed list?",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Authorization",
             "B. WebHook-Request-Callback",
             "C. Resource",
@@ -2760,7 +2758,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You are developing an Azure App Service web app.\n\nThe web app must securely store session information in Azure Redis Cache.\n\nYou need to connect the web app to Azure Redis Cache.\n\nWhich three Azure Redis Cache properties should you use? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "ABE",
-        "Respuestas": [
+        "respuestas": [
             "A. Access key",
             "B. SSL port",
             "C. Subscription name",
@@ -2776,14 +2774,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image455.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image456.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "892276",
         "topic": "Topic 5",
-        "pregunta": "Case study -\n\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\n\nCurrent environment -\n\n\nCorporate website -\n\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\n\nRetail Store Locations -\n\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n\n• Secure the website by using SSL.\n• Minimize costs for data storage and hosting.\n• Implement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\n• Distribute the website content globally for local use.\n• Implement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\n• The website must have 99.95 percent uptime.\n\n\nRetail store locations -\n\n• Azure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\n• Audit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\n\nDelivery services -\n\n• Store service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\n• Store delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\n\nInventory services -\n\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\n\nSecurity -\n\n• All Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\n• Authentication and authorization must use Azure AD and services must use managed identities where possible.\n\n\nIssues -\n\n\nRetail Store Locations -\n\n• You must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\n• Azure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\n\n\nYou need to test the availability of the corporate website.\n\nWhich two test types can you use? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+        "pregunta": "Case study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\n\nCurrent environment -\n\n\nCorporate website -\n\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\n\nRetail Store Locations -\n\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n\n• Secure the website by using SSL.\n• Minimize costs for data storage and hosting.\n• Implement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\n• Distribute the website content globally for local use.\n• Implement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\n• The website must have 99.95 percent uptime.\n\n\nRetail store locations -\n\n• Azure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\n• Audit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\n\nDelivery services -\n\n• Store service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\n• Store delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\n\nInventory services -\n\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\n\nSecurity -\n\n• All Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\n• Authentication and authorization must use Azure AD and services must use managed identities where possible.\n\n\nIssues -\n\n\nRetail Store Locations -\n\n• You must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\n• Azure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\n\n\nYou need to test the availability of the corporate website.\n\nWhich two test types can you use? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "AC",
-        "Respuestas": [
+        "respuestas": [
             "A. Standard",
             "B. URL ping",
             "C. Custom testing using the TrackAvailability API method",
@@ -2795,7 +2793,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You have an Azure API Management (APIM) Standard tier instance named APIM1 that uses a managed gateway.\n\nYou plan to use APIM1 to publish an API named API1 that uses a backend database that supports only a limited volume of requests per minute. You also need a policy for API1 that will minimize the possibility that the number of requests to the backend database from an individual IP address you specify exceeds the supported limit.\n\nYou need to identify a policy for API1 that will meet the requirements.\n\nWhich policy should you use?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. ip-filter",
             "B. quota-by-key",
             "C. rate-limit-by-key",
@@ -2808,7 +2806,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "You develop a web application that sells access to last-minute openings for child camps that run on the weekends. The application uses Azure Application Insights for all alerting and monitoring.\n\nThe application must alert operators when a technical issue is preventing sales to camps.\n\nYou need to build an alert to detect technical issues.\n\nWhich alert type should you use?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Metric alert using multiple time series",
             "B. Metric alert using dynamic thresholds",
             "C. Log alert using multiple time series",
@@ -2820,7 +2818,7 @@ export const data = [
         "topic": "Topic 5",
         "pregunta": "Case study -\n\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\n\nBackground -\n\nMunson’s Pickles and Preserves Farm is an agricultural cooperative corporation based in Washington, US, with farms located across the United States. The company supports agricultural production resources by distributing seeds fertilizers, chemicals, fuel, and farm machinery to the farms.\n\n\nCurrent Environment -\n\nThe company is migrating all applications from an on-premises datacenter to Microsoft Azure. Applications support distributors, farmers, and internal company staff.\n\n\nCorporate website -\n• The company hosts a public website located at http://www.munsonspicklesandpreservesfarm.com. The site supports farmers and distributors who request agricultural production resources.\n\n\nFarms -\n• The company created a new customer tenant in the Microsoft Entra admin center to support authentication and authorization for applications.\n\n\nDistributors -\n• Distributors integrate their applications with data that is accessible by using APIs hosted at http://www.munsonspicklesandpreservesfarm.com/api to receive and update resource data.\n\n\nRequirements -\n\nThe application components must meet the following requirements:\n\n\nCorporate website -\n• The site must be migrated to Azure App Service.\n• Costs must be minimized when hosting in Azure.\n• Applications must automatically scale independent of the compute resources.\n• All code changes must be validated by internal staff before release to production.\n• File transfer speeds must improve, and webpage-load performance must increase.\n• All site settings must be centrally stored, secured without using secrets, and encrypted at rest and in transit.\n• A queue-based load leveling pattern must be implemented by using Azure Service Bus queues to support high volumes of website agricultural production resource requests.\n\n\nFarms -\n• Farmers must authenticate to applications by using Microsoft Entra ID.\n\n\nDistributors -\n• The company must track a custom telemetry value with each API call and monitor performance of all APIs.\n• API telemetry values must be charted to evaluate variations and trends for resource data.\n\n\nInternal staff -\n• App and API updates must be validated before release to production.\n• Staff must be able to select a link to direct them back to the production app when validating an app or API update.\n• Staff profile photos and email must be displayed on the website once they authenticate to applications by using their Microsoft Entra ID.\n\n\nSecurity -\n• All web communications must be secured by using TLS/HTTPS.\n• Web content must be restricted by country/region to support corporate compliance standards.\n• The principle of least privilege must be applied when providing any user rights or process access rights.\n• Managed identities for Azure resources must be used to authenticate services that support Microsoft Entra ID authentication.\n\n\nIssues -\n\n\nCorporate website -\n• Farmers report HTTP 503 errors at the same time as internal staff report that CPU and memory usage are high.\n• Distributors report HTTP 502 errors at the same time as internal staff report that average response times and networking traffic are high.\n• Internal staff report webpage load sizes are large and take a long time to load.\n• Developers receive authentication errors to Service Bus when they debug locally.\n\n\nDistributors -\n• Many API telemetry values are sent in a short period of time. Telemetry traffic, data costs, and storage costs must be reduced while preserving a statistically correct analysis of the data points sent by the APIs.\n\n\nYou need to implement an aggregate of telemetry values for distributor API calls.\n\nWhich Application Insights API method should you use?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. TrackEvent",
             "B. TrackDependency",
             "C. TrackMetric",
@@ -2835,7 +2833,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image513.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image514.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "907858",
@@ -2844,7 +2842,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image515.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image516.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "907859",
@@ -2853,14 +2851,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image517.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image518.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816423",
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.\nYou must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.\nYou need to implement a solution to receive the device data.\nSolution: Provision an Azure Service Bus. Configure a topic to receive the device data by using a correlation filter.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2870,7 +2868,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.\nYou must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.\nYou need to implement a solution to receive the device data.\nSolution: Provision an Azure Event Grid. Configure event filtering to evaluate the device identifier.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2882,7 +2880,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0054900001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0054900002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816426",
@@ -2890,7 +2888,7 @@ export const data = [
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\nYou need to complete the configuration.\nWhich Azure CLI or PowerShell command should you run?\nA.\n\nB.\n\nC.\n\nD.\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0055000001.png",
         "respuestaCorrecta": "A",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816427",
@@ -2899,7 +2897,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0055200001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0055300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -2908,14 +2906,14 @@ export const data = [
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\nYou need to complete the configuration.\nWhich Azure CLI or PowerShell command should you run?\nA.\n\nB.\n\nC.\n\nD.\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0055400001.png",
         "respuestaCorrecta": "C",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816429",
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.\nYou have the following requirements:\n✑ Queue size must not grow larger than 80 gigabytes (GB).\n✑ Use first-in-first-out (FIFO) ordering of messages.\n✑ Minimize Azure costs.\nYou need to implement the messaging solution.\nSolution: Use the .Net API to add a message to an Azure Storage Queue from the mobile application. Create an Azure Function App that uses an Azure Storage\nQueue trigger.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -2927,7 +2925,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0055600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0055700001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816431",
@@ -2936,14 +2934,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0055900001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0056000001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816432",
         "topic": "Topic 6",
         "pregunta": "You are developing an Azure messaging solution.\nYou need to ensure that the solution meets the following requirements:\n✑ Provide transactional support.\n✑ Provide duplicate detection.\n✑ Store the messages for an unlimited period of time.\nWhich two technologies will meet the requirements? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "AB",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Service Bus Topic",
             "B. Azure Service Bus Queue",
             "C. Azure Storage Queue",
@@ -2957,7 +2955,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0056200001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0056300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816434",
@@ -2966,7 +2964,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0056400001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0056500001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816435",
@@ -2975,14 +2973,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0056600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0056700001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816436",
         "topic": "Topic 6",
         "pregunta": "You are developing a solution that will use Azure messaging services.\nYou need to ensure that the solution uses a publish-subscribe model and eliminates the need for constant polling.\nWhat are two possible ways to achieve the goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "AC",
-        "Respuestas": [
+        "respuestas": [
             "A. Service Bus",
             "B. Event Hub",
             "C. Event Grid",
@@ -2994,7 +2992,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is implementing a publish-subscribe (Pub/Sub) messaging component by using Azure Service Bus. You are developing the first subscription application.\nIn the Azure portal you see that messages are being sent to the subscription for each topic. You create and initialize a subscription client object by supplying the correct details, but the subscription application is still not consuming the messages.\nYou need to ensure that the subscription client processes all messages.\nWhich code segment should you use?\n",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. await subscriptionClient.AddRuleAsync(new RuleDescription(RuleDescription.DefaultRuleName, new TrueFilter()));",
             "B. subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);",
             "C. await subscriptionClient.CloseAsync();",
@@ -3007,7 +3005,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.\nYou have the following requirements:\n✑ Queue size must not grow larger than 80 gigabytes (GB).\n✑ Use first-in-first-out (FIFO) ordering of messages.\n✑ Minimize Azure costs.\nYou need to implement the messaging solution.\nSolution: Use the .Net API to add a message to an Azure Storage Queue from the mobile application. Create an Azure VM that is triggered from Azure Storage\nQueue events.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3017,7 +3015,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.\nYou have the following requirements:\n✑ Queue size must not grow larger than 80 gigabytes (GB).\n✑ Use first-in-first-out (FIFO) ordering of messages.\n✑ Minimize Azure costs.\nYou need to implement the messaging solution.\nSolution: Use the .Net API to add a message to an Azure Service Bus Queue from the mobile application. Create an Azure Windows VM that is triggered from\nAzure Service Bus Queue.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3029,7 +3027,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0057100001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0057200001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816441",
@@ -3038,14 +3036,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0057300001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0057400001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816442",
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce\n2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.\nYou must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.\nYou need to implement a solution to receive the device data.\nSolution: Provision an Azure Event Hub. Configure the machine identifier as the partition key and enable capture.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3057,14 +3055,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0057600007.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0057700001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816444",
         "topic": "Topic 6",
         "pregunta": "You are creating an app that will use CosmosDB for data storage. The app will process batches of relational data.\nYou need to select an API for the app.\nWhich API should you use?\n",
         "respuestaCorrecta": "Incorrect Answer:",
-        "Respuestas": [
+        "respuestas": [
             "A. MongoDB API",
             "B. Table API",
             "C. SQL API",
@@ -3078,7 +3076,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0058000001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0058100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816446",
@@ -3087,7 +3085,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0058300001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0058400001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816447",
@@ -3096,7 +3094,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0058500004.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0058600001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -3104,7 +3102,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You are developing an e-commerce solution that uses a microservice architecture.\nYou need to design a communication backplane for communicating transactional messages between various parts of the solution. Messages must be communicated in first-in-first-out (FIFO) order.\nWhat should you use?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Storage Queue",
             "B. Azure Event Hub",
             "C. Azure Service Bus",
@@ -3118,14 +3116,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0058800001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0058900001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816450",
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.\nYou have the following requirements:\n✑ Queue size must not grow larger than 80 gigabytes (GB).\n✑ Use first-in-first-out (FIFO) ordering of messages.\n✑ Minimize Azure costs.\nYou need to implement the messaging solution.\nSolution: Use the .Net API to add a message to an Azure Service Bus Queue from the mobile application. Create an Azure Function App that uses an Azure\nService Bus Queue trigger.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3135,7 +3133,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.\nYou must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.\nYou need to implement a solution to receive the device data.\nSolution: Provision an Azure Notification Hub. Register all devices with the hub.\nDoes the solution meet the goal?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3145,7 +3143,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You are building a loyalty program for a major snack producer. When customers buy a snack at any of 100 participating retailers the event is recorded in Azure\nEvent Hub. Each retailer is given a unique identifier that is used as the primary identifier for the loyalty program.\nRetailers must be able to be added or removed at any time. Retailers must only be able to record sales for themselves.\nYou need to ensure that retailers can record sales.\nWhat should you do?\n",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Use publisher policies for retailers.",
             "B. Create a partition for each retailer.",
             "C. Define a namespace for each retailer."
@@ -3158,14 +3156,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0059400001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0059400002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816454",
         "topic": "Topic 6",
         "pregunta": "You develop a solution that uses Azure Virtual Machines (VMs).\nThe VMs contain code that must access resources in an Azure resource group. You grant the VM access to the resource group in Resource Manager.\nYou need to obtain an access token that uses the VM's system-assigned managed identity.\nWhich two actions should you perform? Each correct answer presents part of the solution.\n",
         "respuestaCorrecta": "BD",
-        "Respuestas": [
+        "respuestas": [
             "A. From the code on the VM, call Azure Resource Manager using an access token.",
             "B. Use PowerShell on a remote machine to make a request to the local managed identity for Azure resources endpoint.",
             "C. Use PowerShell on the VM to make a request to the local managed identity for Azure resources endpoint.",
@@ -3178,7 +3176,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You are developing a road tollway tracking application that sends tracking events by using Azure Event Hubs using premium tier.\nEach road must have a throttling policy uniquely assigned.\nYou need to configure the event hub to allow for per-road throttling.\nWhat should you do?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Use a unique consumer group for each road.",
             "B. Ensure each road stores events in a different partition.",
             "C. Ensure each road has a unique connection string.",
@@ -3190,7 +3188,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You develop and deploy an ASP.NET Core application that connects to an Azure Database for MySQL instance.\nConnections to the database appear to drop intermittently and the application code does not handle the connection failure.\nYou need to handle the transient connection errors in code by implementing retries.\nWhat are three possible ways to achieve this goal? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "ACD",
-        "Respuestas": [
+        "respuestas": [
             "A. Close the database connection and immediately report an error.",
             "B. Disable connection pooling and configure a second Azure Database for MySQL instance.",
             "C. Wait five seconds before repeating the connection attempt to the database.",
@@ -3203,7 +3201,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You are building a B2B web application that uses Azure B2B collaboration for authentication. Paying customers authenticate to Azure B2B using federation.\nThe application allows users to sign up for trial accounts using any email address.\nWhen a user converts to a paying customer, the data associated with the trial should be kept, but the user must authenticate using federation.\nYou need to update the user in Azure Active Directory (Azure AD) when they convert to a paying customer.\nWhich Graph API parameter is used to change authentication from one-time passcodes to federation?\n",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. resetRedemption",
             "B. Status",
             "C. userFlowType",
@@ -3218,7 +3216,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image414.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image415.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860804",
@@ -3227,14 +3225,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image416.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image417.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "860805",
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3246,7 +3244,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3258,7 +3256,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3272,7 +3270,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image438.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image440.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "882070",
@@ -3281,14 +3279,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image441.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image442.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "890559",
         "topic": "Topic 6",
         "pregunta": "You are developing several Azure API Management (APIM) hosted APIs.\n\nThe APIs have the following requirements:\n\n• Require a subscription key to access all APIs.\n• Include terms of use that subscribers must accept to use the APIs.\n• Administrators must review and accept or reject subscription attempts.\n• Limit the count of multiple simultaneous subscriptions.\n\nYou need to implement the APIs.\n\nWhat should you do?",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Configure and apply header-based versioning.",
             "B. Create and publish a product.",
             "C. Configure and apply query string-based versioning.",
@@ -3302,7 +3300,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image457.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image458.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "890561",
@@ -3311,7 +3309,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image459.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image460.png",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -3319,7 +3317,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "You are developing several Azure API Management (APIM) hosted APIs.\n\nYou must inspect request processing of the APIs in APIM. Requests to APIM by using a REST client must also be included. The request inspection must include the following information:\n\n• requests APIM sent to the API backend and the response it received\n• policies applied to the response before sending back to the caller\n• errors that occurred during the processing of the request and the policies applied to the errors\n• original request APIM received from the caller and the policies applied to the request\n\nYou need to inspect the APIs.\n\nWhich three actions should you do? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "ACE",
-        "Respuestas": [
+        "respuestas": [
             "A. Enable the Allow tracing setting for the subscription used to inspect the API.",
             "B. Add the Ocp-Apim-Trace header value to the API call whit a value set to true.",
             "C. Add the Ocp-Apim-Subscription-Key header value to the key for a subscription that allows access to the API.",
@@ -3332,7 +3330,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3346,7 +3344,7 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image471.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image472.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "892692",
@@ -3355,14 +3353,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image473.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image475.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "892693",
         "topic": "Topic 6",
         "pregunta": "You are developing several Azure API Management (APIM) hosted APIs.\n\nYou must make several minor and non-breaking changes to one of the APIs. The API changes include the following requirements:\n\n• Must not disrupt callers of the API.\n• Enable roll back if you find issues.\n• Documented to enable developers to understand what is new.\n• Tested before publishing.\n\nYou need to update the API.\n\nWhat should you do?",
         "respuestaCorrecta": "E",
-        "Respuestas": [
+        "respuestas": [
             "A. Configure and apply header-based versioning.",
             "B. Create and publish a product.",
             "C. Configure and apply a custom policy.",
@@ -3377,14 +3375,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image476.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image477.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "892695",
         "topic": "Topic 6",
         "pregunta": "You are developing several microservices to run on Azure Container Apps for a company. External TCP ingress traffic from the internet has been enabled for the microservices.\n\nThe company requires that the microservices must scale based on an Azure Event Hub trigger.\n\nYou need to scale the microservices by using a custom scaling rule.\n\nWhich two Kubernetes Event-driven Autoscaling (KEDA) trigger fields should you use? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
         "respuestaCorrecta": "AB",
-        "Respuestas": [
+        "respuestas": [
             "A. metadata",
             "B. type",
             "C. authenticationRef",
@@ -3397,7 +3395,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3409,7 +3407,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3421,7 +3419,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. \n",
             "B. \n",
             "C. \n",
@@ -3434,7 +3432,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are implementing an application by using Azure Event Grid to push near-real-time information to customers.\n\nYou have the following requirements:\n• You must send events to thousands of customers that include hundreds of various event types.\n• The events must be filtered by event type before processing.\n• Authentication and authorization must be handled by using Microsoft Entra ID.\n• The events must be published to a single endpoint.\n\nYou need to implement Azure Event Grid.\n\nSolution: Publish events to an event domain. Create a custom topic for each customer.\n\nDoes the solution meet the goal?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3444,7 +3442,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are implementing an application by using Azure Event Grid to push near-real-time information to customers.\n\nYou have the following requirements:\n• You must send events to thousands of customers that include hundreds of various event types.\n• The events must be filtered by event type before processing.\n• Authentication and authorization must be handled by using Microsoft Entra ID.\n• The events must be published to a single endpoint.\n\nYou need to implement Azure Event Grid.\n\nSolution: Publish events to a custom topic. Create an event subscription for each customer.\n\nDoes the solution meet the goal?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3454,7 +3452,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are implementing an application by using Azure Event Grid to push near-real-time information to customers.\n\nYou have the following requirements:\n• You must send events to thousands of customers that include hundreds of various event types.\n• The events must be filtered by event type before processing.\n• Authentication and authorization must be handled by using Microsoft Entra ID.\n• The events must be published to a single endpoint.\n\nYou need to implement Azure Event Grid.\n\nSolution: Enable ingress, create a TCP scale rule, and apply the rule to the container app.\n\nDoes the solution meet the goal?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3466,14 +3464,14 @@ export const data = [
         "imgPregunta": "https://img.examtopics.com/az-204/image519.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://img.examtopics.com/az-204/image520.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "907864",
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are implementing an application by using Azure Event Grid to push near-real-time information to customers.\n\nYou have the following requirements:\n• You must send events to thousands of customers that include hundreds of various event types.\n• The events must be filtered by event type before processing.\n• Authentication and authorization must be handled by using Microsoft Entra ID.\n• The events must be published to a single endpoint.\n\nYou need to implement Azure Event Grid.\n\nSolution: Publish events to a partner topic. Create an event subscription for each customer.\n\nDoes the solution meet the goal?",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3483,7 +3481,7 @@ export const data = [
         "topic": "Topic 6",
         "pregunta": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are implementing an application by using Azure Event Grid to push near-real-time information to customers.\n\nYou have the following requirements:\n• You must send events to thousands of customers that include hundreds of various event types.\n• The events must be filtered by event type before processing.\n• Authentication and authorization must be handled by using Microsoft Entra ID.\n• The events must be published to a single endpoint.\n\nYou need to implement Azure Event Grid.\n\nSolution: Publish events to a system topic. Create an event subscription for each customer.\n\nDoes the solution meet the goal?",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Yes",
             "B. No"
         ]
@@ -3495,7 +3493,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0004000001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0004300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816459",
@@ -3504,7 +3502,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0004000001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0004600001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816460",
@@ -3513,7 +3511,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0018400001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0019000002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816461",
@@ -3522,7 +3520,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0018400001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0019200001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -3532,7 +3530,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0019400003.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0020000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816463",
@@ -3541,7 +3539,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0019400003.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0020300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816464",
@@ -3550,14 +3548,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0027400001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0027500001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816465",
         "topic": "Topic 10",
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\nCurrent environment -\n\nCorporate website -\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\nRetail Store Locations -\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\nRequirements -\nThe application components must meet the following requirements:\n\nCorporate website -\nSecure the website by using SSL.\nMinimize costs for data storage and hosting.\nImplement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\nDistribute the website content globally for local use.\nImplement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\nThe website must have 99.95 percent uptime.\n\nRetail store locations -\nAzure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\nAudit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\nDelivery services -\nStore service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\nStore delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\nInventory services -\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\nSecurity -\nAll Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\nAuthentication and authorization must use Azure AD and services must use managed identities where possible.\n\nIssues -\n\nRetail Store Locations -\nYou must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\nAzure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\nQuestion\nYou need to grant access to the retail store location data for the inventory service development effort.\nWhat should you use?\n",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure AD access token",
             "B. Azure RBAC role",
             "C. Shared access signature (SAS) token",
@@ -3572,14 +3570,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0027800001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0027900001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816467",
         "topic": "Topic 10",
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\nCurrent environment -\n\nCorporate website -\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\nRetail Store Locations -\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\nRequirements -\nThe application components must meet the following requirements:\n\nCorporate website -\nSecure the website by using SSL.\nMinimize costs for data storage and hosting.\nImplement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\nDistribute the website content globally for local use.\nImplement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\nThe website must have 99.95 percent uptime.\n\nRetail store locations -\nAzure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\nAudit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\nDelivery services -\nStore service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\nStore delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\nInventory services -\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\nSecurity -\nAll Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\nAuthentication and authorization must use Azure AD and services must use managed identities where possible.\n\nIssues -\n\nRetail Store Locations -\nYou must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\nAzure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\nQuestion\nYou need to secure the Azure Functions to meet the security requirements.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "AD",
-        "Respuestas": [
+        "respuestas": [
             "A. Store the RSA-HSM key in Azure Key Vault with soft-delete and purge-protection features enabled.",
             "B. Store the RSA-HSM key in Azure Blob storage with an immutability policy applied to the container.",
             "C. Create a free tier Azure App Configuration instance with a new Azure AD service principal.",
@@ -3594,7 +3592,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0028500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0028700002.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816469",
@@ -3603,7 +3601,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0028500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0029000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816470",
@@ -3612,7 +3610,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0028500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0029200001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816471",
@@ -3621,7 +3619,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0028500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0029400002.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -3631,7 +3629,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0028500001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0029700001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816473",
@@ -3640,7 +3638,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030000001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0030300001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816474",
@@ -3648,7 +3646,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nWide World Importers is moving all their datacenters to Azure. The company has developed several applications and services to support supply chain operations and would like to leverage serverless computing where possible.\n\nCurrent environment -\nWindows Server 2016 virtual machine\nThis virtual machine (VM) runs BizTalk Server 2016. The VM runs the following workflows:\nOcean Transport `\" This workflow gathers and validates container information including container contents and arrival notices at various shipping ports.\nInland Transport `\" This workflow gathers and validates trucking information including fuel usage, number of stops, and routes.\nThe VM supports the following REST API calls:\nContainer API `\" This API provides container information including weight, contents, and other attributes.\nLocation API `\" This API provides location information regarding shipping ports of call and trucking stops.\nShipping REST API `\" This API provides shipping information for use and display on the shipping website.\n\nShipping Data -\nThe application uses MongoDB JSON document storage database for all container and transport information.\n\nShipping Web Site -\nThe site displays shipping container tracking information and container contents. The site is located at http://shipping.wideworldimporters.com/\n\nProposed solution -\nThe on-premises shipping application must be moved to Azure. The VM has been migrated to a new Standard_D16s_v3 Azure VM by using Azure Site Recovery and must remain running in Azure to complete the BizTalk component migrations. You create a Standard_D16s_v3 Azure VM to host BizTalk Server. The Azure architecture diagram for the proposed solution is shown below:\n\n\nRequirements -\n\nShipping Logic app -\nThe Shipping Logic app must meet the following requirements:\nSupport the ocean transport and inland transport workflows by using a Logic App.\nSupport industry-standard protocol X12 message format for various messages including vessel content details and arrival notices.\nSecure resources to the corporate VNet and use dedicated storage resources with a fixed costing model.\nMaintain on-premises connectivity to support legacy applications and final BizTalk migrations.\n\nShipping Function app -\nImplement secure function endpoints by using app-level security and include Azure Active Directory (Azure AD).\n\nREST APIs -\nThe REST API's that support the solution must meet the following requirements:\nSecure resources to the corporate VNet.\nAllow deployment to a testing location within Azure while not incurring additional costs.\nAutomatically scale to double capacity during peak shipping times while not causing application downtime.\nMinimize costs when selecting an Azure payment model.\n\nShipping data -\nData migration from on-premises to Azure must minimize costs and downtime.\n\nShipping website -\nUse Azure Content Delivery Network (CDN) and ensure maximum performance for dynamic content while minimizing latency and costs.\n\nIssues -\n\nWindows Server 2016 VM -\nThe VM shows high network latency, jitter, and high CPU utilization. The VM is critical and has not been backed up in the past. The VM must enable a quick restore from a 7-day snapshot to include in-place restore of disks in case of failure.\n\nShipping website and REST APIs -\nThe following error message displays while you are testing the website:\nFailed to load http://test-shippingapi.wideworldimporters.com/: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://test.wideworldimporters.com/' is therefore not allowed access.\nQuestion\nYou need to secure the Shipping Logic App.\nWhat should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030000001.jpg",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure App Service Environment (ASE)",
             "B. Integration Service Environment (ISE)",
             "C. VNet service endpoint",
@@ -3662,7 +3660,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0031000001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816476",
@@ -3671,7 +3669,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0031200001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816477",
@@ -3680,7 +3678,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0031400001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816478",
@@ -3688,7 +3686,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nCity Power & Light company provides electrical infrastructure monitoring solutions for homes and businesses. The company is migrating solutions to Azure.\n\nCurrent environment -\n\nArchitecture overview -\nThe company has a public website located at http://www.cpandl.com/. The site is a single-page web application that runs in Azure App Service on Linux. The website uses files stored in Azure Storage and cached in Azure Content Delivery Network (CDN) to serve static content.\nAPI Management and Azure Function App functions are used to process and store data in Azure Database for PostgreSQL. API Management is used to broker communications to the Azure Function app functions for Logic app integration. Logic apps are used to orchestrate the data processing while Service Bus and\nEvent Grid handle messaging and events.\nThe solution uses Application Insights, Azure Monitor, and Azure Key Vault.\n\nArchitecture diagram -\nThe company has several applications and services that support their business. The company plans to implement serverless computing where possible. The overall architecture is shown below.\n\n\nUser authentication -\nThe following steps detail the user authentication process:\n1. The user selects Sign in in the website.\n2. The browser redirects the user to the Azure Active Directory (Azure AD) sign in page.\n3. The user signs in.\n4. Azure AD redirects the user's session back to the web application. The URL includes an access token.\n5. The web application calls an API and includes the access token in the authentication header. The application ID is sent as the audience ('aud') claim in the access token.\n6. The back-end API validates the access token.\n\nRequirements -\n\nCorporate website -\nCommunications and content must be secured by using SSL.\nCommunications must use HTTPS.\nData must be replicated to a secondary region and three availability zones.\nData storage costs must be minimized.\n\nAzure Database for PostgreSQL -\nThe database connection string is stored in Azure Key Vault with the following attributes:\nAzure Key Vault name: cpandlkeyvault\nSecret name: PostgreSQLConn\nId: 80df3e46ffcd4f1cb187f79905e9a1e8\nThe connection information is updated frequently. The application must always use the latest information to connect to the database.\nAzure Service Bus and Azure Event Grid\nAzure Event Grid must use Azure Service Bus for queue-based load leveling.\nEvents in Azure Event Grid must be routed directly to Service Bus queues for use in buffering.\nEvents from Azure Service Bus and other Azure services must continue to be routed to Azure Event Grid for processing.\n\nSecurity -\nAll SSL certificates and credentials must be stored in Azure Key Vault.\nFile access must restrict access by IP, protocol, and Azure AD rights.\nAll user accounts and processes must receive only those privileges which are essential to perform their intended function.\n\nCompliance -\nAuditing of the file updates and transfers must be enabled to comply with General Data Protection Regulation (GDPR). The file updates must be read-only, stored in the order in which they occurred, include only create, update, delete, and copy operations, and be retained for compliance reasons.\n\nIssues -\n\nCorporate website -\nWhile testing the site, the following error message displays:\nCryptographicException: The system cannot find the file specified.\n\nFunction app -\nYou perform local testing for the RequestUserApproval function. The following error message displays:\n'Timeout value of 00:10:00 exceeded by function: RequestUserApproval'\nThe same error message displays when you test the function in an Azure development environment when you run the following Kusto query:\n\nFunctionAppLogs -\n| where FunctionName = = \"RequestUserApproval\"\n\nLogic app -\nYou test the Logic app in a development environment. The following error message displays:\n'400 Bad Request'\nTroubleshooting of the error shows an HttpTrigger action to call the RequestUserApproval function.\n\nCode -\n\nCorporate website -\nSecurity.cs:\n\n\nFunction app -\nRequestUserApproval.cs:\n\nQuestion\nYou need to authenticate the user to the corporate website as indicated by the architectural diagram.\nWhich two values should you use? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "AD",
-        "Respuestas": [
+        "respuestas": [
             "A. ID token signature",
             "B. ID token claims",
             "C. HTTP response code",
@@ -3703,7 +3701,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0031700001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816480",
@@ -3712,7 +3710,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0030600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0031900001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816481",
@@ -3721,7 +3719,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0032100001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0032800001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
     ,
     {
@@ -3730,7 +3728,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Litware Inc., a SaaS company that provides a solution for managing employee expenses. The solution consists of an ASP.NET Core Web\nAPI project that is deployed as an Azure Web App.\n\nOverall architecture -\nEmployees upload receipts for the system to process. When processing is complete, the employee receives a summary report email that details the processing results. Employees then use a web application to manage their receipts and perform any additional tasks needed for reimbursement.\n\nReceipt processing -\nEmployees may upload receipts in two ways:\nUploading using an Azure Files mounted folder\nUploading using the web application\n\nData Storage -\nReceipt and employee information is stored in an Azure SQL database.\n\nDocumentation -\nEmployees are provided with a getting started document when they first use the solution. The documentation includes details on supported operating systems for\nAzure File upload, and instructions on how to configure the mounted folder.\n\nSolution details -\n\nUsers table -\n\n\nWeb Application -\nYou enable MSI for the Web App and configure the Web App to use the security principal name WebAppIdentity.\n\nProcessing -\nProcessing is performed by an Azure Function that uses version 2 of the Azure Function runtime. Once processing is completed, results are stored in Azure Blob\nStorage and an Azure SQL database. Then, an email summary is sent to the user with a link to the processing report. The link to the report must remain valid if the email is forwarded to another user.\n\nLogging -\nAzure Application Insights is used for telemetry and logging in both the processor and the web application. The processor also has TraceWriter logging enabled.\nApplication Insights must always contain all log messages.\n\nRequirements -\n\nReceipt processing -\nConcurrent processing of a receipt must be prevented.\n\nDisaster recovery -\nRegional outage must not impact application availability. All DR operations must not be dependent on application running and must ensure that data in the DR region is up to date.\n\nSecurity -\nUser's SecurityPin must be stored in such a way that access to the database does not allow the viewing of SecurityPins. The web application is the only system that should have access to SecurityPins.\nAll certificates and secrets used to secure data must be stored in Azure Key Vault.\nYou must adhere to the principle of least privilege and provide privileges which are essential to perform the intended function.\nAll access to Azure Storage and Azure SQL database must use the application's Managed Service Identity (MSI).\nReceipt data must always be encrypted at rest.\nAll data must be protected in transit.\nUser's expense account number must be visible only to logged in users. All other views of the expense account number should include only the last segment, with the remaining parts obscured.\nIn the case of a security breach, access to all summary reports must be revoked without impacting other parts of the system.\n\nIssues -\n\nUpload format issue -\nEmployees occasionally report an issue with uploading a receipt using the web application. They report that when they upload a receipt using the Azure File\nShare, the receipt does not appear in their profile. When this occurs, they delete the file in the file share and use the web application, which returns a 500 Internal\nServer error page.\n\nCapacity issue -\nDuring busy periods, employees report long delays between the time they upload the receipt and when it appears in the web application.\n\nLog capacity issue -\nDevelopers report that the number of log messages in the trace output for the processor is too high, resulting in lost log messages.\n\nApplication code -\n\nProcessing.cs -\n\n\nDatabase.cs -\n\n\nReceiptUploader.cs -\n\n\nConfigureSSE.ps1 -\n\nQuestion\nYou need to ensure the security policies are met.\nWhat code do you add at line CS07 of ConfigureSSE.ps1?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0032100001.png",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. ג€\"PermissionsToKeys create, encrypt, decrypt",
             "B. ג€\"PermissionsToCertificates create, encrypt, decrypt",
             "C. ג€\"PermissionsToCertificates wrapkey, unwrapkey, get",
@@ -3742,7 +3740,7 @@ export const data = [
         "topic": "Topic 15",
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\nCurrent environment -\n\nCorporate website -\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\nRetail Store Locations -\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\nRequirements -\nThe application components must meet the following requirements:\n\nCorporate website -\nSecure the website by using SSL.\nMinimize costs for data storage and hosting.\nImplement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\nDistribute the website content globally for local use.\nImplement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\nThe website must have 99.95 percent uptime.\n\nRetail store locations -\nAzure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\nAudit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\nDelivery services -\nStore service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\nStore delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\nInventory services -\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\nSecurity -\nAll Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\nAuthentication and authorization must use Azure AD and services must use managed identities where possible.\n\nIssues -\n\nRetail Store Locations -\nYou must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\nAzure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\nQuestion\nYou need to reduce read latency for the retail store solution.\nWhat are two possible ways to achieve the goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BC",
-        "Respuestas": [
+        "respuestas": [
             "A. Create a new composite index for the store location data queries in Azure Cosmos DB. Modify the queries to support parameterized SQL and update the Azure Function app to call the new queries.",
             "B. Provision an Azure Cosmos DB dedicated gateway. Update the Azure Function app connection string to use the new dedicated gateway endpoint.",
             "C. Configure Azure Cosmos DB consistency to session consistency. Cache session tokens in a new Azure Redis cache instance after every write. Update reads to use the session token stored in Azure Redis.",
@@ -3755,7 +3753,7 @@ export const data = [
         "topic": "Topic 15",
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\nCurrent environment -\n\nCorporate website -\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\nRetail Store Locations -\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\nRequirements -\nThe application components must meet the following requirements:\n\nCorporate website -\nSecure the website by using SSL.\nMinimize costs for data storage and hosting.\nImplement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\nDistribute the website content globally for local use.\nImplement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\nThe website must have 99.95 percent uptime.\n\nRetail store locations -\nAzure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\nAudit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\nDelivery services -\nStore service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\nStore delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\nInventory services -\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\nSecurity -\nAll Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\nAuthentication and authorization must use Azure AD and services must use managed identities where possible.\n\nIssues -\n\nRetail Store Locations -\nYou must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\nAzure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\nQuestion\nYou need to audit the retail store sales transactions.\nWhat are two possible ways to achieve the goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "BE",
-        "Respuestas": [
+        "respuestas": [
             "A. Update the retail store location data upload process to include blob index tags. Create an Azure Function to process the blob index tags and filter by store location.",
             "B. Process the change feed logs of the Azure Blob storage account by using an Azure Function. Specify a time range for the change feed data.",
             "C. Enable blob versioning for the storage account. Use an Azure Function to process a list of the blob versions per day.",
@@ -3769,7 +3767,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\n\nOverview -\nYou are a developer for Contoso, Ltd. The company has a social networking website that is developed as a Single Page Application (SPA). The main web application for the social networking website loads user uploaded content from blob storage.\nYou are developing a solution to monitor uploaded data for inappropriate content. The following process occurs when users upload content by using the SPA:\n* Messages are sent to ContentUploadService.\n* Content is processed by ContentAnalysisService.\n* After processing is complete, the content is posted to the social network or a rejection message is posted in its place.\nThe ContentAnalysisService is deployed with Azure Container Instances from a private Azure Container Registry named contosoimages.\nThe solution will use eight CPU cores.\n\nAzure Active Directory -\nContoso, Ltd. uses Azure Active Directory (Azure AD) for both internal and guest accounts.\n\nRequirements -\n\nContentAnalysisService -\nThe company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.\nYou must create an Azure Function named CheckUserContent to perform the content checks.\n\nCosts -\nYou must minimize costs for all Azure services.\n\nManual review -\nTo review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using\nReact and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.\n\nHigh availability -\nAll services must run in multiple regions. The failure of any service in a region must not impact overall application availability.\n\nMonitoring -\nAn alert must be raised if the ContentUploadService uses more than 80 percent of available CPU cores.\n\nSecurity -\nYou have the following security requirements:\nAny web service accessible over the Internet must be protected from cross site scripting attacks.\nAll websites and services must use SSL from a valid root certificate authority.\nAzure Storage access keys must only be stored in memory and must be available only to the service.\nAll Internal services must only be accessible from internal Virtual Networks (VNets).\nAll parts of the system must support inbound and outbound traffic restrictions.\nAll service calls must be authenticated by using Azure AD.\n\nUser agreements -\nWhen a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso, Ltd. to review content, store cookies on user devices, and track user's IP addresses.\nInformation regarding agreements is used by multiple divisions within Contoso, Ltd.\nUser responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.\n\nValidation testing -\nWhen a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.\n\nIssues -\nUsers of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.\n\nCode -\n\nContentUploadService -\n\n\nApplicationManifest -\n\nQuestion\nYou need to monitor ContentUploadService according to the requirements.\nWhich command should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0042100001.jpg",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. az monitor metrics alert create ג€\"n alert ג€\"g ג€¦ - -scopes ג€¦ - -condition \"avg Percentage CPU > 8\"",
             "B. az monitor metrics alert create ג€\"n alert ג€\"g ג€¦ - -scopes ג€¦ - -condition \"avg Percentage CPU > 800\"",
             "C. az monitor metrics alert create ג€\"n alert ג€\"g ג€¦ - -scopes ג€¦ - -condition \"CPU Usage > 800\"",
@@ -3782,7 +3780,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\n\nOverview -\nYou are a developer for Contoso, Ltd. The company has a social networking website that is developed as a Single Page Application (SPA). The main web application for the social networking website loads user uploaded content from blob storage.\nYou are developing a solution to monitor uploaded data for inappropriate content. The following process occurs when users upload content by using the SPA:\n* Messages are sent to ContentUploadService.\n* Content is processed by ContentAnalysisService.\n* After processing is complete, the content is posted to the social network or a rejection message is posted in its place.\nThe ContentAnalysisService is deployed with Azure Container Instances from a private Azure Container Registry named contosoimages.\nThe solution will use eight CPU cores.\n\nAzure Active Directory -\nContoso, Ltd. uses Azure Active Directory (Azure AD) for both internal and guest accounts.\n\nRequirements -\n\nContentAnalysisService -\nThe company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.\nYou must create an Azure Function named CheckUserContent to perform the content checks.\n\nCosts -\nYou must minimize costs for all Azure services.\n\nManual review -\nTo review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using\nReact and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.\n\nHigh availability -\nAll services must run in multiple regions. The failure of any service in a region must not impact overall application availability.\n\nMonitoring -\nAn alert must be raised if the ContentUploadService uses more than 80 percent of available CPU cores.\n\nSecurity -\nYou have the following security requirements:\nAny web service accessible over the Internet must be protected from cross site scripting attacks.\nAll websites and services must use SSL from a valid root certificate authority.\nAzure Storage access keys must only be stored in memory and must be available only to the service.\nAll Internal services must only be accessible from internal Virtual Networks (VNets).\nAll parts of the system must support inbound and outbound traffic restrictions.\nAll service calls must be authenticated by using Azure AD.\n\nUser agreements -\nWhen a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso, Ltd. to review content, store cookies on user devices, and track user's IP addresses.\nInformation regarding agreements is used by multiple divisions within Contoso, Ltd.\nUser responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.\n\nValidation testing -\nWhen a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.\n\nIssues -\nUsers of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.\n\nCode -\n\nContentUploadService -\n\n\nApplicationManifest -\n\nQuestion\nYou need to investigate the http server log output to resolve the issue with the ContentUploadService.\nWhich command should you use first?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0042100001.jpg",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. az webapp log",
             "B. az ams live-output",
             "C. az monitor activity-log",
@@ -3795,7 +3793,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nCity Power & Light company provides electrical infrastructure monitoring solutions for homes and businesses. The company is migrating solutions to Azure.\n\nCurrent environment -\n\nArchitecture overview -\nThe company has a public website located at http://www.cpandl.com/. The site is a single-page web application that runs in Azure App Service on Linux. The website uses files stored in Azure Storage and cached in Azure Content Delivery Network (CDN) to serve static content.\nAPI Management and Azure Function App functions are used to process and store data in Azure Database for PostgreSQL. API Management is used to broker communications to the Azure Function app functions for Logic app integration. Logic apps are used to orchestrate the data processing while Service Bus and\nEvent Grid handle messaging and events.\nThe solution uses Application Insights, Azure Monitor, and Azure Key Vault.\n\nArchitecture diagram -\nThe company has several applications and services that support their business. The company plans to implement serverless computing where possible. The overall architecture is shown below.\n\n\nUser authentication -\nThe following steps detail the user authentication process:\n1. The user selects Sign in in the website.\n2. The browser redirects the user to the Azure Active Directory (Azure AD) sign in page.\n3. The user signs in.\n4. Azure AD redirects the user's session back to the web application. The URL includes an access token.\n5. The web application calls an API and includes the access token in the authentication header. The application ID is sent as the audience ('aud') claim in the access token.\n6. The back-end API validates the access token.\n\nRequirements -\n\nCorporate website -\nCommunications and content must be secured by using SSL.\nCommunications must use HTTPS.\nData must be replicated to a secondary region and three availability zones.\nData storage costs must be minimized.\n\nAzure Database for PostgreSQL -\nThe database connection string is stored in Azure Key Vault with the following attributes:\nAzure Key Vault name: cpandlkeyvault\nSecret name: PostgreSQLConn\nId: 80df3e46ffcd4f1cb187f79905e9a1e8\nThe connection information is updated frequently. The application must always use the latest information to connect to the database.\nAzure Service Bus and Azure Event Grid\nAzure Event Grid must use Azure Service Bus for queue-based load leveling.\nEvents in Azure Event Grid must be routed directly to Service Bus queues for use in buffering.\nEvents from Azure Service Bus and other Azure services must continue to be routed to Azure Event Grid for processing.\n\nSecurity -\nAll SSL certificates and credentials must be stored in Azure Key Vault.\nFile access must restrict access by IP, protocol, and Azure AD rights.\nAll user accounts and processes must receive only those privileges which are essential to perform their intended function.\n\nCompliance -\nAuditing of the file updates and transfers must be enabled to comply with General Data Protection Regulation (GDPR). The file updates must be read-only, stored in the order in which they occurred, include only create, update, delete, and copy operations, and be retained for compliance reasons.\n\nIssues -\n\nCorporate website -\nWhile testing the site, the following error message displays:\nCryptographicException: The system cannot find the file specified.\n\nFunction app -\nYou perform local testing for the RequestUserApproval function. The following error message displays:\n'Timeout value of 00:10:00 exceeded by function: RequestUserApproval'\nThe same error message displays when you test the function in an Azure development environment when you run the following Kusto query:\n\nFunctionAppLogs -\n| where FunctionName = = \"RequestUserApproval\"\n\nLogic app -\nYou test the Logic app in a development environment. The following error message displays:\n'400 Bad Request'\nTroubleshooting of the error shows an HttpTrigger action to call the RequestUserApproval function.\n\nCode -\n\nCorporate website -\nSecurity.cs:\n\n\nFunction app -\nRequestUserApproval.cs:\n\nQuestion\nYou need to investigate the Azure Function app error message in the development environment.\nWhat should you do?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0042500001.png",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Connect Live Metrics Stream from Application Insights to the Azure Function app and filter the metrics.",
             "B. Create a new Azure Log Analytics workspace and instrument the Azure Function app with Application Insights.",
             "C. Update the Azure Function app with extension methods from Microsoft.Extensions.Logging to log events by using the log instance.",
@@ -3809,7 +3807,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0042500001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0043000001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816489",
@@ -3817,7 +3815,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nCity Power & Light company provides electrical infrastructure monitoring solutions for homes and businesses. The company is migrating solutions to Azure.\n\nCurrent environment -\n\nArchitecture overview -\nThe company has a public website located at http://www.cpandl.com/. The site is a single-page web application that runs in Azure App Service on Linux. The website uses files stored in Azure Storage and cached in Azure Content Delivery Network (CDN) to serve static content.\nAPI Management and Azure Function App functions are used to process and store data in Azure Database for PostgreSQL. API Management is used to broker communications to the Azure Function app functions for Logic app integration. Logic apps are used to orchestrate the data processing while Service Bus and\nEvent Grid handle messaging and events.\nThe solution uses Application Insights, Azure Monitor, and Azure Key Vault.\n\nArchitecture diagram -\nThe company has several applications and services that support their business. The company plans to implement serverless computing where possible. The overall architecture is shown below.\n\n\nUser authentication -\nThe following steps detail the user authentication process:\n1. The user selects Sign in in the website.\n2. The browser redirects the user to the Azure Active Directory (Azure AD) sign in page.\n3. The user signs in.\n4. Azure AD redirects the user's session back to the web application. The URL includes an access token.\n5. The web application calls an API and includes the access token in the authentication header. The application ID is sent as the audience ('aud') claim in the access token.\n6. The back-end API validates the access token.\n\nRequirements -\n\nCorporate website -\nCommunications and content must be secured by using SSL.\nCommunications must use HTTPS.\nData must be replicated to a secondary region and three availability zones.\nData storage costs must be minimized.\n\nAzure Database for PostgreSQL -\nThe database connection string is stored in Azure Key Vault with the following attributes:\nAzure Key Vault name: cpandlkeyvault\nSecret name: PostgreSQLConn\nId: 80df3e46ffcd4f1cb187f79905e9a1e8\nThe connection information is updated frequently. The application must always use the latest information to connect to the database.\nAzure Service Bus and Azure Event Grid\nAzure Event Grid must use Azure Service Bus for queue-based load leveling.\nEvents in Azure Event Grid must be routed directly to Service Bus queues for use in buffering.\nEvents from Azure Service Bus and other Azure services must continue to be routed to Azure Event Grid for processing.\n\nSecurity -\nAll SSL certificates and credentials must be stored in Azure Key Vault.\nFile access must restrict access by IP, protocol, and Azure AD rights.\nAll user accounts and processes must receive only those privileges which are essential to perform their intended function.\n\nCompliance -\nAuditing of the file updates and transfers must be enabled to comply with General Data Protection Regulation (GDPR). The file updates must be read-only, stored in the order in which they occurred, include only create, update, delete, and copy operations, and be retained for compliance reasons.\n\nIssues -\n\nCorporate website -\nWhile testing the site, the following error message displays:\nCryptographicException: The system cannot find the file specified.\n\nFunction app -\nYou perform local testing for the RequestUserApproval function. The following error message displays:\n'Timeout value of 00:10:00 exceeded by function: RequestUserApproval'\nThe same error message displays when you test the function in an Azure development environment when you run the following Kusto query:\n\nFunctionAppLogs -\n| where FunctionName = = \"RequestUserApproval\"\n\nLogic app -\nYou test the Logic app in a development environment. The following error message displays:\n'400 Bad Request'\nTroubleshooting of the error shows an HttpTrigger action to call the RequestUserApproval function.\n\nCode -\n\nCorporate website -\nSecurity.cs:\n\n\nFunction app -\nRequestUserApproval.cs:\n\nQuestion\nYou need to correct the RequestUserApproval Function app error.\nWhat should you do?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0004900001.png",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Update line RA13 to use the async keyword and return an HttpRequest object value.",
             "B. Configure the Function app to use an App Service hosting plan. Enable the Always On setting of the hosting plan.",
             "C. Update the function to be stateful by using Durable Functions to process the request payload.",
@@ -3831,7 +3829,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0043500001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0043700002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816491",
@@ -3839,7 +3837,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Proseware, Inc. You are developing an application that applies a set of governance policies for Proseware's internal services, external services, and applications. The application will also provide a shared library for common functionality.\n\nRequirements -\n\nPolicy service -\nYou develop and deploy a stateful ASP.NET Core 2.1 web application named Policy service to an Azure App Service Web App. The application reacts to events from Azure Event Grid and performs policy actions based on those events.\nThe application must include the Event Grid Event ID field in all Application Insights telemetry.\nPolicy service must use Application Insights to automatically scale with the number of policy actions that it is performing.\n\nPolicies -\n\nLog policy -\nAll Azure App Service Web Apps must write logs to Azure Blob storage. All log files should be saved to a container named logdrop. Logs must remain in the container for 15 days.\n\nAuthentication events -\nAuthentication events are used to monitor users signing in and signing out. All authentication events must be processed by Policy service. Sign outs must be processed as quickly as possible.\n\nPolicyLib -\nYou have a shared library named PolicyLib that contains functionality common to all ASP.NET Core web services and applications. The PolicyLib library must:\nExclude non-user actions from Application Insights telemetry.\nProvide methods that allow a web service to scale itself.\nEnsure that scaling actions do not disrupt application usage.\n\nOther -\n\nAnomaly detection service -\nYou have an anomaly detection service that analyzes log information for anomalies. It is implemented as an Azure Machine Learning model. The model is deployed as a web service. If an anomaly is detected, an Azure Function that emails administrators is called by using an HTTP WebHook.\n\nHealth monitoring -\nAll web applications and services have health monitoring at the /health service endpoint.\n\nIssues -\n\nPolicy loss -\nWhen you deploy Policy service, policies may not be applied if they were in the process of being applied during the deployment.\n\nPerformance issue -\nWhen under heavy load, the anomaly detection service undergoes slowdowns and rejects connections.\n\nNotification latency -\nUsers report that anomaly detection emails can sometimes arrive several minutes after an anomaly is detected.\n\nApp code -\n\nEventGridController.cs -\nRelevant portions of the app files are shown below. Line numbers are included for reference only and include a two-character prefix that denotes the specific file to which they belong.\n\n\nLoginEvent.cs -\nRelevant portions of the app files are shown below. Line numbers are included for reference only and include a two-character prefix that denotes the specific file to which they belong.\n\nQuestion\nYou need to ensure that the solution can meet the scaling requirements for Policy Service.\nWhich Azure Application Insights data model should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0043500001.png",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. an Application Insights dependency",
             "B. an Application Insights event",
             "C. an Application Insights trace",
@@ -3854,7 +3852,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0043500001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0044100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816493",
@@ -3863,7 +3861,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0043500001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0044200002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816494",
@@ -3871,7 +3869,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Litware Inc., a SaaS company that provides a solution for managing employee expenses. The solution consists of an ASP.NET Core Web\nAPI project that is deployed as an Azure Web App.\n\nOverall architecture -\nEmployees upload receipts for the system to process. When processing is complete, the employee receives a summary report email that details the processing results. Employees then use a web application to manage their receipts and perform any additional tasks needed for reimbursement.\n\nReceipt processing -\nEmployees may upload receipts in two ways:\nUploading using an Azure Files mounted folder\nUploading using the web application\n\nData Storage -\nReceipt and employee information is stored in an Azure SQL database.\n\nDocumentation -\nEmployees are provided with a getting started document when they first use the solution. The documentation includes details on supported operating systems for\nAzure File upload, and instructions on how to configure the mounted folder.\n\nSolution details -\n\nUsers table -\n\n\nWeb Application -\nYou enable MSI for the Web App and configure the Web App to use the security principal name WebAppIdentity.\n\nProcessing -\nProcessing is performed by an Azure Function that uses version 2 of the Azure Function runtime. Once processing is completed, results are stored in Azure Blob\nStorage and an Azure SQL database. Then, an email summary is sent to the user with a link to the processing report. The link to the report must remain valid if the email is forwarded to another user.\n\nLogging -\nAzure Application Insights is used for telemetry and logging in both the processor and the web application. The processor also has TraceWriter logging enabled.\nApplication Insights must always contain all log messages.\n\nRequirements -\n\nReceipt processing -\nConcurrent processing of a receipt must be prevented.\n\nDisaster recovery -\nRegional outage must not impact application availability. All DR operations must not be dependent on application running and must ensure that data in the DR region is up to date.\n\nSecurity -\nUser's SecurityPin must be stored in such a way that access to the database does not allow the viewing of SecurityPins. The web application is the only system that should have access to SecurityPins.\nAll certificates and secrets used to secure data must be stored in Azure Key Vault.\nYou must adhere to the principle of least privilege and provide privileges which are essential to perform the intended function.\nAll access to Azure Storage and Azure SQL database must use the application's Managed Service Identity (MSI).\nReceipt data must always be encrypted at rest.\nAll data must be protected in transit.\nUser's expense account number must be visible only to logged in users. All other views of the expense account number should include only the last segment, with the remaining parts obscured.\nIn the case of a security breach, access to all summary reports must be revoked without impacting other parts of the system.\n\nIssues -\n\nUpload format issue -\nEmployees occasionally report an issue with uploading a receipt using the web application. They report that when they upload a receipt using the Azure File\nShare, the receipt does not appear in their profile. When this occurs, they delete the file in the file share and use the web application, which returns a 500 Internal\nServer error page.\n\nCapacity issue -\nDuring busy periods, employees report long delays between the time they upload the receipt and when it appears in the web application.\n\nLog capacity issue -\nDevelopers report that the number of log messages in the trace output for the processor is too high, resulting in lost log messages.\n\nApplication code -\n\nProcessing.cs -\n\n\nDatabase.cs -\n\n\nReceiptUploader.cs -\n\n\nConfigureSSE.ps1 -\n\nQuestion\nYou need to ensure receipt processing occurs correctly.\nWhat should you do?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0044500001.png",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Use blob properties to prevent concurrency problems",
             "B. Use blob SnapshotTime to prevent concurrency problems",
             "C. Use blob metadata to prevent concurrency problems",
@@ -3884,7 +3882,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Litware Inc., a SaaS company that provides a solution for managing employee expenses. The solution consists of an ASP.NET Core Web\nAPI project that is deployed as an Azure Web App.\n\nOverall architecture -\nEmployees upload receipts for the system to process. When processing is complete, the employee receives a summary report email that details the processing results. Employees then use a web application to manage their receipts and perform any additional tasks needed for reimbursement.\n\nReceipt processing -\nEmployees may upload receipts in two ways:\nUploading using an Azure Files mounted folder\nUploading using the web application\n\nData Storage -\nReceipt and employee information is stored in an Azure SQL database.\n\nDocumentation -\nEmployees are provided with a getting started document when they first use the solution. The documentation includes details on supported operating systems for\nAzure File upload, and instructions on how to configure the mounted folder.\n\nSolution details -\n\nUsers table -\n\n\nWeb Application -\nYou enable MSI for the Web App and configure the Web App to use the security principal name WebAppIdentity.\n\nProcessing -\nProcessing is performed by an Azure Function that uses version 2 of the Azure Function runtime. Once processing is completed, results are stored in Azure Blob\nStorage and an Azure SQL database. Then, an email summary is sent to the user with a link to the processing report. The link to the report must remain valid if the email is forwarded to another user.\n\nLogging -\nAzure Application Insights is used for telemetry and logging in both the processor and the web application. The processor also has TraceWriter logging enabled.\nApplication Insights must always contain all log messages.\n\nRequirements -\n\nReceipt processing -\nConcurrent processing of a receipt must be prevented.\n\nDisaster recovery -\nRegional outage must not impact application availability. All DR operations must not be dependent on application running and must ensure that data in the DR region is up to date.\n\nSecurity -\nUser's SecurityPin must be stored in such a way that access to the database does not allow the viewing of SecurityPins. The web application is the only system that should have access to SecurityPins.\nAll certificates and secrets used to secure data must be stored in Azure Key Vault.\nYou must adhere to the principle of least privilege and provide privileges which are essential to perform the intended function.\nAll access to Azure Storage and Azure SQL database must use the application's Managed Service Identity (MSI).\nReceipt data must always be encrypted at rest.\nAll data must be protected in transit.\nUser's expense account number must be visible only to logged in users. All other views of the expense account number should include only the last segment, with the remaining parts obscured.\nIn the case of a security breach, access to all summary reports must be revoked without impacting other parts of the system.\n\nIssues -\n\nUpload format issue -\nEmployees occasionally report an issue with uploading a receipt using the web application. They report that when they upload a receipt using the Azure File\nShare, the receipt does not appear in their profile. When this occurs, they delete the file in the file share and use the web application, which returns a 500 Internal\nServer error page.\n\nCapacity issue -\nDuring busy periods, employees report long delays between the time they upload the receipt and when it appears in the web application.\n\nLog capacity issue -\nDevelopers report that the number of log messages in the trace output for the processor is too high, resulting in lost log messages.\n\nApplication code -\n\nProcessing.cs -\n\n\nDatabase.cs -\n\n\nReceiptUploader.cs -\n\n\nConfigureSSE.ps1 -\n\nQuestion\nYou need to resolve the capacity issue.\nWhat should you do?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0044500001.png",
         "respuestaCorrecta": "D",
-        "Respuestas": [
+        "respuestas": [
             "A. Convert the trigger on the Azure Function to an Azure Blob storage trigger",
             "B. Ensure that the consumption plan is configured correctly to allow scaling",
             "C. Move the Azure Function to a dedicated App Service Plan",
@@ -3897,7 +3895,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Litware Inc., a SaaS company that provides a solution for managing employee expenses. The solution consists of an ASP.NET Core Web\nAPI project that is deployed as an Azure Web App.\n\nOverall architecture -\nEmployees upload receipts for the system to process. When processing is complete, the employee receives a summary report email that details the processing results. Employees then use a web application to manage their receipts and perform any additional tasks needed for reimbursement.\n\nReceipt processing -\nEmployees may upload receipts in two ways:\nUploading using an Azure Files mounted folder\nUploading using the web application\n\nData Storage -\nReceipt and employee information is stored in an Azure SQL database.\n\nDocumentation -\nEmployees are provided with a getting started document when they first use the solution. The documentation includes details on supported operating systems for\nAzure File upload, and instructions on how to configure the mounted folder.\n\nSolution details -\n\nUsers table -\n\n\nWeb Application -\nYou enable MSI for the Web App and configure the Web App to use the security principal name WebAppIdentity.\n\nProcessing -\nProcessing is performed by an Azure Function that uses version 2 of the Azure Function runtime. Once processing is completed, results are stored in Azure Blob\nStorage and an Azure SQL database. Then, an email summary is sent to the user with a link to the processing report. The link to the report must remain valid if the email is forwarded to another user.\n\nLogging -\nAzure Application Insights is used for telemetry and logging in both the processor and the web application. The processor also has TraceWriter logging enabled.\nApplication Insights must always contain all log messages.\n\nRequirements -\n\nReceipt processing -\nConcurrent processing of a receipt must be prevented.\n\nDisaster recovery -\nRegional outage must not impact application availability. All DR operations must not be dependent on application running and must ensure that data in the DR region is up to date.\n\nSecurity -\nUser's SecurityPin must be stored in such a way that access to the database does not allow the viewing of SecurityPins. The web application is the only system that should have access to SecurityPins.\nAll certificates and secrets used to secure data must be stored in Azure Key Vault.\nYou must adhere to the principle of least privilege and provide privileges which are essential to perform the intended function.\nAll access to Azure Storage and Azure SQL database must use the application's Managed Service Identity (MSI).\nReceipt data must always be encrypted at rest.\nAll data must be protected in transit.\nUser's expense account number must be visible only to logged in users. All other views of the expense account number should include only the last segment, with the remaining parts obscured.\nIn the case of a security breach, access to all summary reports must be revoked without impacting other parts of the system.\n\nIssues -\n\nUpload format issue -\nEmployees occasionally report an issue with uploading a receipt using the web application. They report that when they upload a receipt using the Azure File\nShare, the receipt does not appear in their profile. When this occurs, they delete the file in the file share and use the web application, which returns a 500 Internal\nServer error page.\n\nCapacity issue -\nDuring busy periods, employees report long delays between the time they upload the receipt and when it appears in the web application.\n\nLog capacity issue -\nDevelopers report that the number of log messages in the trace output for the processor is too high, resulting in lost log messages.\n\nApplication code -\n\nProcessing.cs -\n\n\nDatabase.cs -\n\n\nReceiptUploader.cs -\n\n\nConfigureSSE.ps1 -\n\nQuestion\nYou need to resolve the log capacity issue.\nWhat should you do?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0044500001.png",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Create an Application Insights Telemetry Filter",
             "B. Change the minimum log level in the host.json file for the function",
             "C. Implement Application Insights Sampling",
@@ -3911,7 +3909,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0050900001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0051000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816498",
@@ -3919,7 +3917,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nLabelMaker app -\nCoho Winery produces, bottles, and distributes a variety of wines globally. You are a developer implementing highly scalable and resilient applications to support online order processing by using Azure solutions.\nCoho Winery has a LabelMaker application that prints labels for wine bottles. The application sends data to several printers. The application consists of five modules that run independently on virtual machines (VMs). Coho Winery plans to move the application to Azure and continue to support label creation.\nExternal partners send data to the LabelMaker application to include artwork and text for custom label designs.\n\nRequirements. Data -\nYou identify the following requirements for data management and manipulation:\nOrder data is stored as nonrelational JSON and must be queried using SQL.\nChanges to the Order data must reflect immediately across all partitions. All reads to the Order data must fetch the most recent writes.\n\nRequirements. Security -\nYou have the following security requirements:\nUsers of Coho Winery applications must be able to provide access to documents, resources, and applications to external partners.\n\nExternal partners must use their own credentials and authenticate with their organization's identity management solution.\nExternal partner logins must be audited monthly for application use by a user account administrator to maintain company compliance.\nStorage of e-commerce application settings must be maintained in Azure Key Vault.\nE-commerce application sign-ins must be secured by using Azure App Service authentication and Azure Active Directory (AAD).\nConditional access policies must be applied at the application level to protect company content.\nThe LabelMaker application must be secured by using an AAD account that has full access to all namespaces of the Azure Kubernetes Service (AKS) cluster.\n\nRequirements. LabelMaker app -\nAzure Monitor Container Health must be used to monitor the performance of workloads that are deployed to Kubernetes environments and hosted on Azure\nKubernetes Service (AKS).\nYou must use Azure Container Registry to publish images that support the AKS deployment.\n\nArchitecture -\n\n\nIssues -\nCalls to the Printer API App fail periodically due to printer communication timeouts.\nPrinter communication timeouts occur after 10 seconds. The label printer must only receive up to 5 attempts within one minute.\nThe order workflow fails to run upon initial deployment to Azure.\n\nOrder.json -\nRelevant portions of the app files are shown below. Line numbers are included for reference only.\nThis JSON file contains a representation of the data for an order that includes a single item.\n\nQuestion\nYou need to troubleshoot the order workflow.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0051200003.png",
         "respuestaCorrecta": "CD",
-        "Respuestas": [
+        "respuestas": [
             "A. Review the API connections.",
             "B. Review the activity log.",
             "C. Review the run history.",
@@ -3933,7 +3931,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0051200003.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0052000001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816500",
@@ -3942,7 +3940,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0052300001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0052600001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816501",
@@ -3950,7 +3948,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nWide World Importers is moving all their datacenters to Azure. The company has developed several applications and services to support supply chain operations and would like to leverage serverless computing where possible.\n\nCurrent environment -\nWindows Server 2016 virtual machine\nThis virtual machine (VM) runs BizTalk Server 2016. The VM runs the following workflows:\nOcean Transport `\" This workflow gathers and validates container information including container contents and arrival notices at various shipping ports.\nInland Transport `\" This workflow gathers and validates trucking information including fuel usage, number of stops, and routes.\nThe VM supports the following REST API calls:\nContainer API `\" This API provides container information including weight, contents, and other attributes.\nLocation API `\" This API provides location information regarding shipping ports of call and trucking stops.\nShipping REST API `\" This API provides shipping information for use and display on the shipping website.\n\nShipping Data -\nThe application uses MongoDB JSON document storage database for all container and transport information.\n\nShipping Web Site -\nThe site displays shipping container tracking information and container contents. The site is located at http://shipping.wideworldimporters.com/\n\nProposed solution -\nThe on-premises shipping application must be moved to Azure. The VM has been migrated to a new Standard_D16s_v3 Azure VM by using Azure Site Recovery and must remain running in Azure to complete the BizTalk component migrations. You create a Standard_D16s_v3 Azure VM to host BizTalk Server. The Azure architecture diagram for the proposed solution is shown below:\n\n\nRequirements -\n\nShipping Logic app -\nThe Shipping Logic app must meet the following requirements:\nSupport the ocean transport and inland transport workflows by using a Logic App.\nSupport industry-standard protocol X12 message format for various messages including vessel content details and arrival notices.\nSecure resources to the corporate VNet and use dedicated storage resources with a fixed costing model.\nMaintain on-premises connectivity to support legacy applications and final BizTalk migrations.\n\nShipping Function app -\nImplement secure function endpoints by using app-level security and include Azure Active Directory (Azure AD).\n\nREST APIs -\nThe REST API's that support the solution must meet the following requirements:\nSecure resources to the corporate VNet.\nAllow deployment to a testing location within Azure while not incurring additional costs.\nAutomatically scale to double capacity during peak shipping times while not causing application downtime.\nMinimize costs when selecting an Azure payment model.\n\nShipping data -\nData migration from on-premises to Azure must minimize costs and downtime.\n\nShipping website -\nUse Azure Content Delivery Network (CDN) and ensure maximum performance for dynamic content while minimizing latency and costs.\n\nIssues -\n\nWindows Server 2016 VM -\nThe VM shows high network latency, jitter, and high CPU utilization. The VM is critical and has not been backed up in the past. The VM must enable a quick restore from a 7-day snapshot to include in-place restore of disks in case of failure.\n\nShipping website and REST APIs -\nThe following error message displays while you are testing the website:\nFailed to load http://test-shippingapi.wideworldimporters.com/: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://test.wideworldimporters.com/' is therefore not allowed access.\nQuestion\nYou need to support the requirements for the Shipping Logic App.\nWhat should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0052300001.jpg",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Active Directory Application Proxy",
             "B. Site-to-Site (S2S) VPN connection",
             "C. On-premises Data Gateway",
@@ -3965,7 +3963,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0052900001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0053300001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816503",
@@ -3973,7 +3971,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nCity Power & Light company provides electrical infrastructure monitoring solutions for homes and businesses. The company is migrating solutions to Azure.\n\nCurrent environment -\n\nArchitecture overview -\nThe company has a public website located at http://www.cpandl.com/. The site is a single-page web application that runs in Azure App Service on Linux. The website uses files stored in Azure Storage and cached in Azure Content Delivery Network (CDN) to serve static content.\nAPI Management and Azure Function App functions are used to process and store data in Azure Database for PostgreSQL. API Management is used to broker communications to the Azure Function app functions for Logic app integration. Logic apps are used to orchestrate the data processing while Service Bus and\nEvent Grid handle messaging and events.\nThe solution uses Application Insights, Azure Monitor, and Azure Key Vault.\n\nArchitecture diagram -\nThe company has several applications and services that support their business. The company plans to implement serverless computing where possible. The overall architecture is shown below.\n\n\nUser authentication -\nThe following steps detail the user authentication process:\n1. The user selects Sign in in the website.\n2. The browser redirects the user to the Azure Active Directory (Azure AD) sign in page.\n3. The user signs in.\n4. Azure AD redirects the user's session back to the web application. The URL includes an access token.\n5. The web application calls an API and includes the access token in the authentication header. The application ID is sent as the audience ('aud') claim in the access token.\n6. The back-end API validates the access token.\n\nRequirements -\n\nCorporate website -\nCommunications and content must be secured by using SSL.\nCommunications must use HTTPS.\nData must be replicated to a secondary region and three availability zones.\nData storage costs must be minimized.\n\nAzure Database for PostgreSQL -\nThe database connection string is stored in Azure Key Vault with the following attributes:\nAzure Key Vault name: cpandlkeyvault\nSecret name: PostgreSQLConn\nId: 80df3e46ffcd4f1cb187f79905e9a1e8\nThe connection information is updated frequently. The application must always use the latest information to connect to the database.\nAzure Service Bus and Azure Event Grid\nAzure Event Grid must use Azure Service Bus for queue-based load leveling.\nEvents in Azure Event Grid must be routed directly to Service Bus queues for use in buffering.\nEvents from Azure Service Bus and other Azure services must continue to be routed to Azure Event Grid for processing.\n\nSecurity -\nAll SSL certificates and credentials must be stored in Azure Key Vault.\nFile access must restrict access by IP, protocol, and Azure AD rights.\nAll user accounts and processes must receive only those privileges which are essential to perform their intended function.\n\nCompliance -\nAuditing of the file updates and transfers must be enabled to comply with General Data Protection Regulation (GDPR). The file updates must be read-only, stored in the order in which they occurred, include only create, update, delete, and copy operations, and be retained for compliance reasons.\n\nIssues -\n\nCorporate website -\nWhile testing the site, the following error message displays:\nCryptographicException: The system cannot find the file specified.\n\nFunction app -\nYou perform local testing for the RequestUserApproval function. The following error message displays:\n'Timeout value of 00:10:00 exceeded by function: RequestUserApproval'\nThe same error message displays when you test the function in an Azure development environment when you run the following Kusto query:\n\nFunctionAppLogs -\n| where FunctionName = = \"RequestUserApproval\"\n\nLogic app -\nYou test the Logic app in a development environment. The following error message displays:\n'400 Bad Request'\nTroubleshooting of the error shows an HttpTrigger action to call the RequestUserApproval function.\n\nCode -\n\nCorporate website -\nSecurity.cs:\n\n\nFunction app -\nRequestUserApproval.cs:\n\nQuestion\nYou need to ensure that all messages from Azure Event Grid are processed.\nWhat should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0052900001.png",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Event Grid topic",
             "B. Azure Service Bus topic",
             "C. Azure Service Bus queue",
@@ -3988,7 +3986,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0053800001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0054000002.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816505",
@@ -3997,7 +3995,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0053800001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0054300001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816506",
@@ -4006,7 +4004,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0053800001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0054600001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816507",
@@ -4014,7 +4012,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nYou are a developer for Proseware, Inc. You are developing an application that applies a set of governance policies for Proseware's internal services, external services, and applications. The application will also provide a shared library for common functionality.\n\nRequirements -\n\nPolicy service -\nYou develop and deploy a stateful ASP.NET Core 2.1 web application named Policy service to an Azure App Service Web App. The application reacts to events from Azure Event Grid and performs policy actions based on those events.\nThe application must include the Event Grid Event ID field in all Application Insights telemetry.\nPolicy service must use Application Insights to automatically scale with the number of policy actions that it is performing.\n\nPolicies -\n\nLog policy -\nAll Azure App Service Web Apps must write logs to Azure Blob storage. All log files should be saved to a container named logdrop. Logs must remain in the container for 15 days.\n\nAuthentication events -\nAuthentication events are used to monitor users signing in and signing out. All authentication events must be processed by Policy service. Sign outs must be processed as quickly as possible.\n\nPolicyLib -\nYou have a shared library named PolicyLib that contains functionality common to all ASP.NET Core web services and applications. The PolicyLib library must:\nExclude non-user actions from Application Insights telemetry.\nProvide methods that allow a web service to scale itself.\nEnsure that scaling actions do not disrupt application usage.\n\nOther -\n\nAnomaly detection service -\nYou have an anomaly detection service that analyzes log information for anomalies. It is implemented as an Azure Machine Learning model. The model is deployed as a web service. If an anomaly is detected, an Azure Function that emails administrators is called by using an HTTP WebHook.\n\nHealth monitoring -\nAll web applications and services have health monitoring at the /health service endpoint.\n\nIssues -\n\nPolicy loss -\nWhen you deploy Policy service, policies may not be applied if they were in the process of being applied during the deployment.\n\nPerformance issue -\nWhen under heavy load, the anomaly detection service undergoes slowdowns and rejects connections.\n\nNotification latency -\nUsers report that anomaly detection emails can sometimes arrive several minutes after an anomaly is detected.\n\nApp code -\n\nEventGridController.cs -\nRelevant portions of the app files are shown below. Line numbers are included for reference only and include a two-character prefix that denotes the specific file to which they belong.\n\n\nLoginEvent.cs -\nRelevant portions of the app files are shown below. Line numbers are included for reference only and include a two-character prefix that denotes the specific file to which they belong.\n\nQuestion\nYou need to resolve a notification latency issue.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0005700001.png",
         "respuestaCorrecta": "AB",
-        "Respuestas": [
+        "respuestas": [
             "A. Set Always On to true.",
             "B. Ensure that the Azure Function is using an App Service plan.",
             "C. Set Always On to false.",
@@ -4028,7 +4026,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0006200001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0006500001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816509",
@@ -4036,7 +4034,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\n\nOverview -\nYou are a developer for Contoso, Ltd. The company has a social networking website that is developed as a Single Page Application (SPA). The main web application for the social networking website loads user uploaded content from blob storage.\nYou are developing a solution to monitor uploaded data for inappropriate content. The following process occurs when users upload content by using the SPA:\nMessages are sent to ContentUploadService.\nContent is processed by ContentAnalysisService.\nAfter processing is complete, the content is posted to the social network or a rejection message is posted in its place.\nThe ContentAnalysisService is deployed with Azure Container Instances from a private Azure Container Registry named contosoimages.\nThe solution will use eight CPU cores.\n\nAzure Active Directory -\nContoso, Ltd. uses Azure Active Directory (Azure AD) for both internal and guest accounts.\n\nRequirements -\n\nContentAnalysisService -\nThe company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.\nYou must create an Azure Function named CheckUserContent to perform the content checks.\n\nCosts -\nYou must minimize costs for all Azure services.\n\nManual review -\nTo review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using\nReact and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.\n\nHigh availability -\nAll services must run in multiple regions. The failure of any service in a region must not impact overall application availability.\n\nMonitoring -\nAn alert must be raised if the ContentUploadService uses more than 80 percent of available CPU cores.\n\nSecurity -\nYou have the following security requirements:\nAny web service accessible over the Internet must be protected from cross site scripting attacks.\nAll websites and services must use SSL from a valid root certificate authority.\nAzure Storage access keys must only be stored in memory and must be available only to the service.\nAll Internal services must only be accessible from internal Virtual Networks (VNets).\nAll parts of the system must support inbound and outbound traffic restrictions.\nAll service calls must be authenticated by using Azure AD.\n\nUser agreements -\nWhen a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso, Ltd. to review content, store cookies on user devices, and track user's IP addresses.\nInformation regarding agreements is used by multiple divisions within Contoso, Ltd.\nUser responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.\n\nValidation testing -\nWhen a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.\n\nIssues -\nUsers of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.\n\nCode -\n\nContentUploadService -\n\n\nApplicationManifest -\n\nQuestion\nYou need to deploy the CheckUserContent Azure Function. The solution must meet the security and cost requirements.\nWhich hosting model should you use?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0006200001.jpg",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Premium plan",
             "B. App Service plan",
             "C. Consumption plan"
@@ -4049,7 +4047,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0006800003.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0007400001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816511",
@@ -4057,7 +4055,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nLabelMaker app -\nCoho Winery produces, bottles, and distributes a variety of wines globally. You are a developer implementing highly scalable and resilient applications to support online order processing by using Azure solutions.\nCoho Winery has a LabelMaker application that prints labels for wine bottles. The application sends data to several printers. The application consists of five modules that run independently on virtual machines (VMs). Coho Winery plans to move the application to Azure and continue to support label creation.\nExternal partners send data to the LabelMaker application to include artwork and text for custom label designs.\n\nRequirements. Data -\nYou identify the following requirements for data management and manipulation:\nOrder data is stored as nonrelational JSON and must be queried using SQL.\nChanges to the Order data must reflect immediately across all partitions. All reads to the Order data must fetch the most recent writes.\n\nRequirements. Security -\nYou have the following security requirements:\nUsers of Coho Winery applications must be able to provide access to documents, resources, and applications to external partners.\n\nExternal partners must use their own credentials and authenticate with their organization's identity management solution.\nExternal partner logins must be audited monthly for application use by a user account administrator to maintain company compliance.\nStorage of e-commerce application settings must be maintained in Azure Key Vault.\nE-commerce application sign-ins must be secured by using Azure App Service authentication and Azure Active Directory (AAD).\nConditional access policies must be applied at the application level to protect company content.\nThe LabelMaker application must be secured by using an AAD account that has full access to all namespaces of the Azure Kubernetes Service (AKS) cluster.\n\nRequirements. LabelMaker app -\nAzure Monitor Container Health must be used to monitor the performance of workloads that are deployed to Kubernetes environments and hosted on Azure\nKubernetes Service (AKS).\nYou must use Azure Container Registry to publish images that support the AKS deployment.\n\nArchitecture -\n\n\nIssues -\nCalls to the Printer API App fail periodically due to printer communication timeouts.\nPrinter communication timeouts occur after 10 seconds. The label printer must only receive up to 5 attempts within one minute.\nThe order workflow fails to run upon initial deployment to Azure.\n\nOrder.json -\nRelevant portions of the app files are shown below. Line numbers are included for reference only.\nThis JSON file contains a representation of the data for an order that includes a single item.\n\nOrder.json -\n\nQuestion\nYou need to access data from the user claim object in the e-commerce web app.\nWhat should you do first?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0006800003.png",
         "respuestaCorrecta": "C",
-        "Respuestas": [
+        "respuestas": [
             "A. Write custom code to make a Microsoft Graph API call from the e-commerce web app.",
             "B. Assign the Contributor RBAC role to the e-commerce web app by using the Resource Manager create role assignment API.",
             "C. Update the e-commerce web app to read the HTTP request header values.",
@@ -4072,7 +4070,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0007900001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0008100001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816513",
@@ -4081,14 +4079,14 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0008300001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0008400001.png",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816514",
         "topic": "Topic 30",
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\nVanArsdel, Ltd. is a global office supply company. The company is based in Canada and has retail store locations across the world. The company is developing several cloud-based solutions to support their stores, distributors, suppliers, and delivery services.\n\nCurrent environment -\n\nCorporate website -\nThe company provides a public website located at http://www.vanarsdelltd.com. The website consists of a React JavaScript user interface, HTML, CSS, image assets, and several APIs hosted in Azure Functions.\n\nRetail Store Locations -\nThe company supports thousands of store locations globally. Store locations send data every hour to an Azure Blob storage account to support inventory, purchasing and delivery services. Each record includes a location identifier and sales transaction information.\n\nRequirements -\nThe application components must meet the following requirements:\n\nCorporate website -\nSecure the website by using SSL.\nMinimize costs for data storage and hosting.\nImplement native GitHub workflows for continuous integration and continuous deployment (CI/CD).\nDistribute the website content globally for local use.\nImplement monitoring by using Application Insights and availability web tests including SSL certificate validity and custom header value verification.\nThe website must have 99.95 percent uptime.\n\nRetail store locations -\nAzure Functions must process data immediately when data is uploaded to Blob storage. Azure Functions must update Azure Cosmos DB by using native SQL language queries.\nAudit store sale transaction information nightly to validate data, process sales financials, and reconcile inventory.\n\nDelivery services -\nStore service telemetry data in Azure Cosmos DB by using an Azure Function. Data must include an item id, the delivery vehicle license plate, vehicle package capacity, and current vehicle location coordinates.\nStore delivery driver profile information in Azure Active Directory (Azure AD) by using an Azure Function called from the corporate website.\n\nInventory services -\nThe company has contracted a third-party to develop an API for inventory processing that requires access to a specific blob within the retail store storage account for three months to include read-only access to the data.\n\nSecurity -\nAll Azure Functions must centralize management and distribution of configuration data for different environments and geographies, encrypted by using a company-provided RSA-HSM key.\nAuthentication and authorization must use Azure AD and services must use managed identities where possible.\n\nIssues -\n\nRetail Store Locations -\nYou must perform a point-in-time restoration of the retail store location data due to an unexpected and accidental deletion of data.\nAzure Cosmos DB queries from the Azure Function exhibit high Request Unit (RU) usage and contain multiple, complex queries that exhibit high point read latency for large items as the function app is scaling.\nQuestion\nYou need to implement a solution to resolve the retail store location data issue.\nWhich three Azure Blob features should you enable? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "respuestaCorrecta": "ABD",
-        "Respuestas": [
+        "respuestas": [
             "A. Soft delete",
             "B. Change feed",
             "C. Snapshots",
@@ -4103,7 +4101,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\n\nOverview -\nYou are a developer for Contoso, Ltd. The company has a social networking website that is developed as a Single Page Application (SPA). The main web application for the social networking website loads user uploaded content from blob storage.\nYou are developing a solution to monitor uploaded data for inappropriate content. The following process occurs when users upload content by using the SPA:\n* Messages are sent to ContentUploadService.\n* Content is processed by ContentAnalysisService.\n* After processing is complete, the content is posted to the social network or a rejection message is posted in its place.\nThe ContentAnalysisService is deployed with Azure Container Instances from a private Azure Container Registry named contosoimages.\nThe solution will use eight CPU cores.\n\nAzure Active Directory -\nContoso, Ltd. uses Azure Active Directory (Azure AD) for both internal and guest accounts.\n\nRequirements -\n\nContentAnalysisService -\nThe company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.\nYou must create an Azure Function named CheckUserContent to perform the content checks.\n\nCosts -\nYou must minimize costs for all Azure services.\n\nManual review -\nTo review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using\nReact and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.\n\nHigh availability -\nAll services must run in multiple regions. The failure of any service in a region must not impact overall application availability.\n\nMonitoring -\nAn alert must be raised if the ContentUploadService uses more than 80 percent of available CPU cores.\n\nSecurity -\nYou have the following security requirements:\nAny web service accessible over the Internet must be protected from cross site scripting attacks.\nAll websites and services must use SSL from a valid root certificate authority.\nAzure Storage access keys must only be stored in memory and must be available only to the service.\nAll Internal services must only be accessible from internal Virtual Networks (VNets).\nAll parts of the system must support inbound and outbound traffic restrictions.\nAll service calls must be authenticated by using Azure AD.\n\nUser agreements -\nWhen a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso, Ltd. to review content, store cookies on user devices, and track user's IP addresses.\nInformation regarding agreements is used by multiple divisions within Contoso, Ltd.\nUser responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.\n\nValidation testing -\nWhen a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.\n\nIssues -\nUsers of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.\n\nCode -\n\nContentUploadService -\n\n\nApplicationManifest -\n\nQuestion\nYou need to store the user agreements.\nWhere should you store the agreement after it is completed?\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0016800001.jpg",
         "respuestaCorrecta": "B",
-        "Respuestas": [
+        "respuestas": [
             "A. Azure Storage queue",
             "B. Azure Event Hub",
             "C. Azure Service Bus topic",
@@ -4117,7 +4115,7 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0016800001.jpg",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0017200001.jpg",
-        "Respuestas": []
+        "respuestas": []
     },
     {
         "id": "816517",
@@ -4125,7 +4123,7 @@ export const data = [
         "pregunta": "Introductory Info\nCase study -\nThis is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -\nTo display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. When you are ready to answer a question, click the Question button to return to the question.\n\nBackground -\n\nOverview -\nYou are a developer for Contoso, Ltd. The company has a social networking website that is developed as a Single Page Application (SPA). The main web application for the social networking website loads user uploaded content from blob storage.\nYou are developing a solution to monitor uploaded data for inappropriate content. The following process occurs when users upload content by using the SPA:\n* Messages are sent to ContentUploadService.\n* Content is processed by ContentAnalysisService.\n* After processing is complete, the content is posted to the social network or a rejection message is posted in its place.\nThe ContentAnalysisService is deployed with Azure Container Instances from a private Azure Container Registry named contosoimages.\nThe solution will use eight CPU cores.\n\nAzure Active Directory -\nContoso, Ltd. uses Azure Active Directory (Azure AD) for both internal and guest accounts.\n\nRequirements -\n\nContentAnalysisService -\nThe company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.\nYou must create an Azure Function named CheckUserContent to perform the content checks.\n\nCosts -\nYou must minimize costs for all Azure services.\n\nManual review -\nTo review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using\nReact and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.\n\nHigh availability -\nAll services must run in multiple regions. The failure of any service in a region must not impact overall application availability.\n\nMonitoring -\nAn alert must be raised if the ContentUploadService uses more than 80 percent of available CPU cores.\n\nSecurity -\nYou have the following security requirements:\nAny web service accessible over the Internet must be protected from cross site scripting attacks.\nAll websites and services must use SSL from a valid root certificate authority.\nAzure Storage access keys must only be stored in memory and must be available only to the service.\nAll Internal services must only be accessible from internal Virtual Networks (VNets).\nAll parts of the system must support inbound and outbound traffic restrictions.\nAll service calls must be authenticated by using Azure AD.\n\nUser agreements -\nWhen a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso, Ltd. to review content, store cookies on user devices, and track user's IP addresses.\nInformation regarding agreements is used by multiple divisions within Contoso, Ltd.\nUser responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.\n\nValidation testing -\nWhen a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.\n\nIssues -\nUsers of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.\n\nCode -\n\nContentUploadService -\n\n\nApplicationManifest -\n\nQuestion\nYou need to configure the ContentUploadService deployment.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0016800001.jpg",
         "respuestaCorrecta": "A",
-        "Respuestas": [
+        "respuestas": [
             "A. Add the following markup to line CS23: type: Private",
             "B. Add the following markup to line CS24: osType: Windows",
             "C. Add the following markup to line CS24: osType: Linux",
@@ -4139,6 +4137,6 @@ export const data = [
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0017600001.png",
         "respuestaCorrecta": "",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0018100001.jpg",
-        "Respuestas": []
+        "respuestas": []
     }
 ]
