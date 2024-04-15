@@ -64,11 +64,11 @@ export const ExamamPage = () => {
   }, [mostrarRespuesta])
   useEffect(() => {
     const _pregunta = ObtenerPregunta(idExamen, idPregunta)
-    setmostrarRespuesta({ mostrar: false, correcta: _pregunta.pregunta.usuarioRespuesta ?? '-1' })
+    setmostrarRespuesta({ mostrar: false, correcta: _pregunta.pregunta?.usuarioRespuesta ?? '-1' })
     setcantidadPreguntas(_pregunta.cantidadPreguntas)
     setPregunta(_pregunta.pregunta)
     setDatosPregunta(_pregunta)
-    setValue(_pregunta.pregunta.usuarioRespuesta ?? '-1')
+    setValue(_pregunta.pregunta?.usuarioRespuesta ?? '-1')
     setEsFavorito(ExisteFavorito({ idPregunta }))
     clearInterval(interval)
     setIndexPregunta(ObtenerPaginaExamTopic(idPregunta))
