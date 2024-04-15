@@ -35,15 +35,15 @@ export const Resultado = () => {
   }, [resultado])
 
   return (
-        <Card h={'90vh'} alignItems={'center'}>
+        <Card alignItems={'center'}>
             <Heading>
                 Resultado
             </Heading>
-            <Flex m={10} direction={'row'} maxH={500} minH={400} flexDirection={'row'} flexWrap={'wrap'} overflowX={'auto'} >
+            <Flex m={10} direction={'row'} maxH={300} minH={400} flexDirection={'row'} flexWrap={'wrap'} overflowX={'auto'} >
                 <Box borderRadius={4} border={'1px solid green'} overflowY={'auto'}>
                     <Text fontWeight={'bold'}>Correctas</Text>
 
-                    <Table maxW={'40rem'} >
+                    <Table maxW={'30rem'} >
                         <Thead>
                             <Tr>
                                 <Td>
@@ -72,7 +72,7 @@ export const Resultado = () => {
                 </Box>
                 <Box borderRadius={4} border={'1px solid red'} overflowY={'auto'}>
                     <Text fontWeight={'bold'} >Incorrectas</Text>
-                    <Table maxW={'40rem'}>
+                    <Table maxW={'30rem'}>
                         <Thead>
                             <Tr>
                                 <Td>
@@ -139,7 +139,7 @@ export const Resultado = () => {
                 </Heading>
             </Stack>
 
-            <Flex>
+            <Flex m={2}>
                 <Button as={Link} to={'/'} >
                     Volver a inicio
                 </Button>
