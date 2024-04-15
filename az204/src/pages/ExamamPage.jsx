@@ -150,7 +150,7 @@ export const ExamamPage = () => {
                         {
                             pregunta.imgPregunta?.length > 0
                               ? <Box m={'auto'}>
-                                <Image w={500} src={pregunta.imgPregunta} fallbackSrc='az204/pato-loading.gif' />
+                                <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
                             </Box>
                               : null
                         }
@@ -218,7 +218,7 @@ export const ExamamPage = () => {
                             {pregunta.respuestas.length === 0
 
                               ? <Box m={'auto'}>
-                                    <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='az204/pato-loading.gif' />
+                                    <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />
                                 </Box>
 
                               : <></>

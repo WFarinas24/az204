@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
 
   plugins: [react()],
-  define: { _global: ({}), },
-  
-  base : '/az204'
+  define: { _global: ({}) },
+  base: '/az204'
 })
