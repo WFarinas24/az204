@@ -1,4 +1,4 @@
-import { Box, HStack, Radio, Stack, Tag, Text, VStack, useRadio } from '@chakra-ui/react'
+import { Box, HStack, Radio, Stack, Tag, Text, VStack, WrapItem, useRadio } from '@chakra-ui/react'
 import React from 'react'
 import { MoficarRespuesta } from '../services/servicios'
 import { RiCheckboxBlankCircleFill, RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from 'react-icons/ri'
@@ -53,7 +53,9 @@ export const Opcion = (props) => {
                     <Box>
                         {input.checked ? <RiCheckboxBlankCircleFill size={12} /> : <RiCheckboxBlankCircleLine size={12} />}
                     </Box>
-                    <Text textAlign={'start'}>{text}</Text>
+
+                    <Text wordBreak={'break-all'} textAlign={'start'}>{
+                        text}</Text>
                     {esCorrecta
                       ? <Tag p={1} size={20} variant='solid' colorScheme='teal' textDecor={'none'}>
                             Respuesta correcta
