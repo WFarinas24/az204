@@ -60,8 +60,9 @@ export const GenerarExamen = () => {
 }
 
 export const GenerarRepaso = ({ cantidad, inicio, imagenes, aleatorio }) => {
-  let todasPreguntas = imagenes ? data.slice(inicio, cantidad) : data.filter(x => (x.respuestas.length > 0)).slice(inicio, cantidad)
+  console.log({ data: data.slice(parseInt(inicio), parseInt(cantidad)) })
 
+  let todasPreguntas = imagenes ? data.slice(parseInt(inicio), parseInt(inicio + cantidad)) : data.filter(x => (x.respuestas.length > 0)).slice(parseInt(inicio), parseInt(inicio + cantidad))
   todasPreguntas = aleatorio ? todasPreguntas.sort(() => Math.random() - 0.5) : todasPreguntas
 
   const examen = todasPreguntas.map(x => {

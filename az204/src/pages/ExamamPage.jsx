@@ -22,7 +22,8 @@ export const ExamamPage = () => {
   })
 
   const [pregunta, setPregunta] = useState({
-    respuestas: []
+    respuestas: [],
+    pregunta: 'cargando'
   })
 
   const [interval, setIntervalPregunta] = useState(-1)
@@ -54,7 +55,7 @@ export const ExamamPage = () => {
   const group = getRootProps()
 
   useEffect(() => {
-    if (mostrarRespuesta.mostrar && datosPregunta?.pregunta?.respuestaCorrecta?.toLowerCase().includes(mostrarRespuesta.correcta.toLocaleLowerCase())) {
+    if (mostrarRespuesta.mostrar && datosPregunta?.pregunta?.respuestaCorrecta?.toLowerCase().includes(mostrarRespuesta.correcta?.toLocaleLowerCase())) {
       jsConfetti.addConfetti({
         emojis: ['⚡️', '💥', '✨', '💫', '🤩'],
         confettiNumber: 70,
@@ -146,9 +147,9 @@ export const ExamamPage = () => {
                         <Heading m={2}>Pregunta {datosPregunta.index + 1}</Heading>
                     </Box>
                     <Stack border={'1px solid #A0AEC0'} backgroundColor={'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
-                        <Text>{pregunta.pregunta}</Text>
+                        <Text>{pregunta?.pregunta}</Text>
                         {
-                            pregunta.imgPregunta?.length > 0
+                            pregunta?.imgPregunta?.length > 0
                               ? <Box m={'auto'}>
                                 <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
                             </Box>
@@ -169,7 +170,7 @@ export const ExamamPage = () => {
                         </Box>
                     </Stack>
 
-                    {traduccion?.texto?.trim() != undefined || traduccion.cargando
+                    {traduccion?.texto?.trim() !== undefined || traduccion.cargando
                       ? < Accordion defaultIndex={[0]} allowMultiple>
                             <AccordionItem>
                                 <h2>
@@ -215,7 +216,7 @@ export const ExamamPage = () => {
                               return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
                             })
                             }
-                            {pregunta.respuestas.length === 0
+                            {pregunta.respuestas?.length === 0
 
                               ? <Box m={'auto'}>
                                     <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />

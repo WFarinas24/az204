@@ -44,12 +44,12 @@ export const ModalRepaso = ({ isOpen, onOpen, onClose, actualizarTabla }) => {
 
                             <FormControl>
                                 <FormLabel>Cantidad de preguntas</FormLabel>
-                                <Input type='number' min={10} ref={initialRef} onChange={(e) => setInputs({ ...inputs, cantidad: e.target.value })} value={inputs.cantidad} />
+                                <Input type='number' min={10} ref={initialRef} onChange={(e) => setInputs({ ...inputs, cantidad: parseInt(e.target.value) })} value={inputs.cantidad} />
                             </FormControl>
 
                             <FormControl mt={4}>
                                 <FormLabel>Pregunta de inicio (maximo {totalPreguntas - inputs.cantidad})</FormLabel>
-                                <Input type='number' min={0} max={totalPreguntas - inputs.cantidad} onChange={(e) => setInputs({ ...inputs, inicio: e.target.value })} value={inputs.inicio} />
+                                <Input type='number' min={0} max={totalPreguntas - inputs.cantidad} onChange={(e) => setInputs({ ...inputs, inicio: parseInt(e.target.value) })} value={inputs.inicio} />
                             </FormControl>
 
                             <FormControl mt={4}>
