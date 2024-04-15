@@ -92,7 +92,7 @@ export const ExamamPage = () => {
       texto: null
     })
 
-    const res = await Traducir(pregunta.pregunta)
+    const res = await Traducir(pregunta?.pregunta)
     setTraduccion({
       cargando: false,
       texto: res

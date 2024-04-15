@@ -59,9 +59,9 @@ export const Resultado = () => {
                                             <Image left={60} top={3} position={'absolute'} opacity={0.40} src={imgUrlExito} width={'60px'} alt="" />
                                             <Flex justifyContent={'center'} align={'center'} gap={2} >
                                                 <Text fontWeight={'extrabold'} fontSize={30}>
-                                                    {examen.preguntas.findIndex(index => index.id == x.id) + 1}
+                                                    {examen.preguntas?.findIndex(index => index.id == x.id) + 1}
                                                 </Text>
-                                                {x.pregunta.slice(0, 120)} ...more
+                                                {x.pregunta?.slice(0, 120)} ...more
                                             </Flex>
                                         </Td>
                                     </Tr>
@@ -87,10 +87,10 @@ export const Resultado = () => {
                                         <Image left={60} top={3} position={'absolute'} opacity={0.40} src={imgUrlError} width={'60px'} alt="" />
                                         <Flex justifyContent={'center'} align={'center'} gap={2} >
                                             <Text fontWeight={'extrabold'} fontSize={30}>
-                                                {examen.preguntas.findIndex(index => index.id == x.id) + 1}
+                                                {examen.preguntas?.findIndex(index => index.id == x.id) + 1}
                                             </Text>
                                             <Text>
-                                                {x.pregunta.slice(0, 120)}
+                                                {x.pregunta?.slice(0, 120)}
                                                 <Tooltip label={x.pregunta} hasArrow >
 
                                                     <Text w={'fit-content'} color={'blue'}>
@@ -111,7 +111,7 @@ export const Resultado = () => {
 
                                                             <Alert status='warning'>
                                                                 <AlertIcon />
-                                                                <Text>{x.respuestas.find(y => x.respuestaCorrecta.includes(y.slice(0, 1))).slice(2)}</Text>
+                                                                <Text>{x.respuestas?.find(y => x.respuestaCorrecta.includes(y.slice(0, 1))).slice(2)}</Text>
                                                             </Alert>
 
                                                         </PopoverBody>
