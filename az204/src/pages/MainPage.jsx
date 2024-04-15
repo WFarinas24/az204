@@ -46,15 +46,18 @@ export const MainPage = () => {
 
                         <Heading>Historial de Quizz realizado</Heading>
                         <Spacer></Spacer>
-                        <Button onClick={() => {
-                          GenerarExamen()
-                          setListaExamenes(ObtenerExamenes())
-                        }} leftIcon={<FaPlus />} colorScheme='green'>Nuevo</Button>
+                        <Flex flexWrap={'wrap'} gap={1}>
 
-                        <Button onClick={() => {
-                          onOpen()
-                          setListaExamenes(ObtenerExamenes())
-                        }} leftIcon={<FaFire />} colorScheme='yellow'>Repaso completo</Button>
+                            <Button onClick={() => {
+                              GenerarExamen()
+                              setListaExamenes(ObtenerExamenes())
+                            }} leftIcon={<FaPlus />} colorScheme='green'>Examen</Button>
+
+                            <Button onClick={() => {
+                              onOpen()
+                              setListaExamenes(ObtenerExamenes())
+                            }} leftIcon={<FaFire />} colorScheme='yellow'>Repaso completo</Button>
+                        </Flex>
 
                     </Flex>
 
