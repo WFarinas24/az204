@@ -310,7 +310,7 @@ export const data = [
     id: '816258',
     topic: 'Topic 1',
     pregunta: 'You are a developer at your company.\nYou need to edit the workflows for an existing Logic App.\nWhat should you use?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'BD',
     respuestas: [
       'A. the Enterprise Integration Pack (EIP)',
       'B. the Logic App Code View',
