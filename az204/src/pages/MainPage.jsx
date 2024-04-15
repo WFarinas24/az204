@@ -81,7 +81,7 @@ export const MainPage = () => {
                             {
                                 listaExamenes.map(x => {
                                   const idExamen = x.id
-                                  const idPregunta = x.ultimaPregunta ?? x.preguntas[0].id
+                                  const idPregunta = x.ultimaPregunta ?? x.preguntas[0]?.id
 
                                   return <Tr key={x.id}>
                                         <Td>{new Intl.DateTimeFormat('es-mx', {
