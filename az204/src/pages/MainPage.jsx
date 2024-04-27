@@ -48,7 +48,7 @@ export const MainPage = () => {
                         <Spacer></Spacer>
 
                         <Menu>
-                            <MenuButton px={2} colorScheme='green' as={Button} rightIcon={<FaAngleDown />}>
+                            <MenuButton minW={20} px={2} colorScheme='green' as={Button} iconSpacing={5} rightIcon={<FaAngleDown />}>
                                 Menú
                             </MenuButton>
                             <MenuList>
