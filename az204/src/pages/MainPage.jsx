@@ -9,33 +9,33 @@ import { CantidadPreguntasTotalesConImagenes, ClonarExamen, EliminarExamen, Gene
 import { Link } from 'react-router-dom'
 import { ObtenerTiempo } from '../util/Utilidadades'
 import {
-    Avatar, Button, Card, CardHeader, Container, Flex, Heading, IconButton, Menu, MenuButton, MenuItem, MenuList, Spacer, Stack, Tag, TagLabel, Text, Tooltip,
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-    useDisclosure
+  Avatar, Button, Card, CardHeader, Container, Flex, Heading, IconButton, Menu, MenuButton, MenuItem, MenuList, Spacer, Stack, Tag, TagLabel, Text, Tooltip,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+  useDisclosure
 } from '@chakra-ui/react'
 import { ModalRepaso } from '../components/ModalRepaso'
 
 export const MainPage = () => {
-    const [listaExamenes, setListaExamenes] = useState([])
+  const [listaExamenes, setListaExamenes] = useState([])
 
-    const ActualizarTabla = () => {
-        setListaExamenes(ObtenerExamenes())
-    }
-    useEffect(() => {
-        ActualizarTabla()
-    }, [])
+  const ActualizarTabla = () => {
+    setListaExamenes(ObtenerExamenes())
+  }
+  useEffect(() => {
+    ActualizarTabla()
+  }, [])
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
-    return (
+  return (
         <Container maxW='8xl' mt={50}>
             <Card>
                 <ModalRepaso isOpen={isOpen} onOpen={onOpen} onClose={onClose} actualizarTabla={ActualizarTabla} />
@@ -53,22 +53,22 @@ export const MainPage = () => {
                             </MenuButton>
                             <MenuList>
                                 <MenuItem onClick={() => {
-                                    GenerarExamen()
-                                    setListaExamenes(ObtenerExamenes())
+                                  GenerarExamen()
+                                  setListaExamenes(ObtenerExamenes())
                                 }} gap={2}>
                                     <FaPaperPlane />
                                     Examen
                                 </MenuItem>
 
                                 <MenuItem onClick={() => {
-                                    onOpen()
-                                    setListaExamenes(ObtenerExamenes())
+                                  onOpen()
+                                  setListaExamenes(ObtenerExamenes())
                                 }} gap={2}>
                                     <FaFire />
                                     Repaso completo
                                 </MenuItem>
 
-                                <MenuItem as={Link} to={"Favoritos"} gap={2}>
+                                <MenuItem as={Link} to={'Favoritos'} gap={2}>
                                     <FaExternalLinkAlt />
                                     Exportar favoritos
                                 </MenuItem>
@@ -97,22 +97,22 @@ export const MainPage = () => {
 
                             {
                                 listaExamenes.map(x => {
-                                    const idExamen = x.id
-                                    const idPregunta = x.ultimaPregunta ?? x.preguntas[0]?.id
+                                  const idExamen = x.id
+                                  const idPregunta = x.ultimaPregunta ?? x.preguntas[0]?.id
 
-                                    return <Tr key={x.id}>
+                                  return <Tr key={x.id}>
                                         <Td>{new Intl.DateTimeFormat('es-mx', {
-                                            dateStyle: 'short',
-                                            timeStyle: 'short'
+                                          dateStyle: 'short',
+                                          timeStyle: 'short'
                                         }).format(new Date(x.fechaEdit))} 🕧</Td>
                                         <Td>{ObtenerTiempo(x.tiempo)}</Td>
                                         <Td>{x.tipo ?? 'Examen'}</Td>
                                         <Td>{x.preguntas.length ?? 'Preguntas'}</Td>
                                         <Td>{x.estado === 'Incompleto'
-                                            ? <Tag p={1} size={20} variant='solid' colorScheme='purple'>
+                                          ? <Tag p={1} size={20} variant='solid' colorScheme='purple'>
                                                 {x.estado}
                                             </Tag>
-                                            : <Tag p={1} size={20} variant='solid' colorScheme='teal'>
+                                          : <Tag p={1} size={20} variant='solid' colorScheme='teal'>
                                                 {x.estado}
                                             </Tag>
                                         }
@@ -134,10 +134,10 @@ export const MainPage = () => {
                                                     Repetir
                                                 </MenuItem>
                                                 {x.estado === 'Terminado'
-                                                    ? <MenuItem as={Link} to={`/resultado/${idExamen}`} icon={<FaCheck />}>
+                                                  ? <MenuItem as={Link} to={`/resultado/${idExamen}`} icon={<FaCheck />}>
                                                         Ver nota
                                                     </MenuItem>
-                                                    : null
+                                                  : null
                                                 }
 
                                                 {/* <MenuItem icon={<FaRegFilePdf />}>
@@ -160,5 +160,5 @@ export const MainPage = () => {
 
         </Container>
 
-    )
+  )
 }

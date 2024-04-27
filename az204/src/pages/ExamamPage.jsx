@@ -8,111 +8,108 @@ import { ActualizarNota, ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito
 import { Link, useParams } from 'react-router-dom'
 import { Traducir } from '../services/traductor'
 import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
 
 export const ExamamPage = () => {
-    const jsConfetti = new JSConfetti()
+  const { idPregunta, idExamen } = useParams()
 
-    const { idPregunta, idExamen } = useParams()
+  const [indexPregunta, setIndexPregunta] = useState(-1)
 
-    const [indexPregunta, setIndexPregunta] = useState(-1)
+  const [traduccion, setTraduccion] = useState({
+    cargando: false,
+    texto: null
+  })
 
-    const [traduccion, setTraduccion] = useState({
-        cargando: false,
-        texto: null
-    })
+  const [notas, setNotas] = useState({
+    abierto: false,
+    texto: ''
+  })
 
-    const [notas, setNotas] = useState({
-        abierto: false,
-        texto: ""
-    })
+  const [pregunta, setPregunta] = useState({
+    respuestas: [],
+    pregunta: 'cargando'
+  })
 
+  const [interval, setIntervalPregunta] = useState(-1)
 
-    const [pregunta, setPregunta] = useState({
-        respuestas: [],
-        pregunta: 'cargando'
-    })
+  const [datosPregunta, setDatosPregunta] = useState({
+    anterior: null,
+    siguiente: null,
+    index: -1,
+    estado: 'Terminado'
+  })
 
-    const [interval, setIntervalPregunta] = useState(-1)
+  const [mostrarRespuesta, setmostrarRespuesta] = useState({
+    mostrar: false,
+    correcta: '-1'
+  })
 
-    const [datosPregunta, setDatosPregunta] = useState({
-        anterior: null,
-        siguiente: null,
-        index: -1,
-        estado: 'Terminado'
-    })
-
-    const [mostrarRespuesta, setmostrarRespuesta] = useState({
-        mostrar: false,
-        correcta: '-1'
-    })
-
-    const { getRootProps, getRadioProps, setValue, isDisabled } = useRadioGroup({
-        name: 'framework',
-        defaultValue: '-1',
-        onChange: (e) => {
-            MoficarRespuesta({ idExamen, idPregunta, respuesta: e })
-            setmostrarRespuesta({ ...mostrarRespuesta, correcta: e.replace('.', '') })
-        }
-    })
-
-    const [cantidadPreguntas, setcantidadPreguntas] = useState(0)
-
-    const [esFavorito, setEsFavorito] = useState(false)
-    const group = getRootProps()
-
-    useEffect(() => {
-        if (mostrarRespuesta.mostrar && datosPregunta?.pregunta?.respuestaCorrecta?.toLowerCase().includes(mostrarRespuesta.correcta?.toLocaleLowerCase())) {
-            jsConfetti.addConfetti({
-                emojis: ['⚡️', '💥', '✨', '💫', '🤩'],
-                confettiNumber: 70,
-                emojiSize: 50
-            })
-        }
-    }, [mostrarRespuesta])
-    useEffect(() => {
-        const _pregunta = ObtenerPregunta(idExamen, idPregunta)
-        setmostrarRespuesta({ mostrar: false, correcta: _pregunta.pregunta?.usuarioRespuesta ?? '-1' })
-        setcantidadPreguntas(_pregunta.cantidadPreguntas)
-        setPregunta(_pregunta.pregunta)
-        setDatosPregunta(_pregunta)
-        setValue(_pregunta.pregunta?.usuarioRespuesta ?? '-1')
-        setEsFavorito(ExisteFavorito({ idPregunta }))
-        
-        setNotas({
-            texto: ObtenerNota({ idPregunta })
-        })
-        
-
-        clearInterval(interval)
-        setIndexPregunta(ObtenerPaginaExamTopic(idPregunta))
-        setTraduccion({
-            cargando: false,
-            texto: null
-        })
-
-        const intevalId = setInterval(() => {
-            ActualizarTiempoExamen({ idExamen })
-        }, 1000)
-
-        return () => {
-            clearInterval(intevalId)
-        }
-    }, [idPregunta])
-
-    const TraducirPregunta = async () => {
-        setTraduccion({
-            cargando: true,
-            texto: null
-        })
-
-        const res = await Traducir(pregunta?.pregunta)
-        setTraduccion({
-            cargando: false,
-            texto: res
-        })
+  const { getRootProps, getRadioProps, setValue, isDisabled } = useRadioGroup({
+    name: 'framework',
+    defaultValue: '-1',
+    onChange: (e) => {
+      MoficarRespuesta({ idExamen, idPregunta, respuesta: e })
+      setmostrarRespuesta({ ...mostrarRespuesta, correcta: e.replace('.', '') })
     }
+  })
 
-    return (
+  const [cantidadPreguntas, setcantidadPreguntas] = useState(0)
+
+  const [esFavorito, setEsFavorito] = useState(false)
+  const group = getRootProps()
+
+  useEffect(() => {
+    if (mostrarRespuesta.mostrar && datosPregunta?.pregunta?.respuestaCorrecta?.toLowerCase().includes(mostrarRespuesta.correcta?.toLocaleLowerCase())) {
+      jsConfetti.addConfetti({
+        emojis: ['⚡️', '💥', '✨', '💫', '🤩'],
+        confettiNumber: 55,
+        emojiSize: 45
+      })
+    }
+  }, [mostrarRespuesta])
+  useEffect(() => {
+    const _pregunta = ObtenerPregunta(idExamen, idPregunta)
+    setmostrarRespuesta({ mostrar: false, correcta: _pregunta.pregunta?.usuarioRespuesta ?? '-1' })
+    setcantidadPreguntas(_pregunta.cantidadPreguntas)
+    setPregunta(_pregunta.pregunta)
+    setDatosPregunta(_pregunta)
+    setValue(_pregunta.pregunta?.usuarioRespuesta ?? '-1')
+    setEsFavorito(ExisteFavorito({ idPregunta }))
+
+    setNotas({
+      texto: ObtenerNota({ idPregunta })
+    })
+
+    clearInterval(interval)
+    setIndexPregunta(ObtenerPaginaExamTopic(idPregunta))
+    setTraduccion({
+      cargando: false,
+      texto: null
+    })
+
+    const intevalId = setInterval(() => {
+      ActualizarTiempoExamen({ idExamen })
+    }, 1000)
+
+    return () => {
+      clearInterval(intevalId)
+    }
+  }, [idPregunta])
+
+  const TraducirPregunta = async () => {
+    setTraduccion({
+      cargando: true,
+      texto: null
+    })
+
+    const res = await Traducir(pregunta?.pregunta)
+    setTraduccion({
+      cargando: false,
+      texto: res
+    })
+  }
+
+  return (
         <Container maxW='8xl' >
 
             <Card>
@@ -122,8 +119,8 @@ export const ExamamPage = () => {
                         <Spacer></Spacer>
                         <Button onClick={() => { GuardarFavorito(idPregunta); setEsFavorito(!esFavorito) }} colorScheme={esFavorito ? 'green' : 'gray'} >
                             {esFavorito
-                                ? <FaBookmark />
-                                : <FaRegBookmark />
+                              ? <FaBookmark />
+                              : <FaRegBookmark />
                             }
 
                         </Button>
@@ -156,16 +153,16 @@ export const ExamamPage = () => {
                 </CardHeader>
                 <CardBody>
                     <Box dir="row" textAlign={'start'}>
-                        <Heading m={2}>Pregunta {datosPregunta.index + 1}</Heading>
+                        <Heading m={2}>Pregunta {datosPregunta.index + 1} <Text fontWeight={6} fontStyle={'italic'} fontSize={20}>({idPregunta})</Text> </Heading>
                     </Box>
                     <Stack border={'1px solid #A0AEC0'} backgroundColor={'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
                         <Text>{pregunta?.pregunta}</Text>
                         {
                             pregunta?.imgPregunta?.length > 0
-                                ? <Box m={'auto'}>
+                              ? <Box m={'auto'}>
                                     <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
                                 </Box>
-                                : null
+                              : null
                         }
                         <HStack>
                             <FaExternalLinkAlt />
@@ -175,15 +172,15 @@ export const ExamamPage = () => {
                         <Box position={'absolute'} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
 
                             {traduccion.cargando
-                                ? <div style={{ position: 'absolute', right: -26, top: -22, opacity: 0.6 }} class="lds-ripple"><div></div><div></div></div>
-                                : null
+                              ? <div style={{ position: 'absolute', right: -26, top: -22, opacity: 0.6 }} class="lds-ripple"><div></div><div></div></div>
+                              : null
                             }
                             <MdOutlineGTranslate style={{ zIndex: 9999 }} size={32} />
                         </Box>
                     </Stack>
 
                     {traduccion?.texto?.trim() !== undefined || traduccion.cargando
-                        ? < Accordion defaultIndex={[0]} allowMultiple>
+                      ? < Accordion defaultIndex={[0]} allowMultiple>
                             <AccordionItem>
                                 <h2>
                                     <AccordionButton>
@@ -199,12 +196,12 @@ export const ExamamPage = () => {
 
                                     {
                                         (traduccion.cargando)
-                                            ? <Stack>
+                                          ? <Stack>
                                                 <Skeleton height='20px' />
                                                 <Skeleton height='20px' />
                                                 <Skeleton height='20px' />
                                             </Stack>
-                                            : <HStack alignItems={'top'}>
+                                          : <HStack alignItems={'top'}>
                                                 <Box>
                                                     <FaInfoCircle style={{ margin: '10px 2px' }} size={18} />
                                                 </Box>
@@ -218,23 +215,23 @@ export const ExamamPage = () => {
                             </AccordionItem>
                         </Accordion>
 
-                        : null}
+                      : null}
                     <RadioGroup m={4}>
                         <Stack {...group} >
                             {pregunta.respuestas.map((resp, index) => {
-                                const value = resp.substring(0, 1)
-                                const texto = resp.slice(2)
-                                const radio = getRadioProps({ value })
-                                return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
+                              const value = resp.substring(0, 1)
+                              const texto = resp.slice(2)
+                              const radio = getRadioProps({ value })
+                              return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
                             })
                             }
                             {pregunta.respuestas?.length === 0
 
-                                ? <Box m={'auto'}>
+                              ? <Box m={'auto'}>
                                     <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />
                                 </Box>
 
-                                : <></>
+                              : <></>
                             }
                         </Stack>
                     </RadioGroup>
@@ -244,7 +241,7 @@ export const ExamamPage = () => {
                     <Flex >
                         <Spacer />
                         <Button onClick={() => {
-                            setmostrarRespuesta({ ...mostrarRespuesta, mostrar: true })
+                          setmostrarRespuesta({ ...mostrarRespuesta, mostrar: true })
                         }
                         } colorScheme='green' m={2}>Ver respuesta</Button>
                         <Spacer />
@@ -263,15 +260,16 @@ export const ExamamPage = () => {
                                 </AccordionButton>
                             </h2>
 
-                            <AccordionPanel borderRadius={'md'} onChange={(e) => {
-                                ActualizarNota({ idPregunta: idPregunta, notas: e.target.value });
-                                setNotas({ texto: e.target.value });
-                            }} pb={4}>
+                            <AccordionPanel borderRadius={'md'} pb={4}>
                                 <Textarea
                                     placeholder='No hay notas para esta pregunta'
                                     size='sm'
                                     resize={true}
                                     value={notas.texto}
+                                    onChange={(e) => {
+                                      ActualizarNota({ idPregunta, notas: e.target.value })
+                                      setNotas({ texto: e.target.value })
+                                    }}
                                 />
                             </AccordionPanel>
                         </AccordionItem>
@@ -281,20 +279,20 @@ export const ExamamPage = () => {
                         {
                             datosPregunta.index > 0
 
-                                ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.anterior}`} colorScheme='telegram' variant={'outline'} w={200} leftIcon={<FaArrowLeft />} >
+                              ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.anterior}`} colorScheme='telegram' variant={'outline'} w={200} leftIcon={<FaArrowLeft />} >
                                     Anterior
                                 </Button>
-                                : null
+                              : null
                         }
 
                         <Spacer />
 
                         {
                             datosPregunta.siguiente
-                                ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
+                              ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
                                     Siguiente
                                 </Button >
-                                : <Button as={Link} to={`/resultado/${idExamen}`} onClick={clearInterval(interval)} colorScheme='green' w={200} rightIcon={<FaCheck />}>
+                              : <Button as={Link} to={`/resultado/${idExamen}`} onClick={clearInterval(interval)} colorScheme='green' w={200} rightIcon={<FaCheck />}>
                                     Finalizar
                                 </Button >
                         }
@@ -306,5 +304,5 @@ export const ExamamPage = () => {
 
         </Container >
 
-    )
+  )
 }

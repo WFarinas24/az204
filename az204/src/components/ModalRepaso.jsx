@@ -81,10 +81,9 @@ export const ModalRepaso = ({ isOpen, onOpen, onClose, actualizarTabla }) => {
                   <Switch onChange={(e) => {
                     setInputs({
                       ...inputs,
-                      favoritos: e.target.favoritos,
+                      favoritos: e.target.checked,
                       cantidad: parseInt(totalFavs)
-                    });
-
+                    })
                   }} size='lg' />
                 </FormControl>
               }

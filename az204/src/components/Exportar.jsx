@@ -1,36 +1,68 @@
-import { Button, Card, CardBody, CardHeader, Center, Text, Textarea } from '@chakra-ui/react'
+import { Button, Card, CardBody, CardHeader, Center, Text, Textarea, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { ListaFavoritos } from '../services/servicios'
-import { Link } from 'react-router-dom'
+import { ActualizarFavoritosJSON, ListaFavoritos } from '../services/servicios'
+import { Link, json } from 'react-router-dom'
+import { FaCircle } from 'react-icons/fa'
+import { FaArrowRotateRight } from 'react-icons/fa6'
 
 export const Exportar = () => {
+  const [Favoritos, setFavoritos] = useState({})
+  const toast = useToast()
 
-    const [Favoritos, setFavoritos] = useState({})
+  useEffect(() => {
+    setFavoritos(JSON.stringify(ListaFavoritos() ?? ''))
+  }, [])
 
-    useEffect(() => {
-        setFavoritos(ListaFavoritos())
-    }, [])
+  const Actualizar = () => {
+    ActualizarFavoritosJSON({ favoritos: Favoritos })
+  }
 
-
-    return (
+  return (
         <Card>
             <CardHeader>
-                <Text fontSize={"large"}>
+                <Text fontSize={'large'}>
                     Importar Favoritos
                 </Text>
             </CardHeader>
 
             <CardBody>
-                <Textarea value={JSON.stringify(Favoritos)}>
+                <Textarea value={Favoritos} onChange={(e) => {
+                  setFavoritos(e.target.value)
+                }}
+
+                >
                 </Textarea>
             </CardBody>
 
             <Center m={2}>
-                <Button as={Link} to={"/"}>
+                <Button colorScheme='red' leftIcon={<FaArrowRotateRight />} onClick={
+                    () => {
+                      try {
+                        JSON.parse(Favoritos ?? '[]')
+
+                        toast({
+                          title: 'Exito.',
+                          description: 'Se actualizaron los favoritos.',
+                          status: 'success',
+                          duration: 5000,
+                          isClosable: true
+                        })
+                        Actualizar()
+                      } catch (e) {
+                        alert(e)
+                      }
+                    }
+                }>
+                    Actualizar
+                </Button>
+            </Center>
+
+            <Center m={2}>
+                <Button as={Link} to={'/'}>
                     volver
                 </Button>
             </Center>
 
-        </Card>
-    )
+        </Card >
+  )
 }
