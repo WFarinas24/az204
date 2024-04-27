@@ -7,7 +7,7 @@ export const data = [
     respuestas: [
       'A. From the Update management blade, click Enable.',
       'B. From the Overview blade, move VM1 to a different subscription.',
-      'C. From the Redeploy blade, click Redeploy. Most Voted',
+      'C. From the Redeploy blade, click Redeploy.',
       'D. From the Profile blade, modify the usage location.'
     ]
   },
@@ -424,7 +424,7 @@ export const data = [
     id: '816265',
     topic: 'Topic 2',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure\nStorage Blob storage. The storage account type is General-purpose V2.\nWhen photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.\nYou need to design the process that starts the photo processing.\nSolution: Trigger the photo processing from Blob storage events.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Yes',
       'B. No'
@@ -444,7 +444,7 @@ export const data = [
     id: '816267',
     topic: 'Topic 2',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.\nYou need to ensure that scripts run and resources are available before a swap operation occurs.\nSolution: Enable auto swap for the Testing slot. Deploy the app to the Testing slot.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. No',
       'B. Yes'
@@ -454,7 +454,7 @@ export const data = [
     id: '816268',
     topic: 'Topic 2',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.\nYou need to ensure that scripts run and resources are available before a swap operation occurs.\nSolution: Disable auto swap. Update the app with a method named statuscheck to run the scripts. Re-enable auto swap and deploy the app to the Production slot.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. No',
       'B. Yes'
@@ -601,7 +601,7 @@ export const data = [
     id: '816283',
     topic: 'Topic 2',
     pregunta: 'You are developing an Azure Function App that processes images that are uploaded to an Azure Blob container.\nImages must be processed as quickly as possible after they are uploaded, and the solution must minimize latency. You create code to process images when the\nFunction App is triggered.\nYou need to configure the Function App.\nWhat should you do?\n',
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'D',
     respuestas: [
       'A. Use an App Service plan. Configure the Function App to use an Azure Blob Storage input trigger.',
       'B. Use a Consumption plan. Configure the Function App to use an Azure Blob Storage trigger.',
@@ -698,7 +698,7 @@ export const data = [
     id: '816293',
     topic: 'Topic 2',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure\nStorage Blob storage. The storage account type is General-purpose V2.\nWhen photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.\nYou need to design the process that starts the photo processing.\nSolution: Create an Azure Function app that uses the Consumption hosting model and that is triggered from the blob upload.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. Yes',
       'B. No'
@@ -708,7 +708,7 @@ export const data = [
     id: '816294',
     topic: 'Topic 2',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.\nYou need to ensure that scripts run and resources are available before a swap operation occurs.\nSolution: Update the app with a method named statuscheck to run the scripts. Update the app settings for the app. Set the\nWEBSITE_SWAP_WARMUP_PING_PATH and WEBSITE_SWAP_WARMUP_PING_STATUSES with a path to the new method and appropriate response codes.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. No',
       'B. Yes'
@@ -1078,7 +1078,7 @@ export const data = [
     id: '816313',
     topic: 'Topic 3',
     pregunta: 'Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce\n2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.\nYou must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.\nYou need to implement a solution to receive the device data.\nSolution: Provision an Azure Event Grid. Configure the machine identifier as the partition key and enable capture.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. Yes',
       'B. No'
@@ -1088,7 +1088,7 @@ export const data = [
     id: '816314',
     topic: 'Topic 3',
     pregunta: 'You develop Azure solutions.\nA .NET application needs to receive a message each time an Azure virtual machine finishes processing data. The messages must NOT persist after being processed by the receiving application.\nYou need to implement the .NET object that will receive the messages.\nWhich object should you use?\n',
-    respuestaCorrecta: 'D',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. QueueClient',
       'B. SubscriptionClient',
@@ -1587,7 +1587,7 @@ export const data = [
     id: '816342',
     topic: 'Topic 4',
     pregunta: "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\nYou are developing a website that will run as an Azure Web App. Users will authenticate by using their Azure Active Directory (Azure AD) credentials.\nYou plan to assign users one of the following permission levels for the website: admin, normal, and reader. A user's Azure AD group membership must be used to determine the permission level.\nYou need to configure authorization.\nSolution:\n✑ Create a new Azure AD application. In the application's manifest, define application roles that match the required permission levels for the application.\n✑ Assign the appropriate Azure AD group to each role. In the website, use the value of the roles claim from the JWT for the user to determine permissions.\nDoes the solution meet the goal?\n",
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Yes',
       'B. No'
