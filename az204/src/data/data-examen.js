@@ -68,7 +68,7 @@ export const data = [
     id: '816236',
     topic: 'Topic 1',
     pregunta: 'Your company has an Azure subscription.\nYou need to deploy a number of Azure virtual machines to the subscription by using Azure Resource Manager (ARM) templates. The virtual machines will be included in a single availability set.\nYou need to ensure that the ARM template allows for as many virtual machines as possible to remain accessible in the event of fabric failure or maintenance.\nWhich of the following is the value that you should configure for the platformUpdateDomainCount property?\n',
-    respuestaCorrecta: 'D',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. 10',
       'B. 20',
