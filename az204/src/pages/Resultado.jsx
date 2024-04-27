@@ -1,19 +1,21 @@
 import { Alert, AlertIcon, Box, Button, Card, Flex, Heading, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Stack, Table, Tbody, Td, Text, Thead, Tooltip, Tr } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { ObtenerExamen, TerminarExamen } from '../services/servicios'
+import { GuardarFavorito, ListaFavoritos, ObtenerExamen, TerminarExamen } from '../services/servicios'
 import { Link, useParams } from 'react-router-dom'
 import JSConfetti from 'js-confetti'
 
 import imgUrlExito from '../assets/exito.png'
 import imgUrlError from '../assets/error.png'
 import { FaEye } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa6'
+const jsConfetti = new JSConfetti()
 
 export const Resultado = () => {
   const { idExamen } = useParams()
 
   const [examen, setExamen] = useState({})
   const [resultado, setResultado] = useState({})
-  const jsConfetti = new JSConfetti()
+  const [favoritos, setFavoritos] = useState([])
 
   useEffect(() => {
     const _examen = ObtenerExamen(idExamen)
@@ -21,6 +23,7 @@ export const Resultado = () => {
       TerminarExamen({ idExamen })
     }
     setExamen(_examen)
+    setFavoritos(ListaFavoritos())
     setResultado({
       correctas: _examen.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta) || x.respuestaCorrecta?.length === 0).length,
       incorrectas: _examen.preguntas?.filter(x => !x.respuestaCorrecta.includes(x.usuarioRespuesta) && x.usuarioRespuesta != '' && x.usuarioRespuesta != undefined && x.respuestaCorrecta != '').length,
@@ -109,9 +112,15 @@ export const Resultado = () => {
                                                         <PopoverCloseButton />
                                                         <PopoverBody>
 
-                                                            <Alert status='warning'>
+                                                            <Alert status='warning' gap={2}>
                                                                 <AlertIcon />
                                                                 <Text>{x.respuestas?.find(y => x.respuestaCorrecta.includes(y.slice(0, 1))).slice(2)}</Text>
+                                                                <Button size={'sm'} colorScheme={favoritos?.includes(x.id) ? 'green' : 'gray'} onClick={() => {
+                                                                  GuardarFavorito(x.id)
+                                                                  setFavoritos(ListaFavoritos())
+                                                                }} leftIcon={<FaStar/>}>
+
+                                                                </Button>
                                                             </Alert>
 
                                                         </PopoverBody>

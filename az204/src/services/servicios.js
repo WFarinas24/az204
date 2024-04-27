@@ -216,7 +216,6 @@ export const ClonarExamen = (idExamen) => {
   clone.preguntas = clone.preguntas.map((x) => {
     x.usuarioRespuesta = null
     delete x.usuarioRespuesta
-
     return x
   })
 
