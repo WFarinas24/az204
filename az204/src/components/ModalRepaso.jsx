@@ -75,7 +75,7 @@ export const ModalRepaso = ({ isOpen, onOpen, onClose, actualizarTabla }) => {
                 }} size='lg' />
               </FormControl>
 
-              {totalFavs > 0 &&
+              {totalFavs > 6 &&
                 < FormControl mt={4}>
                   <FormLabel>Solo Favoritos {totalFavs}? </FormLabel>
                   <Switch onChange={(e) => {
