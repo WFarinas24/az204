@@ -288,7 +288,7 @@ export const data = [
     id: '816256',
     topic: 'Topic 1',
     pregunta: 'Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\nYou are developing a solution for a public facing API.\nThe API back end is hosted in an Azure App Service instance. You have implemented a RESTful service for the API back end.\nYou must configure back-end authentication for the API Management service instance.\nSolution: You configure Client cert gateway credentials for the Azure resource.\nDoes the solution meet the goal?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. Yes',
       'B. No'
@@ -310,7 +310,7 @@ export const data = [
     id: '816258',
     topic: 'Topic 1',
     pregunta: 'You are a developer at your company.\nYou need to edit the workflows for an existing Logic App.\nWhat should you use?\n',
-    respuestaCorrecta: 'BD',
+    respuestaCorrecta: 'D',
     respuestas: [
       'A. the Enterprise Integration Pack (EIP)',
       'B. the Logic App Code View',
@@ -817,7 +817,7 @@ export const data = [
     id: '816305',
     topic: 'Topic 2',
     pregunta: 'You are developing an Azure Durable Function to manage an online ordering process.\nThe process must call an external API to gather product discount information.\nYou need to implement the Azure Durable Function.\nWhich Azure Durable Function types should you use? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n',
-    respuestaCorrecta: 'AB',
+    respuestaCorrecta: 'AD',
     respuestas: [
       'A. Orchestrator',
       'B. Entity',
@@ -1606,7 +1606,7 @@ export const data = [
     id: '816344',
     topic: 'Topic 4',
     pregunta: 'You provide an Azure API Management managed web service to clients. The back-end web service implements HTTP Strict Transport Security (HSTS).\nEvery request to the backend service must include a valid HTTP authorization header.\nYou need to configure the Azure API Management instance with an authentication policy.\nWhich two policies can you use? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n',
-    respuestaCorrecta: 'CD',
+    respuestaCorrecta: 'AD',
     respuestas: [
       'A. Basic Authentication',
       'B. Digest Authentication',
@@ -1636,7 +1636,7 @@ export const data = [
     id: '816347',
     topic: 'Topic 4',
     pregunta: 'You have an application that includes an Azure Web app and several Azure Function apps. Application secrets including connection strings and certificates are stored in Azure Key Vault.\nSecrets must not be stored in the application or application runtime environment. Changes to Azure Active Directory (Azure AD) must be minimized.\nYou need to design the approach to loading application secrets.\nWhat should you do?\n',
-    respuestaCorrecta: 'C',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Create a single user-assigned Managed Identity with permission to access Key Vault and configure each App Service to use that Managed Identity.',
       'B. Create a single Azure AD Service Principal with permission to access Key Vault and use a client secret from within the App Services to access Key Vault.',
@@ -1832,7 +1832,7 @@ export const data = [
     id: '816366',
     topic: 'Topic 4',
     pregunta: 'You are developing an Azure App Service REST API.\nThe API must be called by an Azure App Service web app. The API must retrieve and update user profile information stored in Azure Active Directory (Azure AD).\nYou need to configure the API to make the updates.\nWhich two tools should you use? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n',
-    respuestaCorrecta: 'AC',
+    respuestaCorrecta: 'AB',
     respuestas: [
       'A. Microsoft Graph API',
       'B. Microsoft Authentication Library (MSAL)',
@@ -1845,7 +1845,7 @@ export const data = [
     id: '816367',
     topic: 'Topic 4',
     pregunta: 'You develop a REST API. You implement a user delegation SAS token to communicate with Azure Blob storage.\nThe token is compromised.\nYou need to revoke the token.\nWhat are two possible ways to achieve this goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n',
-    respuestaCorrecta: 'AB',
+    respuestaCorrecta: 'AD',
     respuestas: [
       'A. Revoke the delegation key.',
       'B. Delete the stored access policy.',
@@ -1888,7 +1888,7 @@ export const data = [
     id: '816371',
     topic: 'Topic 4',
     pregunta: 'You are developing a solution that will use a multi-partitioned Azure Cosmos DB database. You plan to use the latest Azure Cosmos DB SDK for development.\nThe solution must meet the following requirements:\n✑ Send insert and update operations to an Azure Blob storage account.\n✑ Process changes to all partitions immediately.\n✑ Allow parallelization of change processing.\nYou need to process the Azure Cosmos DB operations.\nWhat are two possible ways to achieve this goal? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n',
-    respuestaCorrecta: 'AC',
+    respuestaCorrecta: 'CD',
     respuestas: [
       'A. Create an Azure App Service API and implement the change feed estimator of the SDK. Scale the API by using multiple Azure App Service instances.',
       'B. Create a background job in an Azure Kubernetes Service and implement the change feed feature of the SDK.',
@@ -2377,7 +2377,7 @@ export const data = [
     id: '816397',
     topic: 'Topic 5',
     pregunta: 'You develop a gateway solution for a public facing news API. The news API back end is implemented as a RESTful service and uses an OpenAPI specification.\nYou need to ensure that you can access the news API by using an Azure API Management service instance.\nWhich Azure PowerShell command should you run?\n',
-    respuestaCorrecta: 'D',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Import-AzureRmApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Swagger" -SpecificationPath $SwaggerPath -Path $Path',
       'B. New-AzureRmApiManagementBackend -Context $ApiMgmtContext -Url $Url -Protocol http',
@@ -2403,7 +2403,7 @@ export const data = [
     id: '816399',
     topic: 'Topic 5',
     pregunta: 'You are developing an Azure function that connects to an Azure SQL Database instance. The function is triggered by an Azure Storage queue.\nYou receive reports of numerous System.InvalidOperationExceptions with the following message:\n`Timeout expired. The timeout period elapsed prior to obtaining a connection from the pool. This may have occurred because all pooled connections were in use and max pool size was reached.`\nYou need to prevent the exception.\nWhat should you do?\n',
-    respuestaCorrecta: 'C',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. In the host.json file, decrease the value of the batchSize option',
       'B. Convert the trigger to Azure Event Hub',
@@ -2465,7 +2465,7 @@ export const data = [
     id: '816405',
     topic: 'Topic 5',
     pregunta: 'You are developing applications for a company. You plan to host the applications on Azure App Services.\nThe company has the following requirements:\n✑ Every five minutes verify that the websites are responsive.\n✑ Verify that the websites respond within a specified time threshold. Dependent requests such as images and JavaScript files must load properly.\n✑ Generate alerts if a website is experiencing issues.\n✑ If a website fails to load, the system must attempt to reload the site three more times.\nYou need to implement this process with the least amount of effort.\nWhat should you do?\n',
-    respuestaCorrecta: 'D',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. Create a Selenium web test and configure it to run from your workstation as a scheduled task.',
       'B. Set up a URL ping test to query the home page.',
@@ -3092,7 +3092,7 @@ export const data = [
     id: '816448',
     topic: 'Topic 6',
     pregunta: 'You are developing an e-commerce solution that uses a microservice architecture.\nYou need to design a communication backplane for communicating transactional messages between various parts of the solution. Messages must be communicated in first-in-first-out (FIFO) order.\nWhat should you use?\n',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'C',
     respuestas: [
       'A. Azure Storage Queue',
       'B. Azure Event Hub',
