@@ -7,6 +7,7 @@ import { Opcion } from '../components/Opcion'
 import { ActualizarNota, ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerNota, ObtenerPaginaExamTopic, ObtenerPregunta } from '../services/servicios'
 import { Link, useParams } from 'react-router-dom'
 import { Traducir } from '../services/traductor'
+import { CompletarContenido } from '../components/CompletarContenido'
 import JSConfetti from 'js-confetti'
 const jsConfetti = new JSConfetti()
 
@@ -110,199 +111,203 @@ export const ExamamPage = () => {
   }
 
   return (
-        <Container maxW='8xl' >
+    <Container maxW='8xl' >
 
-            <Card>
+      <Card>
 
-                <CardHeader>
-                    <Flex direction={'row'} gap={1}>
-                        <Spacer></Spacer>
-                        <Button onClick={() => { GuardarFavorito(idPregunta); setEsFavorito(!esFavorito) }} colorScheme={esFavorito ? 'green' : 'gray'} >
-                            {esFavorito
-                              ? <FaBookmark />
-                              : <FaRegBookmark />
-                            }
+        <CardHeader>
+          <Flex direction={'row'} gap={1}>
+            <Spacer></Spacer>
+            <Button onClick={() => { GuardarFavorito(idPregunta); setEsFavorito(!esFavorito) }} colorScheme={esFavorito ? 'green' : 'gray'} >
+              {esFavorito
+                ? <FaBookmark />
+                : <FaRegBookmark />
+              }
 
-                        </Button>
+            </Button>
 
-                        <Menu>
-                            <MenuButton
-                                as={IconButton}
-                                aria-label='Options'
-                                icon={<FaCog />}
-                                variant='outline'
-                            />
-                            <MenuList>
-                                <MenuItem as={Link} to={'/'} onClick={clearInterval(interval)} icon={<FaSave />}>
-                                    Guardar y volver
-                                </MenuItem>
-                                <MenuItem as={Link} to={'/'} onClick={clearInterval(interval)} color={'red'} icon={<FaTrash />}>
-                                    Eliminar
-                                </MenuItem>
-                            </MenuList>
-                        </Menu>
-                    </Flex>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label='Options'
+                icon={<FaCog />}
+                variant='outline'
+              />
+              <MenuList>
+                <MenuItem as={Link} to={'/'} onClick={clearInterval(interval)} icon={<FaSave />}>
+                  Guardar y volver
+                </MenuItem>
+                <MenuItem as={Link} to={'/'} onClick={clearInterval(interval)} color={'red'} icon={<FaTrash />}>
+                  Eliminar
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+          {/* <CompletarContenido /> */}
 
-                    <Box position='relative' padding='10'>
-                        <Divider />
-                        <AbsoluteCenter bg='white' px='4'>
-                            <Text>{datosPregunta.index + 1}/ {cantidadPreguntas} </Text>
-                        </AbsoluteCenter>
+          <Box position='relative' padding='10'>
+            <Divider />
+            <AbsoluteCenter bg='white' px='4'>
+              <Text>{datosPregunta.index + 1}/ {cantidadPreguntas} </Text>
+            </AbsoluteCenter>
+          </Box>
+          <Progress value={(((datosPregunta.index + 1)) / cantidadPreguntas * 100)} size='xs' colorScheme='blue' />
+        </CardHeader>
+        <CardBody>
+          <Box dir="row" textAlign={'start'}>
+            <Heading m={2}>Pregunta {datosPregunta.index + 1} <Text fontWeight={6} fontStyle={'italic'} fontSize={20}>({idPregunta})</Text> </Heading>
+          </Box>
+          <Stack border={'1px solid #A0AEC0'} backgroundColor={'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
+            {
+              pregunta?.pregunta.split('\n').map(x => {
+                return (<>
+                  <Text>{x}</Text>
+                </>
+                )
+              })}
+            {pregunta?.imgPregunta?.length > 0
+              ? <Box m={'auto'}>
+                <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
+              </Box>
+              : null
+            }
+            <HStack>
+              <FaExternalLinkAlt />
+              <a style={{ color: 'blue' }} target="_blank" href={'https://www.examtopics.com/exams/microsoft/az-204/view/' + indexPregunta}>Ver en Exam topics</a>
+            </HStack>
+
+            <Box position={'absolute'} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
+
+              {traduccion.cargando
+                ? <div style={{ position: 'absolute', right: -26, top: -22, opacity: 0.6 }} class="lds-ripple"><div></div><div></div></div>
+                : null
+              }
+              <MdOutlineGTranslate style={{ zIndex: 9999 }} size={32} />
+            </Box>
+          </Stack>
+
+          {traduccion?.texto?.trim() !== undefined || traduccion.cargando
+            ? < Accordion defaultIndex={[0]} allowMultiple>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" flex='1' textAlign='left' fontWeight={'bold'}>
+                      Traducción
+
                     </Box>
-                    <Progress value={(((datosPregunta.index + 1)) / cantidadPreguntas * 100)} size='xs' colorScheme='blue' />
-                </CardHeader>
-                <CardBody>
-                    <Box dir="row" textAlign={'start'}>
-                        <Heading m={2}>Pregunta {datosPregunta.index + 1} <Text fontWeight={6} fontStyle={'italic'} fontSize={20}>({idPregunta})</Text> </Heading>
-                    </Box>
-                    <Stack border={'1px solid #A0AEC0'} backgroundColor={'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
-                        <Text>{pregunta?.pregunta}</Text>
-                        {
-                            pregunta?.imgPregunta?.length > 0
-                              ? <Box m={'auto'}>
-                                    <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
-                                </Box>
-                              : null
-                        }
-                        <HStack>
-                            <FaExternalLinkAlt />
-                            <a style={{ color: 'blue' }} target="_blank" href={'https://www.examtopics.com/exams/microsoft/az-204/view/' + indexPregunta}>Ver en Exam topics</a>
-                        </HStack>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
 
-                        <Box position={'absolute'} right={5} bottom={2} opacity={0.4} _hover={{ opacity: 1 }} onClick={() => TraducirPregunta()}>
+                <AccordionPanel borderRadius={'md'} bg={'orange.100'} pb={4}>
 
-                            {traduccion.cargando
-                              ? <div style={{ position: 'absolute', right: -26, top: -22, opacity: 0.6 }} class="lds-ripple"><div></div><div></div></div>
-                              : null
-                            }
-                            <MdOutlineGTranslate style={{ zIndex: 9999 }} size={32} />
+                  {
+                    (traduccion.cargando)
+                      ? <Stack>
+                        <Skeleton height='20px' />
+                        <Skeleton height='20px' />
+                        <Skeleton height='20px' />
+                      </Stack>
+                      : <HStack alignItems={'top'}>
+                        <Box>
+                          <FaInfoCircle style={{ margin: '10px 2px' }} size={18} />
                         </Box>
-                    </Stack>
+                        <Text>
+                          {traduccion.texto}
+                        </Text>
+                      </HStack>
+                  }
 
-                    {traduccion?.texto?.trim() !== undefined || traduccion.cargando
-                      ? < Accordion defaultIndex={[0]} allowMultiple>
-                            <AccordionItem>
-                                <h2>
-                                    <AccordionButton>
-                                        <Box as="span" flex='1' textAlign='left' fontWeight={'bold'}>
-                                            Traducción
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
 
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                </h2>
+            : null}
+          <RadioGroup m={4}>
+            <Stack {...group} >
+              {pregunta.respuestas.map((resp, index) => {
+                const value = resp.substring(0, 1)
+                const texto = resp.slice(2)
+                const radio = getRadioProps({ value })
+                return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
+              })
+              }
+              {pregunta.respuestas?.length === 0
 
-                                <AccordionPanel borderRadius={'md'} bg={'orange.100'} pb={4}>
+                ? <Box m={'auto'}>
+                  <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />
+                </Box>
 
-                                    {
-                                        (traduccion.cargando)
-                                          ? <Stack>
-                                                <Skeleton height='20px' />
-                                                <Skeleton height='20px' />
-                                                <Skeleton height='20px' />
-                                            </Stack>
-                                          : <HStack alignItems={'top'}>
-                                                <Box>
-                                                    <FaInfoCircle style={{ margin: '10px 2px' }} size={18} />
-                                                </Box>
-                                                <Text>
-                                                    {traduccion.texto}
-                                                </Text>
-                                            </HStack>
-                                    }
+                : <></>
+              }
+            </Stack>
+          </RadioGroup>
 
-                                </AccordionPanel>
-                            </AccordionItem>
-                        </Accordion>
+          <Spacer>
+          </Spacer>
+          <Flex >
+            <Spacer />
+            <Button onClick={() => {
+              setmostrarRespuesta({ ...mostrarRespuesta, mostrar: true })
+            }
+            } colorScheme='green' m={2}>Ver respuesta</Button>
+            <Spacer />
 
-                      : null}
-                    <RadioGroup m={4}>
-                        <Stack {...group} >
-                            {pregunta.respuestas.map((resp, index) => {
-                              const value = resp.substring(0, 1)
-                              const texto = resp.slice(2)
-                              const radio = getRadioProps({ value })
-                              return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
-                            })
-                            }
-                            {pregunta.respuestas?.length === 0
+          </Flex>
 
-                              ? <Box m={'auto'}>
-                                    <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />
-                                </Box>
+          <Accordion allowMultiple mb={4}>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box as="span" flex='1' textAlign='left' fontWeight={'bold'}>
+                    Notas
 
-                              : <></>
-                            }
-                        </Stack>
-                    </RadioGroup>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
 
-                    <Spacer>
-                    </Spacer>
-                    <Flex >
-                        <Spacer />
-                        <Button onClick={() => {
-                          setmostrarRespuesta({ ...mostrarRespuesta, mostrar: true })
-                        }
-                        } colorScheme='green' m={2}>Ver respuesta</Button>
-                        <Spacer />
+              <AccordionPanel borderRadius={'md'} pb={4}>
+                <Textarea
+                  placeholder='No hay notas para esta pregunta'
+                  size='sm'
+                  resize={true}
+                  value={notas.texto}
+                  onChange={(e) => {
+                    ActualizarNota({ idPregunta, notas: e.target.value })
+                    setNotas({ texto: e.target.value })
+                  }}
+                />
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
 
-                    </Flex>
+          <Flex alignItems={'flex-end'}>
+            {
+              datosPregunta.index > 0
 
-                    <Accordion allowMultiple mb={4}>
-                        <AccordionItem>
-                            <h2>
-                                <AccordionButton>
-                                    <Box as="span" flex='1' textAlign='left' fontWeight={'bold'}>
-                                        Notas
+                ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.anterior}`} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }} colorScheme='telegram' variant={'outline'} w={200} leftIcon={<FaArrowLeft />} >
+                  Anterior
+                </Button>
+                : null
+            }
+            <Spacer />
+            {
+              datosPregunta.siguiente
+                ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
+                  Siguiente
+                </Button >
+                : <Button as={Link} to={`/resultado/${idExamen}`} onClick={clearInterval(interval)} colorScheme='green' w={200} rightIcon={<FaCheck />}>
+                  Finalizar
+                </Button >
+            }
 
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
+          </Flex >
+        </CardBody>
 
-                            <AccordionPanel borderRadius={'md'} pb={4}>
-                                <Textarea
-                                    placeholder='No hay notas para esta pregunta'
-                                    size='sm'
-                                    resize={true}
-                                    value={notas.texto}
-                                    onChange={(e) => {
-                                      ActualizarNota({ idPregunta, notas: e.target.value })
-                                      setNotas({ texto: e.target.value })
-                                    }}
-                                />
-                            </AccordionPanel>
-                        </AccordionItem>
-                    </Accordion>
+      </Card>
 
-                    <Flex alignItems={'flex-end'}>
-                        {
-                            datosPregunta.index > 0
-
-                              ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.anterior}`} colorScheme='telegram' variant={'outline'} w={200} leftIcon={<FaArrowLeft />} >
-                                    Anterior
-                                </Button>
-                              : null
-                        }
-
-                        <Spacer />
-
-                        {
-                            datosPregunta.siguiente
-                              ? <Button as={Link} to={`/examen/${idExamen}/${datosPregunta.siguiente}`} colorScheme='telegram' w={200} rightIcon={<FaArrowRight />}>
-                                    Siguiente
-                                </Button >
-                              : <Button as={Link} to={`/resultado/${idExamen}`} onClick={clearInterval(interval)} colorScheme='green' w={200} rightIcon={<FaCheck />}>
-                                    Finalizar
-                                </Button >
-                        }
-
-                    </Flex >
-                </CardBody>
-
-            </Card>
-
-        </Container >
+    </Container >
 
   )
 }
