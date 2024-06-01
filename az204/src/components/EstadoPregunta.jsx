@@ -19,9 +19,9 @@ export const EstadoPregunta = ({ esFavorito, pregunta: { incorrectas, correctas 
 
             {!esFavorito && (incorrectas != 0 || (correctas != 0)) &&
             <Tooltip label={`Total correctas : ${correctas} - incorrectas : ${incorrectas}`}>
-                <HStack display={{ sm: 'none', md: 'block' }}  backgroundColor={"orange.100"} borderRadius={10} py={0} my={0} position={'absolute'} color={'green'} right={2} top={'-60px'} textAlign={'center'} >
-                    <Text mx={2} fontSize={"32px"} fontWeight="bold">🥳{correctas}</Text>
-                    <Text mx={2} fontSize={"32px"} fontWeight="bold">/😖{incorrectas}</Text>
+                <HStack display={{ sm: 'none', md: 'flex' }}  backgroundColor={"orange.100"} borderRadius={10} py={0} my={0} position={'absolute'} color={'green'} right={2} top={'-60px'} textAlign={'center'} >
+                    <Text fontSize={"32px"} fontWeight="bold">🥳{correctas}</Text>
+                    <Text fontSize={"32px"} fontWeight="bold">/😖{incorrectas}</Text>
                 </HStack>
 
             </Tooltip>
