@@ -8,9 +8,15 @@ export const ObtenerExamenes = () => {
 export const ObtenerPregunta = (idExamen, idPregunta) => {
   const examen = ObtenerExamen(idExamen)
   const index = examen.preguntas.findIndex(x => x.id === idPregunta)
+  const _preguntaData = ObtenerPreguntaData(idPregunta)
+
+  const pregunta = examen.preguntas[index]
+  pregunta.pregunta = _preguntaData.pregunta
+
   const cantidadPreguntas = examen.preguntas.length
+
   return {
-    pregunta: examen.preguntas[index],
+    pregunta,
     index,
     anterior: examen.preguntas[index - 1]?.id,
     siguiente: examen.preguntas[index + 1]?.id,
@@ -20,8 +26,19 @@ export const ObtenerPregunta = (idExamen, idPregunta) => {
 }
 
 export const ObtenerExamen = (idExamen) => {
-  const items = JSON.parse(localStorage.getItem('examen-204'))
-  return items.find(x => x.id === idExamen) ?? {}
+  const items = JSON.parse(localStorage.getItem('examen-204')) ?? []
+  const examen = items.find(x => x.id === idExamen) ?? {}
+  examen.preguntas.forEach(x => {
+    x.pregunta = ObtenerPreguntaData(x.id)?.pregunta
+  })
+
+  return examen
+}
+
+export const ObtenerPreguntaData = (idpregunta) => {
+  const pregunta = data.find(x => x.id === idpregunta)
+
+  return pregunta
 }
 
 export const AgregarExamen = (examen) => {
@@ -36,10 +53,16 @@ export const CantidadPreguntasTotalesConImagenes = () => {
   const examen = data
   return examen.length
 }
+
 export const GenerarExamen = () => {
   const examen = data.filter(x => x.respuestas.length > 0).sort(() => Math.random() - 0.5).slice(0, 20).map(x => {
     x.respuestas = x.respuestas.sort(() => Math.random() - 0.5)
     return x
+  })
+
+  examen.forEach(x => {
+    console.log(x)
+    x.pregunta = null
   })
 
   const dataExamen = {
@@ -65,9 +88,7 @@ export const GenerarRepaso = ({ cantidad, inicio, imagenes, aleatorio, favoritos
   let listaPreguntas = data
 
   if (favoritos) {
-    console.log(data)
     listaPreguntas = data.filter(x => items.includes(x.id))
-    console.log(listaPreguntas)
   }
 
   let todasPreguntas = imagenes
@@ -176,8 +197,9 @@ export const TerminarExamen = ({ idExamen }) => {
   const items = (JSON.parse(localStorage.getItem('examen-204'))).map((x => {
     if (x.id === idExamen) {
       x.fechaEdit = new Date()
-      x.nota = (x.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / 20 * 100).toFixed(2)
+      x.nota = (x.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length / x.preguntas.length * 100).toFixed(2)
       x.estado = 'Terminado'
+      x.ultimaPregunta = x.preguntas[0].id
     }
     return x
   }) ?? [])
@@ -205,7 +227,7 @@ export const EliminarExamen = (idExamen) => {
 
 export const ClonarExamen = (idExamen) => {
   const items = (JSON.parse(localStorage.getItem('examen-204')) ?? [])
-  const item = items.find(x => x.id == idExamen)
+  const item = items.find(x => x.id === idExamen)
   const clone = JSON.parse(JSON.stringify(item))
   clone.id = crypto.randomUUID()
   clone.nota = 0
@@ -215,6 +237,7 @@ export const ClonarExamen = (idExamen) => {
   clone.estado = 'Incompleto'
   clone.preguntas = clone.preguntas.map((x) => {
     x.usuarioRespuesta = null
+    x.respuestas = x.respuestas.sort(() => Math.random() - 0.5)
     delete x.usuarioRespuesta
     return x
   })

@@ -22,13 +22,17 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ModalRepaso } from '../components/ModalRepaso'
+import { useStoreExamenes } from '../services/storePreguntas'
 
 export const MainPage = () => {
   const [listaExamenes, setListaExamenes] = useState([])
 
+
   const ActualizarTabla = () => {
     setListaExamenes(ObtenerExamenes())
+    
   }
+
   useEffect(() => {
     ActualizarTabla()
   }, [])

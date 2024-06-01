@@ -8,6 +8,7 @@ import imgUrlExito from '../assets/exito.png'
 import imgUrlError from '../assets/error.png'
 import { FaEye } from 'react-icons/fa'
 import { FaStar } from 'react-icons/fa6'
+
 const jsConfetti = new JSConfetti()
 
 export const Resultado = () => {
@@ -25,8 +26,8 @@ export const Resultado = () => {
     setExamen(_examen)
     setFavoritos(ListaFavoritos())
     setResultado({
-      correctas: _examen.preguntas?.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta) || x.respuestaCorrecta?.length === 0).length,
-      incorrectas: _examen.preguntas?.filter(x => !x.respuestaCorrecta.includes(x.usuarioRespuesta) && x.usuarioRespuesta != '' && x.usuarioRespuesta != undefined && x.respuestaCorrecta != '').length,
+      correctas: _examen.preguntas?.filter(x => x.respuestaCorrecta?.includes(x.usuarioRespuesta) || x.respuestaCorrecta?.length === 0).length,
+      incorrectas: _examen.preguntas?.filter(x => !x.respuestaCorrecta?.includes(x.usuarioRespuesta) && x.usuarioRespuesta != '' && x.usuarioRespuesta != undefined && x.respuestaCorrecta != '').length,
       enBlanco: _examen.preguntas?.filter(x => x.usuarioRespuesta == undefined && x.respuestaCorrecta?.length > 0).length
     })
   }, [])
@@ -84,7 +85,7 @@ export const Resultado = () => {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {examen.preguntas?.filter(x => !x.respuestaCorrecta.includes(x.usuarioRespuesta) && x.usuarioRespuesta != '' && x.respuestaCorrecta != '').map(x => {
+                            {examen.preguntas?.filter(x => !x.respuestaCorrecta?.includes(x.usuarioRespuesta) && x.usuarioRespuesta != '' && x.respuestaCorrecta != '').map(x => {
                               return <Tr key={x.id}>
                                     <Td position={'relative'} bg={'red.100'} borderRadius={10}>
                                         <Image left={60} top={3} position={'absolute'} opacity={0.40} src={imgUrlError} width={'60px'} alt="" />
@@ -114,7 +115,7 @@ export const Resultado = () => {
 
                                                             <Alert status='warning' gap={2}>
                                                                 <AlertIcon />
-                                                                <Text>{x.respuestas?.find(y => x.respuestaCorrecta.includes(y.slice(0, 1))).slice(2)}</Text>
+                                                                <Text>{x.respuestas?.find(y => x.respuestaCorrecta?.includes(y?.slice(0, 1)))?.slice(2)}</Text>
                                                                 <Button size={'sm'} colorScheme={favoritos?.includes(x.id) ? 'green' : 'gray'} onClick={() => {
                                                                   GuardarFavorito(x.id)
                                                                   setFavoritos(ListaFavoritos())

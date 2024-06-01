@@ -1,14 +1,17 @@
 import { AbsoluteCenter, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Container, Divider, Flex, HStack, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Progress, Radio, RadioGroup, Skeleton, Spacer, Stack, Text, Textarea, VStack, useRadioGroup } from '@chakra-ui/react'
-import { FaAd, FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaExternalLinkAlt, FaHamburger, FaInfoCircle, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash } from 'react-icons/fa'
+import { FaArrowLeft, FaArrowRight, FaBookmark, FaCheck, FaCog, FaEdit, FaExternalLinkAlt, FaHamburger, FaInfoCircle, FaLink, FaRegBookmark, FaRegClock, FaSave, FaTrash, FaFireAlt } from 'react-icons/fa'
 
-import { MdOutlineGTranslate } from 'react-icons/md'
+import { MdOutlineGTranslate, MdError } from 'react-icons/md'
 import React, { useEffect, useState } from 'react'
 import { Opcion } from '../components/Opcion'
-import { ActualizarNota, ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerNota, ObtenerPaginaExamTopic, ObtenerPregunta } from '../services/servicios'
+import { ActualizarNota, ActualizarTiempoExamen, ExisteFavorito, GuardarFavorito, MoficarRespuesta, ObtenerNota, ObtenerPaginaExamTopic, ObtenerPregunta, ObtenerPreguntaData } from '../services/servicios'
 import { Link, useParams } from 'react-router-dom'
 import { Traducir } from '../services/traductor'
-import { CompletarContenido } from '../components/CompletarContenido'
+
 import JSConfetti from 'js-confetti'
+import { useStoreExamenes } from '../services/storePreguntas'
+import { EstadoPregunta } from '../components/EstadoPregunta'
+
 const jsConfetti = new JSConfetti()
 
 export const ExamamPage = () => {
@@ -63,13 +66,18 @@ export const ExamamPage = () => {
     if (mostrarRespuesta.mostrar && datosPregunta?.pregunta?.respuestaCorrecta?.toLowerCase().includes(mostrarRespuesta.correcta?.toLocaleLowerCase())) {
       jsConfetti.addConfetti({
         emojis: ['⚡️', '💥', '✨', '💫', '🤩'],
-        confettiNumber: 55,
+        confettiNumber: 35,
         emojiSize: 45
       })
     }
   }, [mostrarRespuesta])
+
+  const __examenes = useStoreExamenes((state) => state.examenes)
+  const getPregunta = useStoreExamenes((state) => state.idPregunta)
+
   useEffect(() => {
     const _pregunta = ObtenerPregunta(idExamen, idPregunta)
+
     setmostrarRespuesta({ mostrar: false, correcta: _pregunta.pregunta?.usuarioRespuesta ?? '-1' })
     setcantidadPreguntas(_pregunta.cantidadPreguntas)
     setPregunta(_pregunta.pregunta)
@@ -157,14 +165,21 @@ export const ExamamPage = () => {
           <Box dir="row" textAlign={'start'}>
             <Heading m={2}>Pregunta {datosPregunta.index + 1} <Text fontWeight={6} fontStyle={'italic'} fontSize={20}>({idPregunta})</Text> </Heading>
           </Box>
-          <Stack border={'1px solid #A0AEC0'} backgroundColor={'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
+
+          <Stack border={'1px solid #A0AEC0'} backgroundColor={esFavorito ? 'orange.100' : 'whitesmoke'} p={4} borderRadius={10} position={'relative'} >
+
+            <EstadoPregunta esFavorito={esFavorito} pregunta={getPregunta(idPregunta)} >
+
+            </EstadoPregunta>
+
             {
-              pregunta?.pregunta.split('\n').map(x => {
+              pregunta?.pregunta?.split('\n').map( (x, index) => {
                 return (<>
-                  <Text>{x}</Text>
+                  <Text key={index}>{x}</Text>
                 </>
                 )
               })}
+
             {pregunta?.imgPregunta?.length > 0
               ? <Box m={'auto'}>
                 <Image w={500} src={pregunta.imgPregunta} fallbackSrc='./pato-loading.gif' />
@@ -184,6 +199,7 @@ export const ExamamPage = () => {
               }
               <MdOutlineGTranslate style={{ zIndex: 9999 }} size={32} />
             </Box>
+
           </Stack>
 
           {traduccion?.texto?.trim() !== undefined || traduccion.cargando
@@ -225,14 +241,14 @@ export const ExamamPage = () => {
             : null}
           <RadioGroup m={4}>
             <Stack {...group} >
-              {pregunta.respuestas.map((resp, index) => {
+              {pregunta?.respuestas?.map((resp, index) => {
                 const value = resp.substring(0, 1)
                 const texto = resp.slice(2)
                 const radio = getRadioProps({ value })
                 return <Opcion mostrarRespuesta={mostrarRespuesta.mostrar} op={value} datos={datosPregunta} disable={datosPregunta.estado == 'Terminado'} text={texto} key={value} {...radio} />
               })
               }
-              {pregunta.respuestas?.length === 0
+              {pregunta?.respuestas?.length === 0
 
                 ? <Box m={'auto'}>
                   <Image w={500} src={pregunta.imgRespuesta} fallbackSrc='./pato-loading.gif' />
