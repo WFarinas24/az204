@@ -1,4 +1,4 @@
-import { Box, Text, Tooltip } from "@chakra-ui/react"
+import { Box, HStack, Text, Tooltip } from "@chakra-ui/react"
 import { FaFireAlt } from "react-icons/fa"
 import { MdOutlineFiberNew } from "react-icons/md";
 export const EstadoPregunta = ({ esFavorito, pregunta: { incorrectas, correctas } }) => {
@@ -17,22 +17,13 @@ export const EstadoPregunta = ({ esFavorito, pregunta: { incorrectas, correctas 
                 </Box>
             }
 
-            {!esFavorito && correctas > 0 &&
+            {!esFavorito && (incorrectas != 0 || (correctas != 0)) &&
             <Tooltip label={`Total correctas : ${correctas} - incorrectas : ${incorrectas}`}>
+                <HStack display={{ sm: 'none', md: 'block' }}  backgroundColor={"orange.100"} borderRadius={10} py={0} my={0} position={'absolute'} color={'green'} right={2} top={'-60px'} textAlign={'center'} >
+                    <Text mx={2} fontSize={"32px"} fontWeight="bold">🥳{correctas}</Text>
+                    <Text mx={2} fontSize={"32px"} fontWeight="bold">/😖{incorrectas}</Text>
+                </HStack>
 
-                <Box backgroundColor={"green.100"} borderRadius={10} py={0} my={0} position={'absolute'} color={'green'} right={2} top={'-60px'} textAlign={'center'} >
-                    <Text fontSize={"32px"} fontWeight="bold">🥳{correctas}</Text>
-                    
-                </Box>
-            </Tooltip>
-            }
-
-            {!esFavorito && incorrectas > (correctas) &&
-                <Tooltip label={`Total incorrectas : ${incorrectas} - correctas : ${correctas}`}>
-                <Box backgroundColor={"orange.100"} borderRadius={10} py={0} my={0} position={'absolute'} color={'green'} right={2} top={'-60px'} textAlign={'center'} >
-                    <Text fontSize={"32px"} fontWeight="bold">⚠️{incorrectas}</Text>
-                    
-                </Box>
             </Tooltip>
             }
 
