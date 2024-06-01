@@ -8,7 +8,7 @@ export const useStoreExamenes = create((set, get) => ({
     try {
       preguntas = preguntas?.examenes.map(x => x.preguntas.map(y => y.usuarioRespuesta && y.id === id ? y : []).flatMap(res => res)).flatMap(res => res)
       const cant = preguntas.filter(x => x.respuestaCorrecta.includes(x.usuarioRespuesta)).length
-      return { correctas: preguntas.length - cant, incorrectas: cant }
+      return { correctas: cant, incorrectas: preguntas.length - cant }
     } catch (error) {
       return { correctas: 0, incorrectas: 0 }
     }

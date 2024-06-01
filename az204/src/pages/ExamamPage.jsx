@@ -72,7 +72,6 @@ export const ExamamPage = () => {
     }
   }, [mostrarRespuesta])
 
-  const __examenes = useStoreExamenes((state) => state.examenes)
   const getPregunta = useStoreExamenes((state) => state.idPregunta)
 
   useEffect(() => {
