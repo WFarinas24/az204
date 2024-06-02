@@ -3054,7 +3054,7 @@ export const data = [
     id: '816444',
     topic: 'Topic 6',
     pregunta: 'You are creating an app that will use CosmosDB for data storage. The app will process batches of relational data.\nYou need to select an API for the app.\nWhich API should you use?\n',
-    respuestaCorrecta: 'Incorrect Answer:',
+    respuestaCorrecta: 'C',
     respuestas: [
       'A. MongoDB API',
       'B. Table API',
