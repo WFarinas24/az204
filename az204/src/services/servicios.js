@@ -95,10 +95,10 @@ export const GenerarRepaso = ({ cantidad, inicio, imagenes, aleatorio, favoritos
     ? listaPreguntas.slice(parseInt(inicio), parseInt(inicio + cantidad))
     : listaPreguntas.filter(x => (x.respuestas.length > 0)).slice(parseInt(inicio), parseInt(inicio + cantidad))
 
-  todasPreguntas = aleatorio ? todasPreguntas.sort(() => Math.random() - 0.5) : todasPreguntas
+  todasPreguntas = aleatorio ? randomArray(todasPreguntas) : todasPreguntas
 
   const examen = todasPreguntas.map(x => {
-    x.respuestas = x.respuestas.sort(() => Math.random() - 0.5)
+    x.respuestas = randomArray(x.respuestas)
     return x
   })
 
@@ -237,11 +237,14 @@ export const ClonarExamen = (idExamen) => {
   clone.estado = 'Incompleto'
   clone.preguntas = clone.preguntas.map((x) => {
     x.usuarioRespuesta = null
-    x.respuestas = x.respuestas.sort(() => Math.random() - 0.5)
+    x.respuestas = randomArray(x.respuestas)
     delete x.usuarioRespuesta
     return x
-  }).sort(() => Math.random() - 0.5)
-  
+  })
+
+  clone.preguntas = randomArray(clone.preguntas);
+
+
 
   delete clone.ultimaPregunta
 
@@ -253,4 +256,10 @@ export const ObtenerPaginaExamTopic = (idPregunta) => {
   const examen = data.findIndex(x => x.id === idPregunta)
   const index = Math.trunc((examen * 0.1) + 1)
   return index
+}
+
+
+const randomArray = (array) => {
+  array = array.sort(() => Math.random() - 0.5)
+  return array
 }
