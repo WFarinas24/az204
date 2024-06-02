@@ -6,23 +6,14 @@ export const Footer = () => {
   return (
         <Container mt={50} color={'black'} width={'max-content'}>
 
-            <Tooltip hasArrow label='Haz click aqui para enviarme un correo'>
-                <a href="mailto:wfarinasg@gmail.com">
+            <Tooltip hasArrow label='Inicio'>
 
                     <Tag size={'lg'} colorScheme='gray' borderRadius='full'>
-                        <Avatar
-                            src='https://bit.ly/sage-adeb2ayo'
-                            size='xs'
-                            name='William Farinas'
-                            ml={-1}
-                            mr={2}
-                        />
+                       
 
-                        <TagLabel>Developed by William Farinas</TagLabel>
+                        <TagLabel as={Link} to="/">Ir al inicio</TagLabel>
 
                     </Tag>
-                </a>
-                
             </Tooltip>
         </Container>
   )
