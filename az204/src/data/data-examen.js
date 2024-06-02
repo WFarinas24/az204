@@ -898,7 +898,7 @@ export const data = [
     id: '890550',
     topic: 'Topic 2',
     pregunta: 'You are developing several microservices to run on Azure Container Apps. External HTTP ingress traffic has been enabled for the microservices.\n\nThe microservices must be deployed to the same virtual network and write logs to the same Log Analytics workspace.\n\nYou need to deploy the microservices.\n\nWhat should you do?',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'D',
     respuestas: [
       'A. Enable single revision mode.',
       'B. Use a separate environment for each container.',
