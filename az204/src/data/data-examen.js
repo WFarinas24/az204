@@ -2279,7 +2279,8 @@ export const data = [
     respuestaCorrecta: 'C',
     respuestas: [
       'A. Create an Azure Cache for Redis instance. Update the code to support the cache.',
-      'B. Create an Azure Content Delivery Network profile and endpoint. Configure the endpoint.\nС. Create an App Service instance with a standard plan. Configure the custom domain with a TLS/SSL certificate.',
+      'B. Create an Azure Content Delivery Network profile and endpoint. Configure the endpoint.',
+      'С. Create an App Service instance with a standard plan. Configure the custom domain with a TLS/SSL certificate.',
       'D. Create an Azure Application Gateway with a Web Application Firewall (WAF). Configure end-to-end TLS encryption and the WAF.'
     ]
   },
