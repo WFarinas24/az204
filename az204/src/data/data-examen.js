@@ -3238,7 +3238,7 @@ export const data = [
     respuestas: [
       'A. \n',
       'B. \n',
-      'C. \n',
+      'C. New-AzureRmServiceBusQueue \n      \n-ResourceGroupName fridge-rg \n-NamespaceName fridge-ns \n-Name fridge-q',
       'D. '
     ]
   },
