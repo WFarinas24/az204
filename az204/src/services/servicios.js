@@ -240,7 +240,8 @@ export const ClonarExamen = (idExamen) => {
     x.respuestas = x.respuestas.sort(() => Math.random() - 0.5)
     delete x.usuarioRespuesta
     return x
-  })
+  }).sort(() => Math.random() - 0.5)
+  
 
   delete clone.ultimaPregunta
 
