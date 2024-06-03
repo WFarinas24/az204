@@ -3154,7 +3154,7 @@ export const data = [
     id: '816454',
     topic: 'Topic 6',
     pregunta: "You develop a solution that uses Azure Virtual Machines (VMs).\nThe VMs contain code that must access resources in an Azure resource group. You grant the VM access to the resource group in Resource Manager.\nYou need to obtain an access token that uses the VM's system-assigned managed identity.\nWhich two actions should you perform? Each correct answer presents part of the solution.\n",
-    respuestaCorrecta: 'BD',
+    respuestaCorrecta: 'AC',
     respuestas: [
       'A. From the code on the VM, call Azure Resource Manager using an access token.',
       'B. Use PowerShell on a remote machine to make a request to the local managed identity for Azure resources endpoint.',
