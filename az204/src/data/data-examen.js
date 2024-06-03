@@ -2649,7 +2649,7 @@ export const data = [
     id: '816422',
     topic: 'Topic 5',
     pregunta: 'You are developing an Azure-based web application. The application goes offline periodically to perform offline data processing. While the application is offline, numerous Azure Monitor alerts fire which result in the on-call developer being paged.\nThe application must always log when the application is offline for any reason.\nYou need to ensure that the on-call developer is not paged during offline processing.\nWhat should you do?\n',
-    respuestaCorrecta: 'D',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Add Azure Monitor alert processing rules to suppress notifications.',
       'B. Disable Azure Monitor Service Health Alerts during offline processing.',
