@@ -3276,7 +3276,7 @@ export const data = [
     id: '890559',
     topic: 'Topic 6',
     pregunta: 'You are developing several Azure API Management (APIM) hosted APIs.\n\nThe APIs have the following requirements:\n\n• Require a subscription key to access all APIs.\n• Include terms of use that subscribers must accept to use the APIs.\n• Administrators must review and accept or reject subscription attempts.\n• Limit the count of multiple simultaneous subscriptions.\n\nYou need to implement the APIs.\n\nWhat should you do?',
-    respuestaCorrecta: 'C',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. Configure and apply header-based versioning.',
       'B. Create and publish a product.',
