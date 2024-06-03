@@ -3224,10 +3224,10 @@ export const data = [
     pregunta: 'A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?',
     respuestaCorrecta: 'B',
     respuestas: [
-      'A. \n',
-      'B. \n',
-      'C. \n',
-      'D. \n'
+      'A. az group create \n --name friedge-rg \n --location-loc',
+      'B. New-AzureRMServiceBusqueue\n-ResourceGroupName friedge-rg \n-Name friedge-q \n-EnablePartitioning $false',
+      'C. connectionString=$ (az servicebus namespace authorization-rule keys list \n--resource-group fridge-rg \n--fridge-ns fridge-ns \n--name RootManageSharedAccessKey \n--query primaryConnectionString --output tsv)',
+      'D. az servicebus namespace create \n--resource-group friedge-rg\n--name friedge-ns \n--location friedge-loc'
     ]
   },
   {
@@ -3236,10 +3236,10 @@ export const data = [
     pregunta: 'A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?',
     respuestaCorrecta: 'C',
     respuestas: [
-      'A. \n',
-      'B. \n',
+      'A. New-AzureRmServiceBusNamespace \n-ResourceGroupName \nfridge-rg \n-NamespaceName fridge-ns \n-Location fridge-loc',
+      'B. New-AzureRmResourceGroup \n-Name fridge-rg \n-Location fridge-loc',
       'C. New-AzureRmServiceBusQueue \n      \n-ResourceGroupName fridge-rg \n-NamespaceName fridge-ns \n-Name fridge-q',
-      'D. '
+      'D. connectionString=$ (az servicebus namespace authorization-rule keys list \n--resource-group fridge-rg \n--fridge-ns fridge-ns \n--name RootManageSharedAccessKey \n--query primaryConnectionString --output tsv)'
     ]
   },
   {
@@ -3248,10 +3248,10 @@ export const data = [
     pregunta: 'A company is developing a solution that allows smart refrigerators to send temperature information to a central location.\n\nThe solution must receive and store messages until they can be processed. You create an Azure Service Bus instance by providing a name, pricing tier, subscription, resource group, and location.\n\nYou need to complete the configuration.\n\nWhich Azure CLI or PowerShell command should you run?',
     respuestaCorrecta: 'C',
     respuestas: [
-      'A. \n',
-      'B. \n',
-      'C. \n',
-      'D. '
+      'A. az group create \n --name friedge-rg \n --location-loc',
+      'B. New-AzureRmServiceBusNamespace \n-ResourceGroupName \nfridge-rg \n-NamespaceName fridge-ns \n-Location fridge-loc',
+      'C. New-AzureRmServiceBusQueue \n      \n-ResourceGroupName fridge-rg \n-NamespaceName fridge-ns \n-Name fridge-q',
+      'D. New-AzureRmResourceGroup \n-Name fridge-rg \n-Location fridge-loc'
     ]
   },
   {
