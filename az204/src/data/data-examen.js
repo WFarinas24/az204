@@ -1364,7 +1364,7 @@ export const data = [
     id: '860785',
     topic: 'Topic 3',
     pregunta: 'You are developing an application to store business-critical data in Azure Blob storage.\n\nThe application must meet the following requirements:\n\n• Data must not be modified or deleted for a user-specified interval.\n• Data must be protected from overwrites and deletes.\n• Data must be written once and allowed to be read many times.\n\nYou need to protect the data in the Azure Blob storage account.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.',
-    respuestaCorrecta: 'AF',
+    respuestaCorrecta: 'AD',
     respuestas: [
       'A. Configure a time-based retention policy for the storage account.',
       'B. Create an account shared-access signature (SAS).',
