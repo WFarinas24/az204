@@ -2045,7 +2045,7 @@ export const data = [
     id: '816386',
     topic: 'Topic 4',
     pregunta: 'A company maintains multiple web and mobile applications. Each application uses custom in-house identity providers as well as social identity providers.\nYou need to implement single sign-on (SSO) for all the applications.\nWhat should you do?\n',
-    respuestaCorrecta: 'B',
+    respuestaCorrecta: 'A',
     respuestas: [
       'A. Use Azure Active Directory B2C (Azure AD B2C) with custom policies.',
       'B. Use Azure Active Directory B2B (Azure AD B2B) and enable external collaboration.',
