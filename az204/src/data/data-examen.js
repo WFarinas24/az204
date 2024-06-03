@@ -2661,7 +2661,7 @@ export const data = [
     id: '860798',
     topic: 'Topic 5',
     pregunta: 'You are developing an online game that includes a feature that allows players to interact with other players on the same team within a certain distance. The calculation to determine the players in range occurs when players move and are cached in an Azure Cache for Redis instance.\n\nThe system should prioritize players based on how recently they have moved and should not prioritize players who have logged out of the game.\n\nYou need to select an eviction policy.\n\nWhich eviction policy should you use?',
-    respuestaCorrecta: 'A',
+    respuestaCorrecta: 'B',
     respuestas: [
       'A. allkeys-Iru',
       'B. volatile-Iru',
