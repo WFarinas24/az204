@@ -21,6 +21,8 @@ import {
   WrapItem,
   Text,
   Center,
+  ListItem,
+  Box,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useEstadoGlobal } from "../services/storePreguntas";
@@ -61,18 +63,18 @@ export const PreguntaChecks = () => {
       </CardHeader>
       <CardBody marginX={10}>
         <Card gap={2} display={"flex"} flexWrap={"wrap"} direction={"row"} className="kanban-board">
-          <Card minW={200} flex={1} ref={todoList}>
+          <Card minHeight={200} minW={200} flex={1} ref={todoList}>
             {todos.map((todo) => (
               <li className="kanban-item" key={todo}>
                 {todo}
               </li>
             ))}
           </Card>
-          <Card minW={200} flex={1} ref={doneList}>
+          <Card minHeight={200} minW={200} flex={1} ref={doneList}>
             {dones.map((done) => (
-              <li className="kanban-item" key={done}>
+              <Box  className="kanban-item" key={done}>
                 {done}
-              </li>
+              </Box>
             ))}
           </Card>
         </Card>
