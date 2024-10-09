@@ -76,6 +76,12 @@ export const MainPage = () => {
                                     Estudiar
                                 </MenuItem>
 
+                                <MenuItem as={Link}  to={"checks"} gap={2}>
+                                    <FaCheck />
+                                    Preguntas especiales
+                                </MenuItem>
+
+
                                 <MenuItem as={Link} to={'Favoritos'} gap={2}>
                                     <FaExternalLinkAlt />
                                     Exportar favoritos

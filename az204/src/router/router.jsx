@@ -4,6 +4,7 @@ import { MainPage } from "../pages/MainPage";
 import { Resultado } from "../pages/Resultado";
 import { Exportar } from "../components/Exportar";
 import { Estudiar } from "../pages/Estudiar";
+import { PreguntaChecks } from "../pages/PreguntaChecks";
 
 export const router = createHashRouter([
   {
@@ -26,5 +27,9 @@ export const router = createHashRouter([
   {
     path: "/estudiar",
     element: <Estudiar />
+  },
+  {
+    path: "/checks",
+    element: <PreguntaChecks />
   },
 ]);
