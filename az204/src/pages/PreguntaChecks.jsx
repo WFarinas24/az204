@@ -1,92 +1,123 @@
-import {
-  Card,
-  CardBody,
-  CheckboxGroup,
-  Stack,
-  Checkbox,
-  Table,
-  Th,
-  Thead,
-  TableContainer,
-  TableCaption,
-  Tr,
-  Tbody,
-  Td,
-  RadioGroup,
-  Radio,
-  CardHeader,
-  CardFooter,
-  Button,
-  Spacer,
-  WrapItem,
-  Text,
-  Center,
-  ListItem,
-  Box,
-} from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { useEstadoGlobal } from "../services/storePreguntas";
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
-export const PreguntaChecks = () => {
-  const todoItems = [
-    "Schedule perm",
-    "Rewind VHS tapes",
-    "Make change for the arcade",
-    "Get disposable camera developed",
-    "Learn C++",
-    "Return Nintendo Power Glove",
-  ];
-  const doneItems = ["Pickup new mix-tape from Beth"];
+import React, { useCallback, useRef, useState } from "react";
+import { DndProvider } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 
-  const [todoList, todos] = useDragAndDrop(todoItems, { group: "todoList" });
-  const [doneList, dones] = useDragAndDrop(doneItems, { group: "todoList" });
+import { useDrag, useDrop } from "react-dnd";
+import update from "immutability-helper";
 
-  const lista = useEstadoGlobal((x) => x.preguntasImanges);
-  const updatePreguntas = useEstadoGlobal((x) => x.updatePreguntas);
+export const ItemTypes = {
+  CARD: "card",
+};
 
-  const preguntaActual = useEstadoGlobal((x) => x.preguntaActual);
-  const updatePreguntaActual = useEstadoGlobal((x) => x.updatePreguntaActual);
-
-  useEffect(() => {
-    updatePreguntas();
-    updatePreguntaActual(0);
-    console.log(lista);
-  }, []);
-
+const style = {
+  border: "1px dashed gray",
+  padding: "0.5rem 1rem",
+  marginBottom: ".5rem",
+  backgroundColor: "white",
+  cursor: "move",
+};
+const Card = ({ id, text, index, moveCard }) => {
+  const ref = useRef(null);
+  const [{ isOver }, drop] = useDrop({
+    accept: ItemTypes.CARD,
+    drop(item, monitor) {
+      if (!ref.current) {
+        return;
+      }
+      const dragIndex = item.index;
+      const hoverIndex = index;
+      // Don't replace items with themselves
+      if (dragIndex !== hoverIndex) {
+        moveCard(dragIndex, hoverIndex);
+      }
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver(),
+    }),
+  });
+  const [, drag] = useDrag({
+    item: { type: ItemTypes.CARD, id, index },
+  });
+  drag(drop(ref));
   return (
-    <Card mt={10}>
-      <Center>
-        <Text fontWeight={"bold"}>Pregunta</Text>
-      </Center>
-      <CardHeader>
-        <Card p={2}>{lista[preguntaActual ?? 0]?.pregunta}</Card>
-      </CardHeader>
-      <CardBody marginX={10}>
-        <Card gap={2} display={"flex"} flexWrap={"wrap"} direction={"row"} className="kanban-board">
-          <Card minHeight={200} minW={200} flex={1} ref={todoList}>
-            {todos.map((todo) => (
-              <li className="kanban-item" key={todo}>
-                {todo}
-              </li>
-            ))}
-          </Card>
-          <Card minHeight={200} minW={200} flex={1} ref={doneList}>
-            {dones.map((done) => (
-              <Box  className="kanban-item" key={done}>
-                {done}
-              </Box>
-            ))}
-          </Card>
-        </Card>
-      </CardBody>
+    <>
+      <div style={{ border: `1px solid ${isOver ? "blue" : "transparent"}` }} />
+      <div ref={ref} style={{ ...style }}>
+        {text}
+      </div>
+    </>
+  );
+};
 
-      <CardFooter marginRight={20}>
-        <Spacer />
-        <Button marginRight={5} colorScheme="blue">
-          Anterior
-        </Button>
-        <Button colorScheme="blue">Siguiente</Button>
-      </CardFooter>
-    </Card>
+const Container = () => {
+  {
+    const [cards, setCards] = useState([
+      {
+        id: 1,
+        text: "Write a cool JS library",
+      },
+      {
+        id: 2,
+        text: "Make it generic enough",
+      },
+      {
+        id: 3,
+        text: "Write README",
+      },
+      {
+        id: 4,
+        text: "Create some examples",
+      },
+      {
+        id: 5,
+        text: "Spam in Twitter and IRC to promote it (note that this element is taller than the others)",
+      },
+      {
+        id: 6,
+        text: "???",
+      },
+      {
+        id: 7,
+        text: "PROFIT",
+      },
+    ]);
+    const moveCard = useCallback(
+      (dragIndex, hoverIndex) => {
+        const dragCard = cards[dragIndex];
+        setCards(
+          update(cards, {
+            $splice: [
+              [dragIndex, 1],
+              [hoverIndex, 0, dragCard],
+            ],
+          })
+        );
+      },
+      [cards]
+    );
+    const renderCard = (card, index) => {
+      return (
+        <Card
+          key={card.id}
+          index={index}
+          id={card.id}
+          text={card.text}
+          moveCard={moveCard}
+        />
+      );
+    };
+    return (
+      <>
+        <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
+      </>
+    );
+  }
+};
+
+export const PreguntaChecks = () => {
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <Container />
+    </DndProvider>
   );
 };
