@@ -4,18 +4,30 @@ export const dataImagenes = [
         "topic": "Topic 1",
         "pregunta": "DRAG DROP -\nYou have downloaded an Azure Resource Manager template to deploy numerous virtual machines. The template is based on a current virtual machine, but must be adapted to reference an administrative password.\nYou need to make sure that the password is not stored in plain text.\nYou are preparing to create the necessary components to achieve your goal.\nWhich of the following should you create to achieve your goal? Answer by dragging the correct option from the list to the answer area.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0000300001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "AD",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0000400001.jpg",
-        "respuestas": []
+        "respuestas": [
+            { "label": "An Azure Key Vault", "value": "A" },
+            { "label": "An Azure Storage account", "value": "B" },
+            { "label": "Azure Active Directory (AD) Identity Protection", "value": "C" },
+            { "label": "An access policy", "value": "D" },
+            { "label": "An Azure policy", "value": "E" },
+            { "label": "A backup policy", "value": "F" }
+        ]
     },
     {
         "id": "816237",
         "topic": "Topic 1",
         "pregunta": "DRAG DROP -\nYou are creating an Azure Cosmos DB account that makes use of the SQL API. Data will be added to the account every day by a web application.\nYou need to ensure that an email notification is sent when information is received from IoT devices, and that compute cost is reduced.\nYou decide to deploy a function app.\nWhich of the following should you configure the function app to use? Answer by dragging the correct options from the list to the answer area.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0000900001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "CE",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0001000001.jpg",
-        "respuestas": []
+        "respuestas": [{ "label": "Azure Cosmos DB connector", "value": "A" },
+            { "label": "SendGrid action", "value": "B" },
+            { "label": "Consumption plan", "value": "C" },
+            { "label": "Azure Event Hubs binding", "value": "D" },
+            { "label": "SendGrid binding", "value": "E" }
+        ]
     },
     {
         "id": "816242",
@@ -53,9 +65,16 @@ export const dataImagenes = [
         "topic": "Topic 1",
         "pregunta": "DRAG DROP -\nYou are a developer for a company that provides a bookings management service in the tourism industry. You are implementing Azure Search for the tour agencies listed in your company's solution.\nYou create the index in Azure Search. You now need to use the Azure Search .NET SDK to import the relevant data into the Azure Search service.\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions from left to right and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0003200001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "DBE",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0003300001.jpg",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Create a DataSource instance and set its Container property to the DataContainer.", "value": "A" },
+            { "label": "Create an IndexBatch that contains the documents which must be added.", "value": "B" },
+            { "label": "Set the DataSources property of the SearchServiceClient.", "value": "C" },
+            { "label": "Create a SearchIndexClient object to connect to the search index.", "value": "D" },
+            { "label": "Call the Documents.Index method of the SearchIndexClient and pass the IndexBatch.", "value": "E" },
+            { "label": "Call the Documents.Suggest method of the SearchIndexClient and pass the DataSource.", "value": "F" }
+          ]
     },
     {
         "id": "816261",
@@ -152,9 +171,15 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP -\nYou are developing a Docker/Go using Azure App Service Web App for Containers. You plan to run the container in an App Service on Linux. You identify a\nDocker container image to use.\nNone of your current resource groups reside in a location that supports Linux. You must minimize the number of resource groups required.\nYou need to create the application and perform an initial deployment.\nWhich three Azure CLI commands should you use to develop the solution? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0010200001.png",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "BFE",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0010300001.png",
-        "respuestas": []
+        "respuestas": [  
+            { "label": "Azure CLI Commands", "value": "A" },
+            { "label": "az group create", "value": "B" },
+            { "label": "az group update", "value": "C" },
+            { "label": "az webapp update", "value": "D" },
+            { "label": "az webapp create", "value": "E" },
+            { "label": "az appservice plan create", "value": "F" }]
     },
     {
         "id": "816272",
@@ -170,9 +195,17 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP -\nYou are developing a serverless Java application on Azure. You create a new Azure Key Vault to work with secrets from a new Azure Functions application.\nThe application must meet the following requirements:\n✑ Reference the Azure Key Vault without requiring any changes to the Java code.\n✑ Dynamically add and remove instances of the Azure Functions host based on the number of incoming application events.\n✑ Ensure that instances are perpetually warm to avoid any cold starts.\n✑ Connect to a VNet.\n✑ Authentication to the Azure Key Vault instance must be removed if the Azure Function application is deleted.\nYou need to grant the Azure Functions application access to the Azure Key Vault.\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0010800001.png",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "BAC",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0010900001.png",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Create a user-assigned managed identity for the application.", "value": "A" },
+            { "label": "Create the Azure Functions app with a Premium plan type.", "value": "B" },
+            { "label": "Create an access policy in Azure Key Vault for the application identity.", "value": "C" },
+            { "label": "Create an SSL certification in Azure Key Vault for the application identity.", "value": "D" },
+            { "label": "Create the Azure Functions app with an App Service plan type.", "value": "E" },
+            { "label": "Create the Azure Functions app with a Consumption plan type.", "value": "F" },
+            { "label": "Create a system-assigned managed identity for the application.", "value": "G" }
+        ]
     },
     {
         "id": "816275",
@@ -197,9 +230,14 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP -\nYou plan to create a Docker image that runs an ASP.NET Core application named ContosoApp. You have a setup script named setupScript.ps1 and a series of application files including ContosoApp.dll.\nYou need to create a Dockerfile document that meets the following requirements:\n✑ Call setupScripts.ps1 when the container is built.\n✑ Run ContosoApp.dll when the container starts.\nThe Dockerfile document must be created in the same folder where ContosoApp.dll and setupScript.ps1 are stored.\nWhich five commands should you use to develop the solution? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0012100001.png",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "CABDE",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0012100002.png",
-        "respuestas": []
+        "respuestas": [
+            { "label": "FROM microsoft/aspnetcore:latest", "value": "A" },
+            { "label": "WORKDIR /apps/ContosoApp", "value": "B" },
+            { "label": "CMD [\"dotnet\", \"ContosoApp.dll\"]", "value": "C" },
+            { "label": "COPY./.", "value": "D" },
+            { "label": "RUN powershell ./setupScript.ps1", "value": "E" }]
     },
     {
         "id": "816284",
@@ -242,9 +280,15 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP -\nYou are developing an application to use Azure Blob storage. You have configured Azure Blob storage to include change feeds.\nA copy of your storage account must be created in another region. Data must be copied from the current storage account to the new storage account directly between the storage servers.\nYou need to create a copy of the storage account in another region and copy the data.\nIn which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0013400001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "DCEBA",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0013400002.jpg",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Use AZCopy to copy the data to the new storage account.", "value": "A" },
+            { "label": "Deploy the template to create a new storage account in the target region.", "value": "B" },
+            { "label": "Export a Resource Manager template.", "value": "C" },
+            { "label": "Create a new template deployment.", "value": "D" },
+            { "label": "Modify the template by changing the storage account name and region.", "value": "E" }
+        ]
     },
     {
         "id": "816290",
