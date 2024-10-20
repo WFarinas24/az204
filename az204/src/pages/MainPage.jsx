@@ -3,7 +3,7 @@ import { CiMenuKebab } from 'react-icons/ci'
 import { FaRepeat } from 'react-icons/fa6'
 
 import { VscDebugContinue } from 'react-icons/vsc'
-
+import { CgMoveRight } from "react-icons/cg";
 import { FaAngleDown, FaCheck, FaChessBoard, FaCog, FaExternalLinkAlt, FaFire, FaPaperPlane, FaPlus, FaRegFilePdf, FaReply, FaSave, FaTrash } from 'react-icons/fa'
 import { CantidadPreguntasTotalesConImagenes, ClonarExamen, EliminarExamen, GenerarExamen, ObtenerExamenes } from '../services/servicios'
 import { Link } from 'react-router-dom'
@@ -77,7 +77,7 @@ export const MainPage = () => {
                                 </MenuItem>
 
                                 <MenuItem as={Link}  to={"checks"} gap={2}>
-                                    <FaCheck />
+                                    <CgMoveRight />
                                     Preguntas especiales
                                 </MenuItem>
 

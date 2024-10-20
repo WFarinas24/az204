@@ -24,7 +24,7 @@ export const ContendoresDropables = ({
             <Box display={"flex"} flexWrap={"wrap"}>
               {items?.map((item, index) => (
                 <Box display={"flex"} flexWrap={"wrap"} key={item.id}>
-                  <Box>
+                  <Box >
                     <DroppableList key={item.id} {...item} />
                   </Box>
                 </Box>
@@ -34,10 +34,6 @@ export const ContendoresDropables = ({
         </DragDropContext>
       </Card>
 
-      <HStack my={3} display={"Flex"} justifyContent={"space-between"}>
-        <Button>Siguiente</Button>
-        <Button>Anterior</Button>
-      </HStack>
     </Card>
   );
 };

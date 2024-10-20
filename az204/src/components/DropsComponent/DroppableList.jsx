@@ -20,14 +20,14 @@ export const DroppableList = ({ id, items, label }) => {
             minH={400}
             minW={400}
             border={1}
-            borderColor={"black"}
+            borderColor={"#bdc3c7"}
             borderStyle={"solid"}
             className={`holder`}
           >
             <Box
               flex={1}
               border={1}
-              borderColor={"black"}
+              borderColor={"#bdc3c7"}
               borderStyle={"solid"}
               className="holder__title"
             >
@@ -37,20 +37,27 @@ export const DroppableList = ({ id, items, label }) => {
             <Box className="holder__content">
               <ul className="list">
                 {items?.map((item, index) => (
-                  <li
-                    style={{
-                      margin: "4px",
-                      border: "1px solid gray",
-                      textDecoration: "none",
-                      listStyle: "none",
-                      padding: "6px",
-                    }}
-                    className="list__item"
-                    key={item.id}
-                  >
-                    <Draggable draggableId={item.id} index={index}>
-                      {(provided) => (
+                  <Draggable key={index} draggableId={item.id} index={index}>
+                    {(provided, snapshot) => (
+                      <li
+                        style={{
+                          margin: "4px",
+                          border: "1px solid gray",
+                          textDecoration: "none",
+                          listStyle: "none",
+                          padding: "6px",
+                          width: "400px",
+                          background: "#ecf0f1",
+                          borderStyle: snapshot.isDragging ? "dotted" : "solid",
+                          borderWidth: snapshot.isDragging ? "3px" : "1px",
+                          height: snapshot.isDragging ? "40px" : "auto",
+
+                          borderRadius: "4px",
+                        }}
+                        key={item.id}
+                      >
                         <Box
+                          userSelect={"none"}
                           className="card"
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
@@ -58,9 +65,9 @@ export const DroppableList = ({ id, items, label }) => {
                         >
                           {item.label}
                         </Box>
-                      )}
-                    </Draggable>
-                  </li>
+                      </li>
+                    )}
+                  </Draggable>
                 ))}
                 {provided.placeholder}
               </ul>
