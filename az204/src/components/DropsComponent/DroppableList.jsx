@@ -18,7 +18,7 @@ export const DroppableList = ({ id, items, label }) => {
         >
           <Box
             minH={400}
-            minW={400}
+            minW={200}
             border={1}
             borderColor={"#bdc3c7"}
             borderStyle={"solid"}
@@ -46,7 +46,7 @@ export const DroppableList = ({ id, items, label }) => {
                           textDecoration: "none",
                           listStyle: "none",
                           padding: "6px",
-                          width: "400px",
+                        //   width: "400px",
                           background: "#ecf0f1",
                           borderStyle: snapshot.isDragging ? "dotted" : "solid",
                           borderWidth: snapshot.isDragging ? "3px" : "1px",
