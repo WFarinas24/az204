@@ -37,7 +37,7 @@ export const DroppableList = ({ id, items, label }) => {
             <Box className="holder__content">
               <ul className="list">
                 {items?.map((item, index) => (
-                  <Draggable key={index} draggableId={item.id} index={index}>
+                  <Draggable key={item.id} draggableId={item.id} index={index}>
                     {(provided, snapshot) => (
                       <li
                         style={{

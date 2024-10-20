@@ -24,7 +24,7 @@ export const ContendoresDropables = ({
             <Box display={"flex"} flexWrap={"wrap"}>
               {items?.map((item, index) => (
                 <Box display={"flex"} flexWrap={"wrap"} key={item.id}>
-                  <Box >
+                  <Box key={item.id}>
                     <DroppableList key={item.id} {...item} />
                   </Box>
                 </Box>
@@ -33,7 +33,6 @@ export const ContendoresDropables = ({
           </Box>
         </DragDropContext>
       </Card>
-
     </Card>
   );
 };

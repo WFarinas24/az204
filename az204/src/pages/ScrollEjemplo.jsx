@@ -63,6 +63,9 @@ export const ScrollEjemplo = () => {
 
   const dragQueen = (result) => {
     const { destination, draggableId, source, type } = result;
+
+    console.log( { destination, draggableId, source, type, NewData} )
+
     if (!destination) {
       return;
     }
@@ -75,14 +78,16 @@ export const ScrollEjemplo = () => {
     }
 
     if ("group" === type) {
-      const sourceIndex = source.index;
-      const targetIndex = destination.index;
-      const workValue = items?.slice();
-      const [deletedItem] = workValue.splice(sourceIndex, 1);
-      workValue.splice(targetIndex, 0, deletedItem);
+        const sourceIndex = source.index;
+        const targetIndex = destination.index;
+        const workValue = items?.slice();
+        const [deletedItem] = workValue.splice(sourceIndex, 1);
+        workValue.splice(targetIndex, 0, deletedItem);
+        
       buildAndSave();
       return;
     }
+
     const sourceDroppableIndex = groups[source.droppableId];
     const targetDroppableIndex = groups[destination.droppableId];
     const sourceItems = items[sourceDroppableIndex].items.slice();
@@ -91,6 +96,7 @@ export const ScrollEjemplo = () => {
       source.droppableId !== destination.droppableId
         ? items[targetDroppableIndex].items.slice()
         : sourceItems;
+
     const [deletedItem] = sourceItems.splice(source.index, 1);
 
     targetItems.splice(destination.index, 0, deletedItem);
@@ -211,9 +217,7 @@ export const ScrollEjemplo = () => {
         >
           {pregunta?.pregunta?.split("\n").map((x, index) => {
             return (
-              <>
                 <Text key={index}>{x}</Text>
-              </>
             );
           })}
         </Card>
