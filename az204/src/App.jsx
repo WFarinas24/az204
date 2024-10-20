@@ -7,7 +7,7 @@ import {
 import { Footer } from './components/Footer'
 import { useStoreExamenes } from './services/storePreguntas'
 import { ObtenerExamenes } from './services/servicios'
-
+import React from 'react'
 export default function App () {
   const update = useStoreExamenes((state) => state.updateExamenes)
   update(ObtenerExamenes())
