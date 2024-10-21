@@ -1,28 +1,26 @@
 import React from "react";
 import {
-  Badge,
   Box,
   Button,
   Card,
   ChakraProvider,
-  Divider,
   HStack,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
+  Image,
   Text,
   useDisclosure,
   useToast,
-  VStack,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { dataImagenes } from "../data/data-imagenes";
 import { ContendoresDropables } from "../components/DropsComponent/ContendoresDropables";
 import { Footer } from "../components/Footer";
+import {
+  ActualizarDatosImagenes,
+  ObtenerPreguntasAleatoriasImagenes,
+} from "../services/servicios";
+import { ModalRespuestasCorrectas } from "../components/modals/ModalRespuestasCorrectas";
+import { useNavigate } from "react-router-dom";
+
+const _listaPreguntas = ObtenerPreguntasAleatoriasImagenes();
 
 export const ScrollEjemplo = () => {
   const [items, setItems] = useState([]);
@@ -31,12 +29,13 @@ export const ScrollEjemplo = () => {
   const [numPregunta, setNumPregunta] = useState(0);
   const [pregunta, setPregunta] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const navigator = useNavigate();
   const toast = useToast();
-  const EsRespuestaValida = () => {
-    const selected = NewData[1]?.items?.map((x) => x.id) ?? [];
-    console.log(selected);
 
+  const EsRespuestaValida = () => {
+    console.log(pregunta);
+
+    const selected = NewData[1]?.items?.map((x) => x.id) ?? [];
     if (selected.join("") == pregunta.respuestaCorrecta) {
       toast({
         position: "top",
@@ -55,9 +54,14 @@ export const ScrollEjemplo = () => {
         duration: 2000,
         isClosable: true,
       });
+
+      ActualizarDatosImagenes(pregunta.id, false);
+
       onOpen();
       return;
     }
+
+    ActualizarDatosImagenes(pregunta.id, true);
     setNumPregunta(numPregunta + 1);
   };
 
@@ -76,12 +80,12 @@ export const ScrollEjemplo = () => {
     }
 
     if ("group" === type) {
-        const sourceIndex = source.index;
-        const targetIndex = destination.index;
-        const workValue = items?.slice();
-        const [deletedItem] = workValue.splice(sourceIndex, 1);
-        workValue.splice(targetIndex, 0, deletedItem);
-        
+      const sourceIndex = source.index;
+      const targetIndex = destination.index;
+      const workValue = items?.slice();
+      const [deletedItem] = workValue.splice(sourceIndex, 1);
+      workValue.splice(targetIndex, 0, deletedItem);
+
       buildAndSave();
       return;
     }
@@ -127,15 +131,11 @@ export const ScrollEjemplo = () => {
   }
 
   useEffect(() => {
-    const mi_pregunta = dataImagenes
-      .filter(
-        (x) =>
-          x.respuestas.length > 0 &&
-          x.respuestaCorrecta.length > 1 &&
-          typeof x.respuestas[0].label != "undefined"
-      )
-      .sort(() => Math.random() - 0.5)[numPregunta];
+    if (numPregunta == _listaPreguntas.length) {
+      navigator("/resultadoImagen");
+    }
 
+    const mi_pregunta = _listaPreguntas[numPregunta];
     const mockData = [
       {
         id: "af1",
@@ -163,88 +163,58 @@ export const ScrollEjemplo = () => {
 
   return (
     <ChakraProvider>
-      <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>
-            Respuestas correctas
-            <Divider></Divider>
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody display={"flex"} flexDir={"column"}>
-            {pregunta?.respuestaCorrecta?.split("").map((x, index) => {
-              return (
-                <VStack
-                  colorScheme="green"
-                  wordBreak={"break-word"}
-                  m={2}
-                  key={x}
-                  flexDir={"row"}
-                  justifyContent={"start"}
-                >
-                  <Badge>{index + 1}. </Badge>
-
-                  <Text>
-                    {pregunta?.respuestas?.find(function (d) {
-                      const valor = d.value == x;
-                      return valor;
-                    }).label ?? "no encontrado"}
-                  </Text>
-                </VStack>
-              );
-            })}
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <ModalRespuestasCorrectas
+        isOpen={isOpen}
+        onClose={onClose}
+        pregunta={pregunta}
+      />
 
       <Card p={8}>
+        <Text>
+          {numPregunta + 1}/{_listaPreguntas.length}
+        </Text>
         <Card
           border={"1px solid #ecf0f1"}
           backgroundColor={"whitesmoke"}
           p={4}
           m={4}
-        
           borderRadius={10}
           position={"relative"}
         >
           {pregunta?.pregunta?.split("\n").map((x, index) => {
-            return (
-                <Text key={index}>{x}</Text>
-            );
+            return <Text key={index}>{x}</Text>;
           })}
+
+          {pregunta?.imgPregunta?.length > 0 ? (
+            <Box m={"auto"}>
+              <Image
+                w={500}
+                src={pregunta.imgPregunta}
+                fallbackSrc="./pato-loading.gif"
+              />
+            </Box>
+          ) : null}
         </Card>
 
         <Box>
-          <Box>
-            <Box style={{ display: "flex", flexWrap: "wrap" }}>Pregunta</Box>
-          </Box>
-
-          <Card>
-            <HStack m={3} display={"Flex"} justifyContent={"center"}>
-              <Button
-                colorScheme={numPregunta > 0 ? "green" : "white"}
-                onClick={() => {
-                  setNumPregunta((numPregunta > 0 ? numPregunta : 1) - 1);
-                }}
-              >
-                Anterior
-              </Button>
-              <Button
-                colorScheme="green"
-                onClick={() => {
-                  EsRespuestaValida();
-                }}
-              >
-                Siguiente
-              </Button>
-            </HStack>
-          </Card>
+          <HStack m={3} display={"Flex"} justifyContent={"center"}>
+            <Button
+              colorScheme={numPregunta > 0 ? "green" : "white"}
+              onClick={() => {
+                setNumPregunta((numPregunta > 0 ? numPregunta : 1) - 1);
+              }}
+            >
+              Anterior
+            </Button>
+            <Button
+              colorScheme="green"
+              onClick={() => {
+                EsRespuestaValida();
+              }}
+            >
+              Siguiente
+            </Button>
+          </HStack>
         </Box>
 
         <ContendoresDropables
@@ -258,8 +228,28 @@ export const ScrollEjemplo = () => {
           dragQueen={dragQueen}
         />
       </Card>
-
-      <Footer/>
+      <Box>
+        <HStack m={3} display={"Flex"} justifyContent={"center"}>
+          <Button
+            colorScheme={numPregunta > 0 ? "green" : "white"}
+            onClick={() => {
+              setNumPregunta((numPregunta > 0 ? numPregunta : 1) - 1);
+            }}
+          >
+            Anterior
+          </Button>
+          <Button
+            colorScheme="green"
+            onClick={() => {
+              EsRespuestaValida();
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          >
+            Siguiente
+          </Button>
+        </HStack>
+      </Box>
+      <Footer />
     </ChakraProvider>
   );
 };

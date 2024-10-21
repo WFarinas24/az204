@@ -371,9 +371,14 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP -\nYou provision virtual machines (VMs) as development environments.\nOne VM does not start. The VM is stuck in a Windows update process. You attach the OS disk for the affected VM to a recovery VM.\nYou need to correct the issue.\nIn which order should you perform the actions? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0015500001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "ADBC",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0015500002.jpg",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Run the following command at an elevated command prompt: dism /image:\\ /get=packages > c:\\temp\\Patch.txt", "value": "A" },
+            { "label": "Run the following command at an elevated command prompt: dism /Image: <Attached OS disks>:\\ /Remove Package /PackageName: <package name to delete>", "value": "B" },
+            { "label": "Detach the OS disk and recreate the VM", "value": "C" },
+            { "label": "Open C:\\temp\\Patch.txt file and locate the update that is in a pending state", "value": "D" }
+          ]
     },
     {
         "id": "816304",
@@ -425,9 +430,16 @@ export const dataImagenes = [
         "topic": "Topic 2",
         "pregunta": "DRAG DROP\n-\n\nYou are developing several microservices to run on Azure Container Apps.\n\nThe microservices must allow HTTPS access by using a custom domain.\n\nYou need to configure the custom domain in Azure Container Apps.\n\nIn which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.\n\n",
         "imgPregunta": "https://img.examtopics.com/az-204/image445.png",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "BEACD",
         "imgRespuesta": "https://img.examtopics.com/az-204/image446.png",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Validate the custom domain name.", "value": "A" },
+            { "label": "Enable ingress.", "value": "B" },
+            { "label": "Bind the certificate.", "value": "C" },
+            { "label": "Add DNS records to the domain provider.", "value": "D" },
+            { "label": "Add the custom domain name.", "value": "E" }
+          ]
+          
     },
     {
         "id": "892685",
@@ -524,18 +536,29 @@ export const dataImagenes = [
         "topic": "Topic 3",
         "pregunta": "DRAG DROP -\nYou have an application that uses Azure Blob storage.\nYou need to update the metadata of the blobs.\nWhich three methods should you use to develop the solution? To answer, move the appropriate methods from the list of methods to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0022100001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "ABE",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0022100002.jpg",
-        "respuestas": []
+        "respuestas":[
+            { "label": "Metadata.Add", "value": "A" },
+            { "label": "SetMetadataAsync", "value": "B" },
+            { "label": "FetchAttributesAsync", "value": "C" },
+            { "label": "UploadFileStream", "value": "D" },
+            { "label": "SetPropertiesAsync", "value": "E" }
+          ]
     },
     {
         "id": "816315",
         "topic": "Topic 3",
         "pregunta": "DRAG DROP -\nYou are maintaining an existing application that uses an Azure Blob GPv1 Premium storage account. Data older than three months is rarely used.\nData newer than three months must be available immediately. Data older than a year must be saved but does not need to be available immediately.\nYou need to configure the account to support a lifecycle management rule that moves blob data to archive storage for data not modified in the last year.\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\nSelect and Place:\n\n",
         "imgPregunta": "https://www.examtopics.com/assets/media/exam-media/04273/0022400001.jpg",
-        "respuestaCorrecta": "",
+        "respuestaCorrecta": "ADC",
         "imgRespuesta": "https://www.examtopics.com/assets/media/exam-media/04273/0022400002.jpg",
-        "respuestas": []
+        "respuestas": [
+            { "label": "Upgrade the storage account to GPV2", "value": "A" },
+            { "label": "Create a new GPV2 Standard account and set its default access tier level to cool", "value": "B" },
+            { "label": "Change the storage account access tier from hot to cool", "value": "C" },
+            { "label": "Copy the data to be archived to a Standard GPV2 storage account and then delete the data from the original storage account", "value": "D" }
+          ]
     },
     {
         "id": "816318",

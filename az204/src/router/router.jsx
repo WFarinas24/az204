@@ -7,6 +7,7 @@ import { Estudiar } from "../pages/Estudiar";
 // import { PreguntaChecks } from "../pages/PreguntaChecks";
 import React from "react";
 import { ScrollEjemplo } from "../pages/ScrollEjemplo";
+import { ResultadoImagenes } from "../pages/ResultadoImagenes";
 
 export const router = createHashRouter([
   {
@@ -33,5 +34,9 @@ export const router = createHashRouter([
   {
     path: "/checks",
     element: <ScrollEjemplo />
+  },
+  {
+    path: "/resultadoImagen",
+    element: <ResultadoImagenes />
   },
 ]);

@@ -1,4 +1,5 @@
 import { data } from "../data/data-examen";
+import { dataImagenes } from "../data/data-imagenes";
 
 export const ObtenerExamenes = () => {
   const items = JSON.parse(localStorage.getItem("examen-204"));
@@ -294,8 +295,50 @@ const randomArray = (array) => {
   return array;
 };
 
+export const ObtenerPreguntasImagenes = () => {
+  return data.filter(
+    (x) => x.respuestas.length == 0 || x.imgPregunta?.length > 0
+  );
+};
 
-export const ObtenerPreguntasImagenes =()=> {
-  return data.filter(x => x.respuestas.length == 0 || x.imgPregunta?.length > 0 )
+export const ObtenerPreguntasAleatoriasImagenes = () => {
+  const preguntas = dataImagenes
+    .filter(
+      (x) =>
+        x.respuestas.length > 0 &&
+        x.respuestaCorrecta.length > 1 &&
+        typeof x.respuestas[0].label != "undefined"
+    )
+    .sort(() => Math.random() - 0.5);
 
-}
+  return preguntas;
+};
+
+export const ObtenerDatosImagenes = () => {
+  const coleccion = "examen-204-imagenes";
+  return JSON.parse(localStorage.getItem(coleccion)) ?? [];
+};
+
+export const ActualizarDatosImagenes = (id, correcta) => {
+  const coleccion = "examen-204-imagenes";
+  let items = JSON.parse(localStorage.getItem(coleccion)) ?? [];
+  let dato = items.find((x) => x.id == id) ?? {};
+  items = items.filter((x) => x.id != id);
+
+  if (typeof(dato.id) == "undefined") {
+    dato = {
+      id : id, 
+      correctas : 0,
+      incorrectas : 0
+    }
+  }
+
+  dato.correctas += correcta ? 1 : 0;
+  dato.incorrectas += !correcta ? 1 : 0;
+
+  items.push(dato);
+
+  localStorage.setItem(coleccion, JSON.stringify(items));
+
+  return items;
+};
