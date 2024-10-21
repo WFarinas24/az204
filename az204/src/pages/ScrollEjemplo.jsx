@@ -56,13 +56,15 @@ export const ScrollEjemplo = () => {
       });
 
       ActualizarDatosImagenes(pregunta.id, false);
+      window.scrollTo({ top: 0, behavior: 'smooth' })
 
       onOpen();
       return;
     }
-
+    
     ActualizarDatosImagenes(pregunta.id, true);
     setNumPregunta(numPregunta + 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   };
 
   const dragQueen = (result) => {

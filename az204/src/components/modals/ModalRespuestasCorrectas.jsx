@@ -1,10 +1,29 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Divider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, VStack } from "@chakra-ui/react";
+import {
+  Badge,
+  Button,
+  Divider,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 
-export const ModalRespuestasCorrectas = ({isOpen, onClose, pregunta}) => {
+export const ModalRespuestasCorrectas = ({ isOpen, onClose, pregunta }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
+    <Modal
+      isOpen={isOpen}
+      onClose={() => {
+        onClose();
+      }}
+      size={"xl"}
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
@@ -16,7 +35,6 @@ export const ModalRespuestasCorrectas = ({isOpen, onClose, pregunta}) => {
           {pregunta?.respuestaCorrecta?.split("").map((x, index) => {
             return (
               <VStack
-                colorScheme="green"
                 wordBreak={"break-word"}
                 m={2}
                 key={x}
@@ -37,8 +55,8 @@ export const ModalRespuestasCorrectas = ({isOpen, onClose, pregunta}) => {
         </ModalBody>
 
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
+          <Button colorScheme="green" mr={3} onClick={onClose}>
+            Cerrar
           </Button>
         </ModalFooter>
       </ModalContent>
