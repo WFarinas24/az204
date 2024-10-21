@@ -17,22 +17,14 @@ export const ContendoresDropables = ({
   useEffect(() => {}, []);
 
   return (
-    <Card>
-      <Card margin={3} display={"flex"} alignItems={"center"} flexWrap={"wrap"}>
-        <DragDropContext onDragEnd={dragQueen}>
-          <Box>
-            <Box display={"flex"} flexWrap={"wrap"}>
-              {items?.map((item, index) => (
-                <Box display={"flex"} flexWrap={"wrap"} key={item.id}>
-                  <Box key={item.id}>
-                    <DroppableList key={item.id} {...item} />
-                  </Box>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </DragDropContext>
-      </Card>
+    <Card margin={3} display={"flex"} alignItems={"center"} flexWrap={"wrap"}>
+      <DragDropContext onDragEnd={dragQueen}>
+        <HStack wrap={"wrap"}>
+          {items?.map((item, index) => (
+              <DroppableList key={item.id} {...item} />
+          ))}
+        </HStack>
+      </DragDropContext>
     </Card>
   );
 };

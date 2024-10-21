@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box } from "@chakra-ui/react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import { Draggable, Droppable } from "@hello-pangea/dnd";
 import React from "react";
 
@@ -7,73 +7,58 @@ import React from "react";
 export const DroppableList = ({ id, items, label }) => {
   return (
     <Droppable droppableId={id}>
-      {(provided) => (
-        <Box
-          marginLeft={10}
-          width={"100%"}
-          display={"flex"}
-          justifyContent={"space-between"}
+      {(provided, snapshot1) => (
+        <VStack
+          alignItems={"center"}
+          minH={400}
+          minW={300}
           {...provided.droppableProps}
           ref={provided.innerRef}
+          border={1}
+          borderColor={"#bdc3c7"}
+          borderStyle={"solid"}
+          bgColor={snapshot1.isDraggingOver ? "#1abc9c" : ""}
         >
-          <Box
-            minH={400}
-            minW={200}
-            border={1}
-            borderColor={"#bdc3c7"}
-            borderStyle={"solid"}
-            className={`holder`}
-          >
-            <Box
-              flex={1}
-              border={1}
-              borderColor={"#bdc3c7"}
-              borderStyle={"solid"}
-              className="holder__title"
-            >
-              {" "}
-              {label}{" "}
-            </Box>
-            <Box className="holder__content">
-              <ul className="list">
-                {items?.map((item, index) => (
-                  <Draggable key={item.id} draggableId={item.id} index={index}>
-                    {(provided, snapshot) => (
-                      <li
-                        style={{
-                          margin: "4px",
-                          border: "1px solid gray",
-                          textDecoration: "none",
-                          listStyle: "none",
-                          padding: "6px",
-                        //   width: "400px",
-                          background: "#ecf0f1",
-                          borderStyle: snapshot.isDragging ? "dotted" : "solid",
-                          borderWidth: snapshot.isDragging ? "3px" : "1px",
-                          height: snapshot.isDragging ? "40px" : "auto",
+          <Text>{label}</Text>
 
-                          borderRadius: "4px",
-                        }}
-                        key={item.id}
-                      >
-                        <Box
-                          userSelect={"none"}
-                          className="card"
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          ref={provided.innerRef}
-                        >
-                          {item.label}
-                        </Box>
-                      </li>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </ul>
-            </Box>
+          <Box className="list" style={{ width: "100%", justifyContent:"center" }} >
+            {items?.map((item, index) => (
+              <Draggable key={item.id} draggableId={item.id} index={index}>
+                {(provided, snapshot) => (
+                  <Box
+                    style={{
+                      opacity: snapshot.isDragging ? 0.9 : 1,
+                      margin: "2px",
+                      border: "1px solid gray",
+                      textDecoration: "none",
+                      listStyle: "none",
+                      padding: "6px",
+                      //   minWidth: "278px",
+                      background: "#ecf0f1",
+                      borderStyle: snapshot.isDragging ? "dotted" : "solid",
+                      borderWidth: snapshot.isDragging ? "3px" : "1px",
+                      height: snapshot.isDragging ? "40px" : "auto",
+                      //   width: "100%",
+                      borderRadius: "4px",
+                    }}
+                    key={item.id}
+                  >
+                    <Box
+                      userSelect={"none"}
+                      className="card"
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      ref={provided.innerRef}
+                    >
+                      {item.label}
+                    </Box>
+                  </Box>
+                )}
+              </Draggable>
+            ))}
+            {provided.placeholder}
           </Box>
-        </Box>
+        </VStack>
       )}
     </Droppable>
   );

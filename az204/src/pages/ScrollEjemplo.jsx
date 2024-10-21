@@ -64,8 +64,6 @@ export const ScrollEjemplo = () => {
   const dragQueen = (result) => {
     const { destination, draggableId, source, type } = result;
 
-    console.log( { destination, draggableId, source, type, NewData} )
-
     if (!destination) {
       return;
     }
